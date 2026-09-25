@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contractor License Renewal Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+        .form-section {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .form-section h3 {
+            margin-top: 0;
+            color: #555;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-group button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-button { background-color: #28a745; color: white; }
+        .back-button { background-color: #007bff; color: white; }
+        .print-button { background-color: #6c757d; color: white; }
+        .whatsapp-button { background-color: #25d366; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>विद्युत ठेकेदार लायसन्स नुतनीकरणा करीता आवश्यक माहिती</h2>
+    <p>Information For Contractor License Renewal Process</p>
+    <p>कृपया माहिती मराठीत द्यावी</p>
+
+    <form id="renewalForm" action="/submit-renewal" method="post">
+        
+        <div class="form-section">
+            <h3>व्यवसाय संस्थेची माहिती (Firm Information)</h3>
+            <label for="firm_name">व्यवसाय संस्थेचे नाव (Firm Name) आणि मठे क्रमांक व दिनांक</label>
+            [cite_start]<input type="text" id="firm_name" name="firm_name" placeholder="मठे क्रमांक व दिनांक" required> [cite: 237]
+
+            <label for="firm_address">व्यवसाय संस्थेचा पत्ता (Firm Address)</label>
+            [cite_start]<input type="text" id="firm_address" name="firm_address" required> [cite: 237]
+        </div>
+
+        <div class="form-section">
+            <h3>मालकाची माहिती (Owner Information)</h3>
+            <label for="owner_name">मालकाचे पूर्ण नाव (Owner Full Name)</label>
+            [cite_start]<input type="text" id="owner_name" name="owner_name" required> [cite: 237]
+
+            <label for="owner_address">मालकाचा पत्ता (Owner Address)</label>
+            [cite_start]<input type="text" id="owner_address" name="owner_address" required> [cite: 237]
+
+            <label for="owner_father_name">मालकाच्या वडिलांचे पूर्ण नाव (Owner Father Full Name)</label>
+            [cite_start]<input type="text" id="owner_father_name" name="owner_father_name" required> [cite: 237]
+
+            <label for="owner_dob">मालकाची जन्म दिनांक (Owner Date Of Birth)</label>
+            [cite_start]<input type="date" id="owner_dob" name="owner_dob" required> [cite: 237]
+
+            <label for="owner_email">मालकाचा ई मेल पत्ता (Owner Email Address)</label>
+            [cite_start]<input type="email" id="owner_email" name="owner_email" required> [cite: 237]
+
+            <label for="owner_education">मालकाचे शिक्षण (Owner Education Qualification)</label>
+            [cite_start]<input type="text" id="owner_education" name="owner_education" required> [cite: 237]
+
+            <label for="owner_pan">मालकाचा पॅन कार्ड क्रमांक (Owner Pan card Number)</label>
+            [cite_start]<input type="text" id="owner_pan" name="owner_pan" required> [cite: 237]
+        </div>
+        
+        <div class="form-section">
+            <h3>सुपरवायजरची माहिती (Supervisor Information)</h3>
+            <label for="supervisor_name">सुपरवायजरचे पूर्ण नाव (Supervisor Full Name)</label>
+            [cite_start]<input type="text" id="supervisor_name" name="supervisor_name" required> [cite: 237]
+
+            <label for="supervisor_father_name">सुपरवायजरचे वडिलांचे पूर्ण नाव (Supervisor Father Full Name)</label>
+            [cite_start]<input type="text" id="supervisor_father_name" name="supervisor_father_name" required> [cite: 237]
+
+            <label for="supervisor_address">सुपरवायजरचा पूर्ण पत्ता (Supervisor Address)</label>
+            [cite_start]<input type="text" id="supervisor_address" name="supervisor_address" required> [cite: 237]
+
+            <label for="supervisor_dob">सुपरवायजरची जन्म दिनांक (Supervisor Date of Birth)</label>
+            [cite_start]<input type="date" id="supervisor_dob" name="supervisor_dob" required> [cite: 237]
+
+            <label for="supervisor_email">सुपरवायजर चा ई मेल पत्ता (Supervisor Email Address)</label>
+            [cite_start]<input type="email" id="supervisor_email" name="supervisor_email" required> [cite: 237]
+
+            <label for="supervisor_mobile">सुपरवायजरचा मोबाइल क्रमांक (Supervisor Mobile number)</label>
+            [cite_start]<input type="tel" id="supervisor_mobile" name="supervisor_mobile" required> [cite: 237]
+
+            <label for="supervisor_adhar">सुपरवायजरचा आधार क्रमांक (Supervisor Adhar Kramank)</label>
+            [cite_start]<input type="text" id="supervisor_adhar" name="supervisor_adhar" required> [cite: 237]
+
+            <label for="supervisor_appointment_date">सुपरवायजरची सध्याची नेमणूक दिनांक (Supervisor Appointment Date)</label>
+            [cite_start]<input type="date" id="supervisor_appointment_date" name="supervisor_appointment_date" required> [cite: 237]
+
+            <label for="supervisor_license">सुपरवायजरचे प्रमाणपत्र क्रमांक व दिनांक (Supervisor License Number and Date)</label>
+            [cite_start]<input type="text" id="supervisor_license" name="supervisor_license" required> [cite: 237]
+
+            <div class="form-section">
+                <h4>सुपरवायजरची पूर्वीची नोकरीचे तपशील (Supervisor's Previous Job Details)</h4>
+                <label for="previous_contractor_name">काम केलेल्या ठेकेदार अथवा कंपनीचे नाव (Contractor Or Company Name)</label>
+                [cite_start]<input type="text" id="previous_contractor_name" name="previous_contractor_name"> [cite: 237]
+
+                <label for="previous_contractor_mc">ठेकेदार क्रमांक व दिनांक (Contractor MC number)</label>
+                [cite_start]<input type="text" id="previous_contractor_mc" name="previous_contractor_mc"> [cite: 237]
+
+                <label for="previous_job_dates">कधी पासून कधी पर्यंत काम केले (Date of Joining and Seva End Date)</label>
+                [cite_start]<input type="text" id="previous_job_dates" name="previous_job_dates"> [cite: 237]
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>मेगर व अर्थ टेस्टर तपशील (Megar & Earth Tester Details)</h3>
+            <label for="megar_make">मेगर बनावट (मेक) Megar Make</label>
+            [cite_start]<input type="text" id="megar_make" name="megar_make" required> [cite: 237]
+
+            <label for="earth_tester_make">अर्थ टेस्टर बनावट (मेक) Earth Tester Make</label>
+            [cite_start]<input type="text" id="earth_tester_make" name="earth_tester_make" required> [cite: 238]
+
+            <label for="megar_serial">मेगर सिरीयल क्रमांक (Megar Serial Number)</label>
+            [cite_start]<input type="text" id="megar_serial" name="megar_serial" required> [cite: 238]
+
+            <label for="earth_tester_serial">अर्थ टेस्टर सिरीयल क्रमांक (Earth Tester Serial Number)</label>
+            [cite_start]<input type="text" id="earth_tester_serial" name="earth_tester_serial" required> [cite: 238]
+        </div>
+
+        <div class="button-group">
+            <button type="button" class="back-button" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
+            <button type="submit" class="submit-button">Submit & Pay</button>
+        </div>
+    </form>
+</div>
+<script src="lang-toggle.js"></script>
+<script src="payment.js"></script>
+
+</body>
+</html>
