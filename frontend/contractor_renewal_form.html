@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरण अर्ज</title>
+    <style>
+        /* General Layout */
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+
+        /* Header Styles */
+        .header { text-align: center; margin-bottom: 20px; }
+        .header h1 { font-size: 1.8em; color: #0056b3; }
+        
+        /* Form Sections */
+        .form-section { border: 1px solid #ccc; padding: 15px; margin-bottom: 25px; border-radius: 5px; }
+        .form-section h2 { border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 0; font-size: 1.4em; color: #0056b3; }
+        
+        /* Input and Label Styles */
+        .form-group { margin-bottom: 15px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+        .form-group label { font-weight: bold; margin-bottom: 0; flex-basis: 150px; }
+        .inline-input { padding: 8px; border: 1px solid #aaa; border-radius: 4px; box-sizing: border-box; font-size: 1em; flex-grow: 1; }
+        .input-year { max-width: 100px; }
+        .input-license { max-width: 180px; }
+        .input-full-width { width: 100%; max-width: none; }
+        .input-medium { max-width: 250px; }
+        .input-small { max-width: 150px; }
+        .input-date { max-width: 150px; }
+        .input-tel { max-width: 200px; }
+        
+        /* Affidavit Text Flow Inputs (Embedded in prose) */
+        .prose-input { display: inline-block; padding: 3px 5px; border: none; border-bottom: 1px dashed #333; margin: 0 5px; text-align: center; font-size: 1em; }
+        .prose-input-name { width: 200px; }
+        .prose-input-age { width: 50px; }
+        .prose-input-address { width: 300px; }
+        .prose-input-long { width: 300px; }
+        .prose-input-short { width: 100px; }
+
+        /* Checklist Table */
+        .checklist-table { width: 100%; border-collapse: collapse; margin-top: 15px; table-layout: fixed; }
+        .checklist-table th, .checklist-table td { border: 1px solid #ddd; padding: 10px; text-align: left; vertical-align: middle; }
+        .checklist-table th { background-color: #f2f2f2; font-weight: bold; }
+        .checklist-table td:nth-child(1) { width: 5%; text-align: center; }
+        .checklist-table td:nth-child(3) { width: 10%; text-align: center; }
+        .checklist-table td:nth-child(4) { width: 20%; }
+        .checklist-table input[type="checkbox"] { transform: scale(1.3); cursor: pointer; }
+
+        /* Namuna U Styles (Photo/Signature) */
+        .namuna-u-layout { display: flex; justify-content: space-around; gap: 20px; }
+        .detail-box { text-align: center; flex: 1; padding: 10px; border: 1px dashed #ddd; }
+        .detail-box h4 { margin-top: 0; color: #555; }
+        .detail-box input[type="file"] { display: block; margin: 10px auto; }
+        
+        /* Affidavit Footer/Signature Styles */
+        .affidavit-footer { text-align: right; margin-top: 30px; }
+        .affidavit-signature-details { margin-top: 30px; }
+        .affidavit-signature-details p { margin: 5px 0; }
+        
+        /* Utility Classes */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .page-break { page-break-before: always; }
+        
+        /* Arja Section */
+        .arja-header { text-align: right; margin-bottom: 20px; }
+        .arja-recipient { text-align: left; margin-bottom: 20px; }
+        .arja-subject { font-weight: bold; text-align: center; margin: 20px 0; }
+        .arja-body p { text-indent: 0; margin-top: 15px; }
+
+        /* Button Group */
+        .form-actions { text-align: center; border: none; padding: 20px 0; }
+        .button-group button { margin: 0 10px; padding: 10px 15px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; }
+        .submit-button { background-color: #4CAF50; color: white; }
+        .back-button { background-color: #f44336; color: white; }
+        .print-button { background-color: #008CBA; color: white; }
+    </style>
+</head>
+<body class="renewal-form">
+
+<div class="container">
+    <header class="header">
+        <h1>विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरण अर्ज</h1>
+        <p class="subtitle">Contractor License Renewal Application</p>
+    </header>
+
+    <form id="renewalForm" action="/submit-renewal" method="post" enctype="multipart/form-data" novalidate>
+
+        <section class="form-section arja-section" aria-labelledby="arja-heading">
+            <h2 id="arja-heading" class="sr-only">अर्जदाराचा अर्ज</h2>
+            
+            <div class="arja-recipient">
+                <p>
+                    प्रति,<br>
+                    विद्युत निरीक्षक,<br>
+                    <label for="inspector_office">विद्युत निरीक्षक कार्यालय:</label>
+                    <input id="inspector_office" name="inspector_office" type="text" class="inline-input input-medium" placeholder="पुणे/मुंबई/इतर" required aria-label="विद्युत निरीक्षक कार्यालय">
+                </p>
+            </div>
+            
+            <div class="arja-subject">
+                <p>विषय :- विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरण करून मिळणेबाबत</p>
+            </div>
+
+            <div class="arja-body">
+                <p>
+                    मी अर्जदार श्री/श्रीमती:&nbsp;
+                    <input id="applicant_name" name="applicant_name" type="text" class="prose-input prose-input-name" placeholder="अर्जदाराचे नाव" required aria-label="अर्जदाराचे नाव">,
+                    मेसर्स:&nbsp;
+                    <input id="firm_display_name_arja" name="firm_display_name_arja" type="text" class="prose-input prose-input-name" placeholder="संस्थेचे नाव" required aria-label="संस्थेचे नाव">
+                    अनुज्ञप्ती क्र.:&nbsp;
+                    <input id="mthe_no_arja" name="mthe_no_arja" type="text" class="prose-input prose-input-short" placeholder="म. ठे. क्र." required aria-label="म. ठे. क्र.">
+                    असून, माझा विद्युत ठेकेदार परवाना सन:&nbsp;
+                    <input id="renewal_start_year" name="renewal_start_year" type="text" class="prose-input prose-input-short" placeholder="सुरुवात" required aria-label="नूतनीकरणाचा सुरुवातीचा वर्ष">-
+                    <input id="renewal_end_year" name="renewal_end_year" type="text" class="prose-input prose-input-short" placeholder="समाप्ती" required aria-label="नूतनीकरणाचा समाप्तीचा वर्ष">
+                    सालाकरता नूतनीकरण करून मिळावा म्हणून मी हा अर्ज करीत आहे[cite: 5].
+                </p>
+                <p>नूतनीकरणासाठी लागणारी आवश्यक कागदपत्रे मी खालील तपासणी सूचीनुसार जोडली आहेत.</p>
+            </div>
+            
+            <div class="affidavit-footer">
+                <div class="form-group text-right">
+                    <p>आपला विश्वासू,</p>
+                    <p>श्री/श्रीमती: <input id="arja_applicant_name" name="arja_applicant_name" type="text" class="inline-input input-medium" placeholder="अर्जदाराचे नाव"></p>
+                    <p>मेसर्स: <input id="arja_firm_name" name="arja_firm_name" type="text" class="inline-input input-medium" placeholder="संस्थेचे नाव"></p>
+                    <p><label>दिनांक: <input id="arja_date" name="arja_date" type="date" class="inline-input input-date"></label></p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="form-section page-break" aria-labelledby="checklist-heading">
+            <h2 id="checklist-heading">तपासणी सूची / Checklist</h2>
+
+            <table class="checklist-table" aria-describedby="checklist-desc" role="table">
+                <caption id="checklist-desc" class="sr-only">आवश्यक कागदपत्रांची तपासणी सूची</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">अ. क्र.</th>
+                        <th scope="col">दस्तऐवज (Document)</th>
+                        <th scope="col">जोडले आहे/नाही</th>
+                        <th scope="col">अपलोड करा (File Upload)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>१.</td><td><label for="chk_f1">मूळ अनुज्ञप्ती</label></td><td class="text-center"><input id="chk_f1" name="checklist[]" type="checkbox" value="original_license"></td><td><input id="file_f1" name="file_f1" type="file" accept=".pdf,image/*" aria-label="मूळ अनुज्ञप्ती अपलोड करा"></td></tr>
+                    <tr><td>२.</td><td><label for="chk_f2">मूळ विद्युत पर्यवेक्षक प्रमाणपत्र व झेरॉक्स प्रत</label></td><td class="text-center"><input id="chk_f2" name="checklist[]" type="checkbox" value="supervisor_certificate"></td><td><input id="file_f2" name="file_f2" type="file" accept=".pdf,image/*" aria-label="मूळ विद्युत पर्यवेक्षक प्रमाणपत्र व झेरॉक्स प्रत अपलोड करा"></td></tr>
+                    <tr><td>३.</td><td><label for="chk_f3">नमुना **'एस'** पूर्ण पणे टंकलिखित मेगर परीक्षण अहवाल</label></td><td class="text-center"><input id="chk_f3" name="checklist[]" type="checkbox" value="namuna_s_megger"></td><td><input id="file_f3" name="file_f3" type="file" accept=".pdf,image/*" aria-label="नमुना 'एस' मेगर परीक्षण अहवाल अपलोड करा"></td></tr>
+                    <tr><td>४.</td><td><label for="chk_f4">नमुना **'टी'** पूर्णपणे टंकलिखित अर्थ टेस्टर परीक्षण अहवाल</label></td><td class="text-center"><input id="chk_f4" name="checklist[]" type="checkbox" value="namuna_t_earthtester"></td><td><input id="file_f4" name="file_f4" type="file" accept=".pdf,image/*" aria-label="नमुना 'टी' अर्थ टेस्टर परीक्षण अहवाल अपलोड करा"></td></tr>
+                    <tr><td>५.</td><td><label for="chk_f5">नमुना **'एम'** मधील विद्युत पर्यवेक्षक, तारतंत्री व शिकाऊ उमेदवार यांची अध्ययावत मूळ नोंदवही व तिच्या दोन छायाप्रती</label></td><td class="text-center"><input id="chk_f5" name="checklist[]" type="checkbox" value="namuna_m_register"></td><td><input id="file_f5" name="file_f5" type="file" accept=".pdf,image/*" aria-label="नमुना 'एम' मधील नोंदवही अपलोड करा"></td></tr>
+                    <tr><td>६.</td><td><label for="chk_f6">नमुना **'यु'** (U) - मालक व विद्युत पर्यवेक्षक यांच्या नमुना स्वाक्षरी व छायाचित्र मोबाईल नं व ई-मेल साक्षांकित</label></td><td class="text-center"><input id="chk_f6" name="checklist[]" type="checkbox" value="namuna_u_details"></td><td><input id="file_f6" name="file_f6" type="file" accept=".pdf,image/*" aria-label="नमुना 'यु' स्वाक्षरी व छायाचित्र अपलोड करा"></td></tr>
+                    <tr><td>७.</td><td><label for="chk_f7">नमुना **'व्ही'** (V) - विद्युत पर्यवेक्षकाचे प्रतिज्ञापत्र (१००/- मुद्रांक कागदावर)</label></td><td class="text-center"><input id="chk_f7" name="checklist[]" type="checkbox" value="namuna_v_affidavit"></td><td><input id="file_f7" name="file_f7" type="file" accept=".pdf,image/*" aria-label="नमुना 'व्ही' प्रतिज्ञापत्र अपलोड करा"></td></tr>
+                    <tr><td>८.</td><td><label for="chk_f8">नमुना **'डब्ल्यू', 'एक्स', 'वाय', 'झेड'** (जो लागू असेल तो) मालक/पर्यवेक्षक यांनी पूर्णतः टंकलिखित प्रतिज्ञापत्र (१००/- मुद्रांक कागदावर)</label></td><td class="text-center"><input id="chk_f8" name="checklist[]" type="checkbox" value="namuna_w_x_y_z_affidavit"></td><td><input id="file_f8" name="file_f8" type="file" accept=".pdf,image/*" aria-label="लागू नमुना 'डब्ल्यू', 'एक्स', 'वाय', 'झेड' प्रतिज्ञापत्र अपलोड करा"></td></tr>
+                    
+                    <tr><td>९.</td><td><label for="chk_f9">अनुज्ञप्ती नूतनीकरण शुल्क रु. **२००० किंवा २५००** भरलेली मूळ पावती [cite: 9]</label></td><td class="text-center"><input id="chk_f9" name="checklist[]" type="checkbox" value="renewal_fee_receipt"></td><td><input id="file_f9" name="file_f9" type="file" accept=".pdf,image/*" aria-label="नूतनीकरण शुल्क पावती अपलोड करा"></td></tr>
+                    <tr><td>१०.</td><td><label for="chk_f10">विद्युत पर्यवेक्षक ६० वर्षांपेक्षा अधिक वयाचा असल्यास, **नोंदणीकृत वैद्यकीय व्यावसायिकाने दिलेले शारीरिक प्रमाणपत्र** [cite: 10]</label></td><td class="text-center"><input id="chk_f10" name="checklist[]" type="checkbox" value="medical_cert_sup"></td><td><input id="file_f10" name="file_f10" type="file" accept=".pdf,image/*" aria-label="शारीरिक प्रमाणपत्र अपलोड करा"></td></tr>
+                    <tr><td>११.</td><td><label for="chk_f11">मागील तीन वर्षात केलेल्या विद्युत कामांची यादी **नमुना 'क्यू' कंत्राट नोंदवही** [cite: 11]</label></td><td class="text-center"><input id="chk_f11" name="checklist[]" type="checkbox" value="namuna_q_list"></td><td><input id="file_f11" name="file_f11" type="file" accept=".pdf,image/*" aria-label="नमुना 'क्यू' कंत्राट नोंदवही अपलोड करा"></td></tr>
+                    <tr><td>१२.</td><td><label for="chk_f12">विद्युत पर्यवेक्षक बदलला असल्यास: सचिव अनुज्ञापक मंडळ मुंबई यांचे **मान्यता पत्र व परवाना प्रमाणपत्राची झेरॉक्स प्रत** [cite: 12]</label></td><td class="text-center"><input id="chk_f12" name="checklist[]" type="checkbox" value="sup_change_approval"></td><td><input id="file_f12" name="file_f12" type="file" accept=".pdf,image/*" aria-label="पर्यवेक्षक बदलाचे मान्यता पत्र अपलोड करा"></td></tr>
+                    <tr><td>१३.</td><td><label for="chk_f13">मुखत्यारक (Power of Attorney) म्हणून नियुक्ती केली असल्यास व त्यास सचिव अनुज्ञापक मंडळ मुंबई यांनी मान्यता दिली असल्यास **त्या पत्राची प्रत** [cite: 13]</label></td><td class="text-center"><input id="chk_f13" name="checklist[]" type="checkbox" value="poa_approval"></td><td><input id="file_f13" name="file_f13" type="file" accept=".pdf,image/*" aria-label="मुखत्यारक पत्राची प्रत अपलोड करा"></td></tr>
+                    <tr><td>१४.</td><td><label for="chk_f14">पत्ता बदल असल्यास: सचिव अनुज्ञापक मंडळ मुंबई यांचे **मान्यता पत्र** [cite: 14]</label></td><td class="text-center"><input id="chk_f14" name="checklist[]" type="checkbox" value="address_change_approval"></td><td><input id="file_f14" name="file_f14" type="file" accept=".pdf,image/*" aria-label="पत्ता बदलाचे मान्यता पत्र अपलोड करा"></td></tr>
+                    <tr><td>१५.</td><td><label for="chk_f15">हजेरी पटातील जुन्या नूतनीकरण नंतर **वाढ झालेल्या सर्व परवानाधारक पर्यवेक्षक व तारतंत्री यांच्या परवानाच्या छायाप्रती** [cite: 15]</label></td><td class="text-center"><input id="chk_f15" name="checklist[]" type="checkbox" value="new_licenses_copies"></td><td><input id="file_f15" name="file_f15" type="file" accept=".pdf,image/*" aria-label="वाढलेल्या परवानाधारक कर्मचाऱ्यांच्या प्रती अपलोड करा"></td></tr>
+                    <tr><td>१६.</td><td><label for="chk_f16">कामगार नोंदवही मध्ये कार्यरत असलेल्या शिकाऊ कामगार **एन सी टी व्ही टी/एम सी विसी यांच्या प्रमाणपत्राची साक्षांकित छायाप्रती** [cite: 16]</label></td><td class="text-center"><input id="chk_f16" name="checklist[]" type="checkbox" value="apprentice_certificates"></td><td><input id="file_f16" name="file_f16" type="file" accept=".pdf,image/*" aria-label="शिकाऊ कामगार प्रमाणपत्राच्या प्रती अपलोड करा"></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section class="form-section page-break" aria-labelledby="namuna-s-heading">
+            <h2 id="namuna-s-heading">नमुना 'एस' (S) - मेगर परीक्षण अहवाल</h2>
+            <p>(नियम ३५ व ३९ पहा)</p>
+            <div class="form-group">
+                <label for="megger_make">मेगर बनावट (Make):</label>
+                <input id="megger_make" name="megger_make" type="text" class="inline-input input-medium" placeholder="उदा. शांती" required>
+            </div>
+            <div class="form-group">
+                <label for="megger_voltage">व्होल्टेज / रेंज (Voltage/Range):</label>
+                <input id="megger_voltage" name="megger_voltage" type="text" class="inline-input input-medium" placeholder="उदा. 500/1000 व्होल्ट" required>
+            </div>
+            <div class="form-group">
+                <label for="megger_serial">क्रमांक (Serial No.):</label>
+                <input id="megger_serial" name="megger_serial" type="text" class="inline-input input-medium" placeholder="मेगरचा अनुक्रमांक" required>
+            </div>
+        </section>
+
+        <section class="form-section" aria-labelledby="namuna-t-heading">
+            <h2 id="namuna-t-heading">नमुना 'टी' (T) - अर्थ टेस्टर परीक्षण अहवाल</h2>
+            <p>(नियम ३५ व ३९ पहा)</p>
+            <div class="form-group">
+                <label for="earth_tester_make">अर्थ टेस्टर बनावट (Make):</label>
+                <input id="earth_tester_make" name="earth_tester_make" type="text" class="inline-input input-medium" required>
+            </div>
+            <div class="form-group">
+                <label for="earth_tester_range">रेंज (Range):</label>
+                <input id="earth_tester_range" name="earth_tester_range" type="text" class="inline-input input-medium" placeholder="उदा. 0-10-100 ओहम्स" required>
+            </div>
+            <div class="form-group">
+                <label for="earth_tester_serial">क्रमांक (Serial No.):</label>
+                <input id="earth_tester_serial" name="earth_tester_serial" type="text" class="inline-input input-medium" placeholder="अर्थ टेस्टरचा अनुक्रमांक" required>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="form-section page-break" aria-labelledby="namuna-u-heading">
+            <h2 id="namuna-u-heading">नमुना 'यू' (U) - छायाचित्र व स्वाक्षरी विभाग</h2>
+            <p>मालक व विद्युत पर्यवेक्षक यांच्या नमुना स्वाक्षरी, छायाचित्र, मोबाईल नं व ई-मेल साक्षांकित.</p>
+
+            <div class="namuna-u-layout">
+                <div class="detail-box">
+                    <h4>मालकाचे/अर्जदाराचे तपशील</h4>
+                    <label for="owner_photo_file">मालकाचे पासपोर्ट साईज छायाचित्र अपलोड करा:</label>
+                    <input id="owner_photo_file" name="owner_photo_file" type="file" accept="image/*" required>
+                    <hr>
+                    <label for="owner_sign_file">मालकाची स्वाक्षरी अपलोड करा:</label>
+                    <input id="owner_sign_file" name="owner_sign_file" type="file" accept="image/*" required>
+                    <hr>
+                    <label for="owner_email">मालकाचा ई-मेल:</label>
+                    <input id="owner_email" name="owner_email" type="email" class="inline-input input-medium" required>
+                    <hr>
+                    <label for="owner_mobile">मालकाचा मोबाईल क्र.:</label>
+                    <input id="owner_mobile" name="owner_mobile" type="tel" class="inline-input input-tel" required>
+                </div>
+                <div class="detail-box">
+                    <h4>पर्यवेक्षकाचे तपशील</h4>
+                    <label for="supervisor_photo_file">पर्यवेक्षकाचे पासपोर्ट साईज छायाचित्र अपलोड करा:</label>
+                    <input id="supervisor_photo_file" name="supervisor_photo_file" type="file" accept="image/*" required>
+                    <hr>
+                    <label for="supervisor_sign_file">पर्यवेक्षकाची स्वाक्षरी अपलोड करा:</label>
+                    <input id="supervisor_sign_file" name="supervisor_sign_file" type="file" accept="image/*" required>
+                    <hr>
+                    <label for="sup_email">पर्यवेक्षकाचा ई-मेल:</label>
+                    <input id="sup_email" name="sup_email" type="email" class="inline-input input-medium" required>
+                    <hr>
+                    <label for="sup_mobile">पर्यवेक्षकाचा मोबाईल क्र.:</label>
+                    <input id="sup_mobile" name="sup_mobile" type="tel" class="inline-input input-tel" required>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="form-section page-break" aria-labelledby="namuna-w-heading">
+            <h2 id="namuna-w-heading">नमुना 'डब्ल्यू' (W) - मालकाचे प्रतिज्ञापत्र</h2>
+            <p>(मालकी हक्कामध्ये (Proprietorship) असलेल्या फार्मसाठी) (रुपये १००/- स्टॅम्प पेपर वर टंकलिखित)</p>
+
+            <p>
+                मी श्री/श्रीमती:&nbsp;
+                <input id="nw_name" name="nw_name" type="text" class="prose-input prose-input-name" placeholder="पूर्ण नाव" aria-label="मालकाचे पूर्ण नाव" required>,
+                वय:&nbsp;<input id="nw_age" name="nw_age" type="text" class="prose-input prose-input-age" placeholder="वय" aria-label="वय" required> वर्ष,
+                राहणार:&nbsp;<input id="nw_address" name="nw_address" type="text" class="prose-input prose-input-address" placeholder="पत्ता" aria-label="राहण्याचा पत्ता" required>,
+                असे जाहीर करतो/करते, कि मी मेसर्स: <input id="nw_firm_name" name="nw_firm_name" type="text" class="prose-input prose-input-name" placeholder="संस्थेचे नाव" aria-label="संस्थेचे नाव">
+                या संस्थेचा/ची एकमेव मालक आहे आणि मी इतर कोणत्याही कंपनीत कोणत्याही पदावर व भागीदार म्हणून काम करीत नाही.
+            </p>
+
+            <p>
+                ठेकेदार अनुज्ञप्ती मिळण्याकरिता/नूतनीकरण करिता मी हे प्रतिज्ञापत्र सादर करीत आहे. वरील सर्व माहिती खरी आहे; खोटी निघाल्यास, मी भारतीय दंड संहिता आणि / किंवा त्यास लागू असलेल्या कोणत्याही कायद्यान्वये खटला भरण्यास पात्र असेल याची मला पूर्ण जाणीव आहे.
+            </p>
+
+            <div class="affidavit-footer">
+                <div class="form-group text-right">
+                    <label for="nw_place" class="sr-only">स्थळ:</label>
+                    <span class="affidavit-label">स्थळ:</span>
+                    <input id="nw_place" name="nw_place" type="text" class="inline-input input-small" placeholder="स्थळ" required>
+                </div>
+                <div class="form-group text-right">
+                    <label for="nw_date" class="sr-only">दिनांक:</label>
+                    <span class="affidavit-label">दिनांक:</span>
+                    <input id="nw_date" name="nw_date" type="date" class="inline-input input-date" required>
+                </div>
+
+                <div class="affidavit-signature-details">
+                    <p>स्वाक्षरी:</p>
+                    <p>मालक/प्रतिज्ञाधारक</p>
+                    <p>श्री/श्रीमतीः <input id="nw_owner_name" name="nw_owner_name" type="text" class="inline-input input-medium" placeholder="मालकाचे पूर्ण नाव"></p>
+                    <p>मोबाईल क्र.: <input id="nw_mobile_w" name="nw_mobile_w" type="tel" class="inline-input input-tel" placeholder="मोबाईल क्रमांक"></p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        
+        <section class="form-section page-break" aria-labelledby="namuna-v-heading">
+            <h2 id="namuna-v-heading">नमुना 'व्ही' (V) - विद्युत पर्यवेक्षकाचे प्रतिज्ञापत्र</h2>
+            <p>(रुपये १००/- स्टॅम्प पेपर वर टंकलिखित)</p>
+
+            <p>
+                मी श्री/श्रीमती:&nbsp;
+                <input id="nv_name" name="nv_name" type="text" class="prose-input prose-input-name" placeholder="पूर्ण नाव" aria-label="विद्युत पर्यवेक्षकाचे पूर्ण नाव" required>,
+                वय:&nbsp;<input id="nv_age" name="nv_age" type="text" class="prose-input prose-input-age" placeholder="वय" aria-label="वय" required> वर्ष,
+                राहणार:&nbsp;<input id="nv_address" name="nv_address" type="text" class="prose-input prose-input-address" placeholder="पत्ता" aria-label="राहण्याचा पत्ता" required>,
+                असे जाहीर करतो/करते, कि मी इतर कोणत्याही कंपनीत कोणत्याही पदावर व भागीदार म्हणून काम करीत नाही.
+            </p>
+
+            <p>
+                ठेकेदार अनुज्ञप्ती मिळण्याकरिता/नूतनीकरण करिता मी हे प्रतिज्ञापत्र सादर करीत आहे. वरील सर्व माहिती खरी आहे; खोटी निघाल्यास, मी भारतीय दंड संहिता आणि / किंवा त्यास लागू असलेल्या कोणत्याही कायद्यान्वये खटला भरण्यास पात्र असेल याची मला पूर्ण जाणीव आहे.
+            </p>
+
+            <div class="affidavit-footer">
+                <div class="form-group text-right">
+                    <label for="nv_place" class="sr-only">स्थळ:</label>
+                    <span class="affidavit-label">स्थळ:</span>
+                    <input id="nv_place" name="nv_place" type="text" class="inline-input input-small" placeholder="स्थळ" required>
+                </div>
+                <div class="form-group text-right">
+                    <label for="nv_date" class="sr-only">दिनांक:</label>
+                    <span class="affidavit-label">दिनांक:</span>
+                    <input id="nv_date" name="nv_date" type="date" class="inline-input input-date" required>
+                </div>
+
+                <div class="affidavit-signature-details">
+                    <p>स्वाक्षरी:</p>
+                    <p>विद्युत पर्यवेक्षक व अनुज्ञाप्तीधारक</p>
+                    <p>श्री/श्रीमतीः <input id="nv_supervisor_name" name="nv_supervisor_name" type="text" class="inline-input input-medium" placeholder="पर्यवेक्षकाचे पूर्ण नाव"></p>
+                    <p>मोबाईल क्र.: <input id="nv_mobile_v" name="nv_mobile_v" type="tel" class="inline-input input-tel" placeholder="मोबाईल क्रमांक"></p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        
+        <section class="form-section page-break" aria-labelledby="namuna-y-heading">
+            <h2 id="namuna-y-heading">नमुना 'वाय' (Y) - भागीदारी फार्मचे प्रतिज्ञापत्र</h2>
+            <p>(रुपये १००/- स्टॅम्प पेपर वर टंकलिखित)</p>
+            <p>आम्ही खाली सही करणारे</p>
+            <ol>
+                <li>
+                    <label for="py_partner1_name" class="sr-only">पहिले भागीदार</label>
+                    <span>१) श्री/श्रीमती:</span> 
+                    <input id="py_partner1_name" name="py_partner1_name" type="text" class="prose-input prose-input-long" placeholder="पहिल्या भागीदाराचे नाव">
+                </li>
+                <li>
+                    <label for="py_partner2_name" class="sr-only">दुसरे भागीदार</label>
+                    <span>२) श्री/श्रीमती:</span> 
+                    <input id="py_partner2_name" name="py_partner2_name" type="text" class="prose-input prose-input-long" placeholder="दुसऱ्या भागीदाराचे नाव">
+                </li>
+            </ol>
+
+            <p>
+                असे जाहीर करतो कि, आम्ही मेसर्स: 
+                <input id="py_firmname" name="py_firmname" type="text" class="prose-input prose-input-name" placeholder="संस्थेचे नाव">
+                म. ठे. क्र.: 
+                <input id="py_mthe_no_y" name="py_mthe_no_y" type="text" class="prose-input input-small" placeholder="म. ठे. क्र.">
+                दिनांक: 
+                <input id="py_date_firm" name="py_date_firm" type="date" class="prose-input input-date" aria-label="म. ठे. क्र. दिनांक"> चे भागीदार असून आम्ही इतर कोणत्याही कंपनीत कोणत्याच पदावर व भागीदार म्हणून काम करीत नाही.
+            </p>
+
+            <p>
+                आम्ही पुढे असे जाहीर करतो की श्री: 
+                <input id="py_supervisor" name="py_supervisor" type="text" class="prose-input prose-input-name" placeholder="पर्यवेक्षकाचे नाव">,
+                विद्युत पर्यवेक्षक, परवाना क्रमांक: **म. प. क्र.** <input id="py_supervisor_license" name="py_supervisor_license" type="text" class="prose-input input-small" placeholder="परवाना क्र.">
+                दिनांक: 
+                <label id="py_supervisor_license_date" name="py_supervisor_license_date" type="date" class="prose-input input-date">
+                धारक हे वरील कंपनीत पूर्णवेळ कामगार असून ते इतर कोणत्याही कंपनीत पदावर व भागीदार म्हणून काम करत नाही.
+            </p>
+            
+            <div class="affidavit-footer">
+                <div class="form-group text-right">
+                    <label for="py_place" class="sr-only">स्थळ:</label>
+                    <span class="affidavit-label">स्थळ:</span>
+                    <input id="py_place" name="py_place" type="text" class="inline-input input-small" placeholder="स्थळ" required>
+                </div>
+                <div class="form-group text-right">
+                    <label for="py_date_affidavit" class="sr-only">दिनांक:</label>
+                    <span class="affidavit-label">दिनांक:</span>
+                    <input id="py_date_affidavit" name="py_date_affidavit" type="date" class="inline-input input-date" required>
+                </div>
+
+                <div class="affidavit-signature-details">
+                    <p>स्वाक्षरी: (भागीदार १)</p>
+                    <p>स्वाक्षरी: (भागीदार २)</p>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section class="form-actions">
+            <div class="button-group">
+                <button type="button" class="back-button" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
+                <button type="submit" class="submit-button">अर्ज सबमिट करा व पेमेंट करा</button>
+            </div>
+        </section>
+
+    </form>
+</div>
+<script src="lang-toggle.js"></script>
+<script src="payment.js"></script>

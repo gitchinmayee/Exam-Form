@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2 id="welcome-message"></h2>
+        <h2 data-lang-en="Select Form Type" data-lang-mr="फॉर्म प्रकार निवडा">
+            Select Form Type
+        </h2>
+        <label for="formType" 
+            data-lang-en="Choose Form Type" 
+            data-lang-mr="फॉर्म प्रकार निवडा">
+            Choose Form Type
+        </label>
+        <select id="formType"></select>
+        <button id="goBtn">Go</button>
+    </div>
+
+    <div class="dashboard-actions">
+        <button id="lang-toggle">मराठी / English</button>
+        <button id="logoutBtn" data-lang-en="Logout" data-lang-mr="लॉगआउट">Logout</button>
+    </div>
+
+    <script>
+        // In a real application, you would get the username from a backend after authentication.
+        // For this example, we'll use a placeholder.
+        const username = "User"; // Replace with actual username from your login process
+        document.getElementById("welcome-message").innerText = `Welcome, ${username}!`;
+
+        const forms = {
+            'contractor_info_form.html': { en: 'Information for Contractor license Renewal Form', mr: 'कंत्राटदार परवाना नूतनीकरण फॉर्मसाठी माहिती' },
+            'contractor_renewal_form.html': { en: 'Contractor License Renewal Form', mr: 'कंत्राटदार परवाना नूतनीकरण फॉर्म' },
+            'contractor_newlicense_form.html': { en: 'Information for New Contractor license Form', mr: 'नवीन कंत्राटदार परवाना फॉर्मसाठी माहिती' },
+            'contractor_newlicense_application_form.html': { en: 'New Contractor license application Form', mr: 'नवीन कंत्राटदार परवाना अर्ज फॉर्म' },
+            'supervisor_exam_suit_form.html': { en: 'Supervisor Exam  Suit Form', mr: 'पर्यवेक्षक परीक्षा फॉर्म' },
+            'wireman_suit_application.html': { en: 'Wireman Suit Application Form', mr: 'तारतंत्री सूट अर्ज' }
+        };
+
+        const formSelect = document.getElementById('formType');
+
+        function populateDropdown(language = 'en') {
+            formSelect.innerHTML = '<option value="">-- Select --</option>';
+            for (const [file, name] of Object.entries(forms)) {
+                const option = document.createElement('option');
+                option.value = file;
+                option.textContent = name[language];
+                formSelect.appendChild(option);
+            }
+        }
+
+        let currentLang = localStorage.getItem("myexam_lang") || 'en';
+
+        function toggleLanguage() {
+            const elementsToTranslate = document.querySelectorAll('[data-lang-en]');
+            currentLang = currentLang === 'en' ? 'mr' : 'en';
+            localStorage.setItem("myexam_lang", currentLang);
+
+            elementsToTranslate.forEach(el => {
+                el.innerText = el.getAttribute(`data-lang-${currentLang}`);
+            });
+
+            // Update the welcome message in Marathi
+            if (currentLang === 'mr') {
+                document.getElementById("welcome-message").innerText = `सुस्वागतम्, ${username}!`;
+                document.getElementById("lang-toggle").textContent = "🌐 English";
+            } else {
+                document.getElementById("welcome-message").innerText = `Welcome, ${username}!`;
+                document.getElementById("lang-toggle").textContent = "🌐 मराठी";
+            }
+
+            populateDropdown(currentLang);
+        }
+        
+        // Initial population of the dropdown
+        populateDropdown(currentLang);
+
+        // Apply initial language state
+        if (currentLang === 'mr') {
+            document.querySelectorAll('[data-lang-en]').forEach(el => {
+                el.innerText = el.getAttribute('data-lang-mr');
+            });
+            document.getElementById("welcome-message").innerText = `सुस्वागतम्, ${username}!`;
+            document.getElementById("lang-toggle").textContent = "🌐 English";
+        } else {
+            document.getElementById("lang-toggle").textContent = "🌐 मराठी";
+        }
+
+        document.getElementById("goBtn").addEventListener("click", () => {
+            const formPage = formSelect.value;
+            if (formPage) {
+                window.location.href = formPage;
+            } else {
+                alert("Please select a form");
+            }
+        });
+
+        document.getElementById("lang-toggle").addEventListener("click", toggleLanguage);
+
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            // Redirect to login page
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>

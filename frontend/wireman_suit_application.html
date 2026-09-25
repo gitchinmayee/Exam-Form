@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>विद्युत तारतंत्री सूट अर्ज</title>
+    <style>
+        /* General Layout */
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0 0 0 0.1); }
+
+        /* Header Styles */
+        .header { text-align: center; margin-bottom: 20px; }
+        .header h1 { font-size: 1.8em; color: #0056b3; }
+        .arja-header-top { text-align: right; margin-bottom: 30px; }
+        .arja-header-top p { margin: 5px 0; }
+        
+        /* Form Sections */
+        .form-section { border: 1px solid #ccc; padding: 15px; margin-bottom: 25px; border-radius: 5px; }
+        .form-section h2 { border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 0; font-size: 1.4em; color: #0056b3; text-align: center; }
+        
+        /* Input and Label Styles */
+        .form-group { margin-bottom: 15px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+        .form-group label { font-weight: bold; margin-bottom: 0; flex-basis: 150px; }
+        .inline-input { padding: 8px; border: 1px solid #aaa; border-radius: 4px; box-sizing: border-box; font-size: 1em; flex-grow: 1; max-width: 100%; }
+        .input-short { max-width: 150px; }
+        .input-medium { max-width: 250px; }
+        .input-long { max-width: 400px; }
+        
+        /* Inline CSS Replacement Classes */
+        .signature-box-medium { flex: 0 0 40%; }
+        .form-group-align-right { justify-content: flex-end; }
+
+        /* Embedded Text Inputs (Prose Style) */
+        .prose-input { display: inline-block; padding: 3px 5px; border: none; border-bottom: 1px dashed #333; margin: 0 5px; text-align: center; font-size: 1em; }
+        .prose-input-name { width: 200px; }
+        .prose-input-age { width: 50px; }
+        .prose-input-address { width: 300px; }
+        
+        /* Checklist Table */
+        .checklist-table { width: 100%; border-collapse: collapse; margin-top: 15px; table-layout: fixed; }
+        .checklist-table th, .checklist-table td { border: 1px solid #ddd; padding: 10px; text-align: left; vertical-align: middle; }
+        .checklist-table th { background-color: #f2f2f2; font-weight: bold; }
+        .checklist-table td:nth-child(1) { width: 5%; text-align: center; }
+        .checklist-table td:nth-child(3) { width: 15%; text-align: center; }
+        .checklist-table td:nth-child(4) { width: 20%; }
+        .checklist-table input[type="checkbox"] { transform: scale(1.3); cursor: pointer; }
+
+        /* Signature and Footer */
+        .signature-area { margin-top: 30px; display: flex; justify-content: space-between; text-align: center; }
+        .signature-box { flex: 1; padding: 10px; border: 1px dashed #ccc; margin: 0 5px; }
+        .signature-box p { margin: 5px 0; font-weight: bold; }
+        .sign-placeholder { height: 50px; border-bottom: 1px solid #333; margin: 10px auto; width: 80%; }
+
+        /* Tips Section */
+        .tips-section { margin-top: 40px; padding: 15px; border: 1px solid #f0ad4e; background-color: #fff8e1; border-radius: 5px; }
+        .tips-section h3 { margin-top: 0; color: #8a6d3b; }
+        .tips-section ol, .tips-section ul { padding-left: 20px; }
+
+        /* Utility Classes */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .page-break { page-break-before: always; }
+        
+        /* Button Group */
+        .form-actions { text-align: center; border: none; padding: 20px 0; }
+        .button-group button { margin: 0 10px; padding: 10px 15px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; }
+        .submit-button { background-color: #4CAF50; color: white; }
+        .back-button { background-color: #f44336; color: white; }
+        .print-button { background-color: #008CBA; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <div class="arja-header-top">
+            <p>श्री./श्रीमती : <input id="applicant_name_header" name="applicant_name_header" type="text" class="prose-input input-medium" placeholder="अर्जदाराचे नाव" aria-label="अर्जदाराचे नाव" required></p>
+            <p>आवक क्रमांक / दिनांक : <input id="receipt_date" name="receipt_date" type="date" class="prose-input input-short" aria-label="आवक दिनांक"></p>
+        </div>
+        <h1>विद्युत तारतंत्री सूट अर्ज</h1>
+        <p>माहितीसाठी व मान्यतेसाठी सादर - यांना विद्युत तारतंत्री परीक्षा सूट करीत विहित नमुन्यात अर्ज सादर केलेला आहे.</p>
+    </header>
+
+    <form id="wiremanSuitForm" action="/submit-wireman-suit" method="post" enctype="multipart/form-data" novalidate>
+
+        <section class="form-section" aria-labelledby="checklist-heading">
+            <h2 id="checklist-heading">तपासणी सूची / Checklist</h2>
+
+            <table class="checklist-table" aria-describedby="checklist-desc" role="table">
+                <caption id="checklist-desc" class="sr-only">आवश्यक कागदपत्रांची तपासणी सूची</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">अ. क्र.</th>
+                        <th scope="col">आवश्यक असणारी माहिती</th>
+                        <th scope="col">जोडले आहे/नाही (शेरा)</th>
+                        <th scope="col">अपलोड करा</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>१.</td><td><label for="chk_f1">नमुना **"बी १"** परिपूर्ण (टंकलिखित) भरलेला तसेच छायाचित्र साक्षांकित करणे</label></td><td class="text-center"><input id="chk_f1" name="checklist[]" type="checkbox" value="namuna_b1"></td><td><input id="file_f1" name="file_f1" type="file" accept=".pdf,image/*" aria-label="नमुना बी १ अपलोड करा"></td></tr>
+                    <tr><td>२.</td><td><label for="chk_f2">अर्जा सोबत पासपोर्ट आकाराचे **तीन** अलीकडील काळातील फोटो जोडणे</label></td><td class="text-center"><input id="chk_f2" name="checklist[]" type="checkbox" value="three_photos"></td><td><input id="file_f2" name="file_f2" type="file" accept="image/*" aria-label="फोटो अपलोड करा"></td></tr>
+                    <tr><td>३.</td><td><label for="chk_f3">आवश्यक शुल्क भरलेले आहे.</label></td><td class="text-center"><input id="chk_f3" name="checklist[]" type="checkbox" value="fee_paid"></td><td><input id="file_f3" name="file_f3" type="file" accept=".pdf,image/*" aria-label="शुल्क पावती अपलोड करा"></td></tr>
+                    <tr><td>४.</td><td><label for="chk_f4">औद्दोगिक प्रशिक्षण संस्थे मधील वीजतंत्री उत्तीर्ण झाल्याबाबतची साक्षांकित गुणपत्रिका जोडलेली आहे. राष्ट्रीय व्यवसाय साक्षांकित उत्तीर्ण गुणपत्रिका जोडलेली आहे.</label></td><td class="text-center"><input id="chk_f4" name="checklist[]" type="checkbox" value="iti_marksheet"></td><td><input id="file_f4" name="file_f4" type="file" accept=".pdf,image/*" aria-label="वीजतंत्री उत्तीर्ण गुणपत्रिका अपलोड करा"></td></tr>
+                    <tr><td>५.</td><td><label for="chk_f5">राहण्याचा पत्ता व जन्मतारखेचा साक्षांकित दाखल जोडलेला आहे.</label></td><td class="text-center"><input id="chk_f5" name="checklist[]" type="checkbox" value="address_dob_proof"></td><td><input id="file_f5" name="file_f5" type="file" accept=".pdf,image/*" aria-label="पत्ता व जन्मतारीख पुरावा अपलोड करा"></td></tr>
+                    <tr><td>६.</td><td><label for="chk_f6">शासकीय निमशासकीय उमेदवाराचा अर्ज आस्थापने मार्फत सादर केलेला आहे.</label></td><td class="text-center"><input id="chk_f6" name="checklist[]" type="checkbox" value="govt_candidature"></td><td><input id="file_f6" name="file_f6" type="file" accept=".pdf,image/*" aria-label="शासकीय उमेदवारी पत्र अपलोड करा"></td></tr>
+                    <tr><td>७.</td><td><label for="chk_f7">उमेदवारांनी आपली सर्व कागदपत्रे स्वयंसाक्षांकीत करणे आवश्यक</label></td><td class="text-center"><input id="chk_f7" name="checklist[]" type="checkbox" value="self_attested"></td><td></td></tr>
+                    <tr><td>८.</td><td><label for="chk_f8">स्वतःचा नांव, पत्ता व मोबाईल नं. असलेले पोस्टल स्टॅम्प (**०५ रु तिकिटे**) लावलेले **३ लिफाफे**</label></td><td class="text-center"><input id="chk_f8" name="checklist[]" type="checkbox" value="stamped_envelopes"></td><td></td></tr>
+                    <tr><td>९.</td><td><label for="chk_f9">इतर आवश्यक कागदपत्रे (उदा. आधार कार्ड, पॅन कार्डची साक्षांकित प्रत)</label></td><td class="text-center"><input id="chk_f9" name="checklist[]" type="checkbox" value="other_docs"></td><td><input id="file_f9" name="file_f9" type="file" accept=".pdf,image/*" aria-label="इतर कागदपत्रे अपलोड करा"></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section class="form-section page-break" aria-labelledby="namuna-b1-heading">
+            <h2 id="namuna-b1-heading">नमुना "बी १" (Namuna B-1) - अर्ज</h2>
+            <p>विद्युत तारतंत्री प्रमाणपत्र परीक्षा सूट अर्ज (Exemption Application)</p>
+            
+            <div class="form-group">
+                <label for="b1_full_name">१. अर्जदाराचे पूर्ण नांव:</label>
+                <input id="b1_full_name" name="b1_full_name" type="text" class="inline-input input-long" placeholder="आडनाव, नाव, वडिलांचे नाव" required>
+            </div>
+            <div class="form-group">
+                <label for="b1_address">२. कायमचा पत्ता (Full Address):</label>
+                <input id="b1_address" name="b1_address" type="text" class="inline-input input-long" placeholder="घराचा नंबर, गल्ली, शहर, जिल्हा" required>
+            </div>
+            <div class="form-group">
+                <label for="b1_mobile">३. मोबाईल क्रमांक:</label>
+                <input id="b1_mobile" name="b1_mobile" type="tel" class="inline-input input-medium" required>
+            </div>
+            <div class="form-group">
+                <label for="b1_dob">४. जन्म दिनांक (Date of Birth):</label>
+                <input id="b1_dob" name="b1_dob" type="date" class="inline-input input-medium" required>
+            </div>
+            <div class="form-group">
+                <label for="b1_qualification">५. शैक्षणिक अर्हता (Qualification):</label>
+                <input id="b1_qualification" name="b1_qualification" type="text" class="inline-input input-long" placeholder="उदा. ITI वीजतंत्री, MCVC, B.E. Electrical" required>
+            </div>
+            <div class="form-group">
+                <label for="b1_iti_details">६. उत्तीर्ण संस्थेचे नांव व दिनांक:</label>
+                <input id="b1_iti_details" name="b1_iti_details" type="text" class="inline-input input-long" placeholder="संस्थेचे नाव, उत्तीर्ण दिनांक, गुणपत्रिका क्रमांक" required>
+            </div>
+            <div class="form-group">
+                <label for="b1_work_exp">७. अनुभव (Work Experience):</label>
+                <textarea id="b1_work_exp" name="b1_work_exp" class="inline-input" placeholder="कामाचा अनुभव / शिकाऊ उमेदवारीचा कालावधी (संस्थेच्या नावासह)" rows="3"></textarea>
+            </div>
+
+            <div class="signature-area text-center">
+                <div class="signature-box">
+                    <label for="photo_b1">अर्जदाराचा **साक्षांकित** फोटो (Upload Photo):</label>
+                    <input id="photo_b1" name="photo_b1" type="file" accept="image/*" required>
+                </div>
+            </div>
+            <div class="signature-area">
+                <div class="signature-box">
+                    <div class="sign-placeholder"></div>
+                    <p>अर्जदाराची सही (Applicant's Signature)</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="form-section page-break" aria-labelledby="jodpatra-heading">
+            <h2 id="jodpatra-heading">जोडपत्र (Annexure) - विद्युत तारतंत्री परवाना करीता अर्ज</h2>
+            <p>खालील माहिती अर्जदाराने अचूक भरावी.</p>
+
+            <div class="form-group">
+                <label for="j_name">१. नांव श्री/श्रीमती:</label>
+                <input id="j_name" name="j_name" type="text" class="inline-input input-long" placeholder="पूर्ण नाव" required>
+            </div>
+            <div class="form-group">
+                <label for="j_dob">२. जन्म दिनांक:</label>
+                <input id="j_dob" name="j_dob" type="date" class="inline-input input-medium" required>
+            </div>
+            <div class="form-group">
+                <label for="j_edu_qual">३. शैक्षणिक अर्हता:</label>
+                <input id="j_edu_qual" name="j_edu_qual" type="text" class="inline-input input-long" placeholder="ITI/डिप्लोमा/इतर" required>
+            </div>
+
+            <div class="signature-area text-right">
+                <div class="signature-box signature-box-medium">
+                    <label for="j_sign_upload">सही अपलोड करा:</label>
+                    <input id="j_sign_upload" name="j_sign_upload" type="file" accept="image/*" required>
+                    <p>अर्जदाराची सही</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="form-section page-break" aria-labelledby="prapatra-b-heading">
+            <h2 id="prapatra-b-heading">प्रपत्र ब - स्वयं सांक्षांकनासाठी स्वयं घोषणापत्र</h2>
+            <p>शासन निर्णय क्रमांक प्रसुधा १६१४/३४५/प्र. क्र. ७१/१८-अ</p>
+
+            <p>
+                मी श्री/श्रीमती:
+                <input id="pb_name" name="pb_name" type="text" class="prose-input prose-input-name" placeholder="घोषणाकर्त्याचे नाव" required>,
+                श्री/श्रीमती:
+                <input id="pb_parent_name" name="pb_parent_name" type="text" class="prose-input prose-input-name" placeholder="वडिलांचे/पतीचे नाव" required>
+                यांची मुलगा / मुलगी,
+            </p>
+            <p>
+                वय: <input id="pb_age" name="pb_age" type="text" class="prose-input prose-input-age" placeholder="वय" required> वर्ष,
+                व्यवसाय: <input id="pb_occupation" name="pb_occupation" type="text" class="prose-input prose-input-name" placeholder="शिकाऊ/तारतंत्री/इतर" value="शिकाऊ" required>,
+                राहणार: <input id="pb_address" name="pb_address" type="text" class="prose-input prose-input-address" placeholder="पत्ता" required>
+            </p>
+            <p>
+                याद्वारे घोषित करतो/करते कि, मी स्वयं साक्षांकित केलेल्या प्रति या मूळ कागदपत्रांच्याच **सत्य प्रति आहेत**. त्या खोट्या असल्याचे आढळून आल्यास, भारतीय दंड संहिता आणि/ किंवा संबंधित कायद्यानुसार माझ्यावर खटला भरला जाईल व त्यानुसार मी शिक्षेस पात्र राहीन याची मला पूर्ण जाणीव आहे.
+            </p>
+
+            <div class="signature-area text-right">
+                <div class="form-group text-right form-group-align-right">
+                    <label for="pb_place">ठिकाण:</label>
+                    <input id="pb_place" name="pb_place" type="text" class="inline-input input-short" placeholder="उदा. पुणे" required>
+                </div>
+                <div class="form-group text-right form-group-align-right">
+                    <label for="pb_date">दिनांक:</label>
+                    <input id="pb_date" name="pb_date" type="date" class="inline-input input-short" required>
+                </div>
+                
+                <div class="signature-box signature-box-medium">
+                    <div class="sign-placeholder"></div>
+                    <p>अर्जदाराची सही (Applicant's Signature)</p>
+                    <p>अर्जदाराचे नांव: श्री/श्रीमती: <input id="pb_applicant_name" name="pb_applicant_name" type="text" class="inline-input input-medium" placeholder="अर्जदाराचे नाव"></p>
+                    <p>मोबाइल क्रमांक: <input id="pb_mobile" name="pb_mobile" type="tel" class="inline-input input-medium" placeholder="मोबाइल क्रमांक"></p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="form-section page-break" aria-labelledby="sign-tips-heading">
+            <h2 id="sign-tips-heading">सही, मुद्रा आणि महत्वाच्या टीप (Signatures, Seal and Important Tips)</h2>
+            
+            <div class="signature-area">
+                <div class="signature-box">
+                    <p>दिनांक: <input id="sig_date" name="sig_date" type="date" class="inline-input input-short" aria-label="दिनांक"></p>
+                    <p>स्थळ: <input id="sig_place" name="sig_place" type="text" class="inline-input input-short" placeholder="स्थळ" aria-label="स्थळ"></p>
+                    <p>मुद्रा:</p>
+                </div>
+                <div class="signature-box">
+                    <div class="sign-placeholder"></div>
+                    <p>विद्युत पर्यवेक्षक सही</p>
+                </div>
+                <div class="signature-box">
+                    <div class="sign-placeholder"></div>
+                    <p>मालक किंवा प्रतिज्ञाधारक</p>
+                    <p>विद्युत ठेकेदाराची स्वाक्षरी</p>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3>महत्वाच्या टीप (Important Instructions)</h3>
+                <ol>
+                    <li>हे प्रमाणपत्र केवळ **विद्युत तारेची आणि संचमांडणीची प्रत्यक्ष कामे करत असणाऱ्या व्यक्तींना** देण्यात येईल आणि ज्यांच्या नावाची नोंद प्रत्येक विद्युत अनुज्ञाप्तीधारक ठेकेदाराने ठेवलेल्या तारकामे करणाऱ्या कर्मचारी वर्गाच्या नोंदवहीत असावी.</li>
+                    <li>खोटे प्रमाणपत्र अनुज्ञप्तीधारक कंत्राटदाराला **परत करण्यात येईल** आणि संबंधित व्यक्ती सक्षम प्रमाणपत्र पर्यवेक्षक आणि तारतंत्री परवाना तसेच विद्युत ठेकेदाराची अनुज्ञप्ती देण्याचा नियम व शर्तीन्वये कारवाई करण्यास पात्र ठरेल.</li>
+                    <li>मालक किंवा विद्युत अनुज्ञप्ती मिळालेल्या विद्युत ठेकेदार सचिव, अनुज्ञापक मंडळ / विद्युत निरीक्षक यांना अर्जदाराच्या सेवायोजनाच्या संबंधात **दस्तऐवज पुरावा सादर करण्यास जबाबदार असेल**.</li>
+                </ol>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="form-actions">
+            <div class="button-group">
+                <button type="button" class="back-button" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
+                <button type="submit" class="submit-button">अर्ज सबमिट करा व पेमेंट करा</button>
+            </div>
+        </section>
+
+    </form>
+</div>
+<script src="lang-toggle.js"></script>
+<script src="payment.js"></script>
+</body>
+</html>

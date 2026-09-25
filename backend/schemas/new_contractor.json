@@ -1,0 +1,17 @@
+{
+  "form_type": "new_contractor",
+  "title": "New Contractor License Application (English)",
+  "title_en": "New Contractor License Application",
+  "title_mr": "नवीन ठेकेदार परवाना अर्ज",
+  "description": "New contractor license application",
+  "fields": [
+    { "name": "fullname", "label_en": "Full Name", "label_mr": "पूर्ण नाव", "type": "text", "required": true },
+    { "name": "father_name", "label_en": "Father/Husband Name", "label_mr": "वडील/पतींचे नाव", "type": "text" },
+    { "name": "dob", "label_en": "Date of Birth", "label_mr": "जन्म तारीख", "type": "date" },
+    { "name": "address", "label_en": "Address", "label_mr": "पत्ता", "type": "textarea" },
+    { "name": "education", "label_en": "Education", "label_mr": "शैक्षणिक पात्रता", "type": "text" },
+    { "name": "mobile", "label_en": "Mobile Number", "label_mr": "मोबाईल नंबर", "type": "tel", "required": true },
+    { "name": "email", "label_en": "Email", "label_mr": "ईमेल", "type": "email" },
+    { "name": "qualification", "label_en": "Qualification Details", "label_mr": "पात्रता तपशील", "type": "textarea" }
+  ]
+}

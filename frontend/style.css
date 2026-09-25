@@ -1,121 +1,244 @@
-/* General Styles */
+/* General Body and Container Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f7f8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
+    color: #333;
 }
 
 .container {
-    max-width: 700px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Adjusted to be consistent with the login form */
+    text-align: center;
 }
 
-/* Headings */
-h2 {
+.form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
     text-align: center;
+}
+
+/* Headings and Labels */
+h2 {
     color: #333;
     margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
-h3 {
-    color: #444;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-}
-
-/* Form Elements */
-form label {
+label {
     display: block;
-    margin-top: 15px;
-    font-weight: bold;
+    margin-bottom: 8px;
     color: #555;
+    font-size: 1rem;
+    text-align: left;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form input[type="date"],
-form select {
+/* Select Dropdown */
+select {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 20px;
     box-sizing: border-box;
-}
-
-/* Multiple select height */
-form select[multiple] {
-    height: 100px;
-}
-
-/* Radio Buttons */
-.radio-group {
-    display: flex;
-    gap: 20px;
-    margin-top: 5px;
-}
-
-.radio-group input[type="radio"] {
-    margin-right: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23888" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 20px;
+    cursor: pointer;
 }
 
 /* Buttons */
 button {
-    flex: 1;
-    padding: 15px;
-    margin-top: 20px;
-    border: none;
-    background: #007BFF;
+    background-color: #007bff;
     color: white;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background: #0056b3;
+    background-color: #0056b3;
 }
 
-/* Button Group */
-.button-group {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-/* WhatsApp Button */
-.whatsapp-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: green;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
+.dashboard-actions {
     margin-top: 20px;
     text-align: center;
-    transition: background 0.3s ease;
 }
 
-.whatsapp-btn:hover {
-    background: darkgreen;
+.dashboard-actions button {
+    margin: 0 8px;
 }
 
-.whatsapp-container {
-    margin-top: 20px;
+#logoutBtn {
+    background-color: #dc3545;
 }
 
-/* Responsive */
+#logoutBtn:hover {
+    background-color: #c82333;
+}
+
+#lang-toggle {
+    background-color: #6c757d;
+}
+
+#lang-toggle:hover {
+    background-color: #5a6268;
+}
+
+#goBtn {
+    background-color: #28a745;
+}
+
+#goBtn:hover {
+    background-color: #218838;
+}
+
+/* Welcome message and other text formatting */
+#welcome-message {
+    color: #0056b3;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+/* Styles for login form inputs to ensure consistency */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    margin-top: 5px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Responsive design for smaller screens */
 @media (max-width: 600px) {
-    .radio-group {
-        flex-direction: column;
+    .form-container, .container {
+        padding: 25px;
+        margin: 15px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+/* === Contractor Renewal Form Only === */
+.renewal-form {
+    background: #f4f6f9;
+    padding: 2rem;
+    display: block;          /* overrides flex from global body */
+}
+
+.renewal-form .container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: left;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+.renewal-form h1,
+.renewal-form h2 {
+    color: #222;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Checklist Table */
+.renewal-form .checklist-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+.renewal-form .checklist-table th,
+.renewal-form .checklist-table td {
+    border: 1px solid #ddd;
+    padding: 0.6rem;
+    text-align: left;
+}
+.renewal-form .checklist-table thead {
+    background: #eef1f4;
+}
+
+/* Inputs inside the form */
+.renewal-form input[type="text"],
+.renewal-form input[type="date"],
+.renewal-form input[type="file"],
+.renewal-form textarea {
+    width: 100%;
+    padding: 0.55rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+/* Buttons inside the form */
+.renewal-form .button-group {
+    text-align: center;
+    margin-top: 2rem;
+}
+.renewal-form .button-group button {
+    padding: 0.65rem 1.4rem;
+    margin: 0.3rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+}
+.renewal-form .submit-button   { background:#28a745; }
+.renewal-form .back-button     { background:#007bff; }
+.renewal-form .print-button    { background:#6c757d; }
+.renewal-form .whatsapp-button { background:#25d366; }
+
+/* Optional: page breaks for printing */
+@media print {
+    .renewal-form {
+        background: #fff;
+        padding: 0;
+    }
+    .renewal-form .button-group button {
+        display: none !important;
+    }
+    .renewal-form .page-break {
+        page-break-before: always;
     }
 }

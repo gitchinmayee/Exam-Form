@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contractor License Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-section {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .form-section h3 {
+            margin-top: 0;
+            color: #555;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-group button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .back-button {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>नवीन विद्युत ठेकेदार लायसन्स करीता आवश्यक माहिती</h2>
+    <p>Information For New Contractor License</p>
+    <p>कृपया माहिती मराठीत द्यावी</p>
+
+    <form action="/submit-form" method="post">
+        <div class="form-section">
+            <h3>व्यवसाय संस्थेची माहिती (Firm Information)</h3>
+            <label for="firm_name">व्यवसाय संस्थेचे नाव (Firm Name)</label>
+            <input type="text" id="firm_name" name="firm_name">
+
+            <label for="firm_address">व्यवसाय संस्थेचा पत्ता (Firm Address)</label>
+            <input type="text" id="firm_address" name="firm_address">
+        </div>
+
+        <div class="form-section">
+            <h3>मालकाची माहिती (Owner Information)</h3>
+            <label for="owner_name">मालकाचे पूर्ण नाव (Owner Full Name)</label>
+            <input type="text" id="owner_name" name="owner_name">
+
+            <label for="owner_address">मालकाचा पत्ता (Owner Address)</label>
+            <input type="text" id="owner_address" name="owner_address">
+
+            <label for="owner_father_name">मालकाच्या वडिलांचे पूर्ण नाव (Owner Father Full Name)</label>
+            <input type="text" id="owner_father_name" name="owner_father_name">
+
+            <label for="owner_dob">मालकाची जन्म दिनांक (Owner Date Of Birth)</label>
+            <input type="date" id="owner_dob" name="owner_dob">
+
+            <label for="owner_email">मालकाचा ई मेल पत्ता (Owner Email Address)</label>
+            <input type="email" id="owner_email" name="owner_email">
+
+            <label for="owner_education">मालकाचे शिक्षण (Owner Education Qualification)</label>
+            <input type="text" id="owner_education" name="owner_education">
+
+            <label for="owner_pan">मालकाचा पॅन कार्ड क्रमांक (Owner Pan card Number)</label>
+            <input type="text" id="owner_pan" name="owner_pan">
+        </div>
+        
+        <div class="form-section">
+            <h3>बँक तपशील (Bank Details)</h3>
+            <label for="bank_name">बँकेचे नाव (Name of Bank)</label>
+            <input type="text" id="bank_name" name="bank_name">
+
+            <label for="bank_branch">बॅच (Branch)</label>
+            <input type="text" id="bank_branch" name="bank_branch">
+
+            <label for="bank_account">खाते क्रमांक (Account Number)</label>
+            <input type="text" id="bank_account" name="bank_account">
+
+            <label for="balance">शिल्लक रक्कम (Balance)</label>
+            <input type="text" id="balance" name="balance">
+        </div>
+        
+        <div class="form-section">
+            <h3>सुपरवायजरची माहिती (Supervisor Information)</h3>
+            <label for="supervisor_name">सुपरवायजरचे पूर्ण नाव (Supervisor Full Name)</label>
+            <input type="text" id="supervisor_name" name="supervisor_name">
+
+            <label for="supervisor_father_name">सुपरवायजरचे वडिलांचे पूर्ण नाव (Supervisor Father Full Name)</label>
+            <input type="text" id="supervisor_father_name" name="supervisor_father_name">
+
+            <label for="supervisor_address">सुपरवायजरचा पूर्ण पत्ता (Supervisor Address)</label>
+            <input type="text" id="supervisor_address" name="supervisor_address">
+
+            <label for="supervisor_dob">सुपरवायजरची जन्म दिनांक (Supervisor Date of Birth)</label>
+            <input type="date" id="supervisor_dob" name="supervisor_dob">
+
+            <label for="supervisor_email">सुपरवायजर चा ई मेल पत्ता (Supervisor Email Address)</label>
+            <input type="email" id="supervisor_email" name="supervisor_email">
+
+            <label for="supervisor_mobile">सुपरवायजरचा मोबाइल क्रमांक (Supervisor Mobile number)</label>
+            <input type="tel" id="supervisor_mobile" name="supervisor_mobile">
+
+            <label for="supervisor_adhar">सुपरवायजरचा आधार क्रमांक (Supervisor Adhar Kramank)</label>
+            <input type="text" id="supervisor_adhar" name="supervisor_adhar">
+
+            <label for="supervisor_appointment_date">सुपरवायजरची सध्याची नेमणूक दिनांक (Supervisor Appointment Date)</label>
+            <input type="date" id="supervisor_appointment_date" name="supervisor_appointment_date">
+
+            <tr>
+          
+          <td><label for="sup_license" id="f19label">Supervisor License No. & Date</label></td>
+          <td><input type="text" id="sup_license" name="sup_license" placeholder="Licence No. / Date"></td>
+        </tr>
+
+        <!-- Row 20 (previously missing) - Supervisor previous work details with subfields -->
+        <tr>
+          
+          <td><label for="sup_prev" id="f20label">Supervisor Previous Work Details</label></td>
+          <td><textarea id="sup_prev" name="sup_prev" rows="3" placeholder="Previous work details"></textarea></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label for="sup_company" id="f20sublabel">Contractor/Company Name</label></td>
+          <td><input type="text" id="sup_company" name="sup_company"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label for="sup_mc" id="f20sublabel2">Contractor MC No. & Date</label></td>
+          <td><input type="text" id="sup_mc" name="sup_mc"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label for="sup_period" id="f20sublabel3">Date of Joining – End Date</label></td>
+          <td><input type="text" id="sup_period" name="sup_period" placeholder="Start Date — End Date"></td>
+        </tr>
+
+        <!-- Row 21 (previously missing) - Megar & Earth Tester -->
+        <tr>
+          <td><label id="f21label">Megar & Earth Tester Details</label></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label for="megar_make" id="f21sublabel1">Megar Make</label></td>
+          <td><input type="text" id="megar_make" name="megar_make"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label for="earth_make" id="f21sublabel2">Earth Tester Make</label></td>
+          <td><input type="text" id="earth_make" name="earth_make"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label for="megar_serial" id="f21sublabel3">Megar Serial Number</label></td>
+          <td><input type="text" id="megar_serial" name="megar_serial"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label for="earth_serial" id="f21sublabel4">Earth Tester Serial Number</label></td>
+          <td><input type="text" id="earth_serial" name="earth_serial"></td>
+        </tr>
+
+        </div>
+
+        <div class="button-group">
+            <button type="button" class="back-button" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
+            <button type="submit" class="submit-button">Submit & Pay</button>
+        </div>
+    </form>
+    <script src="lang-toggle.js"></script>
+    <script src="payment.js"></script>
+</div>
+
+</body>
+</html>

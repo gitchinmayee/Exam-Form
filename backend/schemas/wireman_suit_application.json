@@ -1,0 +1,31 @@
+{
+  "form_type": "wireman_suit_application",
+  "title": "Wireman Suit Application",
+  "title_en": "Wireman Suit Application",
+  "title_mr": "विद्युत तारतंत्री सूट अर्ज",
+  "fields": [
+    { "name": "applicant_name_header", "label_en": "Applicant Name", "label_mr": "अर्जदाराचे नाव" },
+    { "name": "receipt_date", "label_en": "Receipt Date", "label_mr": "आवक दिनांक" },
+    { "name": "b1_full_name", "label_en": "Full Name", "label_mr": "पूर्ण नांव" },
+    { "name": "b1_address", "label_en": "Permanent Address", "label_mr": "कायमचा पत्ता" },
+    { "name": "b1_mobile", "label_en": "Mobile Number", "label_mr": "मोबाईल क्रमांक" },
+    { "name": "b1_dob", "label_en": "Date of Birth", "label_mr": "जन्म दिनांक" },
+    { "name": "b1_qualification", "label_en": "Qualification", "label_mr": "शैक्षणिक अर्हता" },
+    { "name": "b1_iti_details", "label_en": "Passed Institution & Date", "label_mr": "उत्तीर्ण संस्थेचे नांव व दिनांक" },
+    { "name": "b1_work_exp", "label_en": "Work Experience", "label_mr": "अनुभव" },
+    { "name": "j_name", "label_en": "Annexure - Name", "label_mr": "जोडपत्र - नांव" },
+    { "name": "j_dob", "label_en": "Annexure - Date of Birth", "label_mr": "जोडपत्र - जन्म दिनांक" },
+    { "name": "j_edu_qual", "label_en": "Annexure - Qualification", "label_mr": "जोडपत्र - शैक्षणिक अर्हता" },
+    { "name": "pb_name", "label_en": "Declaration - Name", "label_mr": "प्रपत्र ब - नाव" },
+    { "name": "pb_parent_name", "label_en": "Declaration - Parent Name", "label_mr": "प्रपत्र ब - वडिलांचे नाव" },
+    { "name": "pb_age", "label_en": "Age", "label_mr": "वय" },
+    { "name": "pb_occupation", "label_en": "Occupation", "label_mr": "व्यवसाय" },
+    { "name": "pb_address", "label_en": "Declaration - Address", "label_mr": "प्रपत्र ब - पत्ता" },
+    { "name": "pb_place", "label_en": "Place", "label_mr": "ठिकाण" },
+    { "name": "pb_date", "label_en": "Date", "label_mr": "दिनांक" },
+    { "name": "pb_applicant_name", "label_en": "Applicant Name (Declaration)", "label_mr": "अर्जदाराचे नाव" },
+    { "name": "pb_mobile", "label_en": "Mobile (Declaration)", "label_mr": "मोबाइल क्रमांक" },
+    { "name": "sig_date", "label_en": "Signature Date", "label_mr": "सही दिनांक" },
+    { "name": "sig_place", "label_en": "Signature Place", "label_mr": "सही स्थळ" }
+  ]
+}

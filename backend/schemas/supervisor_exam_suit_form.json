@@ -1,0 +1,26 @@
+{
+  "form_type": "supervisor_exam_suit_form",
+  "title": "Supervisor Exam Suit Application",
+  "title_en": "Supervisor Exam Suit Application",
+  "title_mr": "पर्यवेक्षक सूट करीता उमेदवाराची माहिती",
+  "fields": [
+    { "name": "candidate_name", "label_en": "Candidate Full Name", "label_mr": "अर्जदाराचे पूर्ण नांव" },
+    { "name": "father_name", "label_en": "Father's Full Name", "label_mr": "वडिलांचे/पतीचे संपूर्ण नांव" },
+    { "name": "local_address", "label_en": "Local Address", "label_mr": "स्थानिक पत्ता" },
+    { "name": "mobile_number", "label_en": "Mobile Number", "label_mr": "मोबाईल क्रमांक" },
+    { "name": "email_id", "label_en": "Email ID", "label_mr": "ई-मेल पत्ता" },
+    { "name": "adhar_number", "label_en": "Aadhaar Number", "label_mr": "आधार क्रमांक" },
+    { "name": "pan_number", "label_en": "PAN Card Number", "label_mr": "पॅन कार्ड क्रमांक" },
+    { "name": "exam_passed", "label_en": "Exam Passed", "label_mr": "उत्तीर्ण परीक्षा" },
+    { "name": "dob", "label_en": "Date of Birth & Place", "label_mr": "जन्म दिनांक व जन्म ठिकाण" },
+    { "name": "height", "label_en": "Height", "label_mr": "उंची" },
+    { "name": "identification_mark", "label_en": "Identification Mark", "label_mr": "शरीरावरील ओळख चिन्हे" },
+    { "name": "company_name", "label_en": "Company/Contractor Firm Name", "label_mr": "ठेकेदार/कंपनीचे नाव" },
+    { "name": "joining_date", "label_en": "Joining Date", "label_mr": "जॉइनिंग तारीख" },
+    { "name": "service_end_date", "label_en": "Service End Date", "label_mr": "सेवा समाप्त तारीख" },
+    { "name": "supervisor_name", "label_en": "Supervisor/Electrical Inspector Name", "label_mr": "विद्युत पर्यवेक्षक/अभियंता नांव" },
+    { "name": "ms_number", "label_en": "Supervisor MS Number", "label_mr": "पर्यवेक्षक क्रमांक" },
+    { "name": "mcvc_joining_date", "label_en": "MCVC Joining Date", "label_mr": "MCVC जॉइनिंग तारीख" },
+    { "name": "mcvc_service_end_date", "label_en": "MCVC Service End Date", "label_mr": "MCVC सेवा समाप्त तारीख" }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "form_type": "contractor_newlicense_application_form",
+  "title": "New Contractor License Application Form",
+  "title_en": "New Contractor License Application Form",
+  "title_mr": "नवीन विद्युत ठेकेदार अनुज्ञप्ती अर्ज",
+  "fields": [
+    { "name": "firm_name", "label_en": "Firm Name", "label_mr": "मेसर्स (संस्थेचे नाव)" },
+    { "name": "owner_name", "label_en": "Owner Name", "label_mr": "मुखत्यारधारक/मालक" },
+    { "name": "supervisor_name", "label_en": "Supervisor Name", "label_mr": "पर्यवेक्षकाचे नाव" },
+    { "name": "license_number", "label_en": "License Number", "label_mr": "परवाना क्रमांक" },
+    { "name": "application_date", "label_en": "Application Date", "label_mr": "दिनांक" },
+    { "name": "megger_make", "label_en": "Megger Make", "label_mr": "मेगर बनावट" },
+    { "name": "megger_voltage", "label_en": "Megger Voltage", "label_mr": "व्होल्टेज" },
+    { "name": "megger_receipt_no", "label_en": "Megger Receipt Number", "label_mr": "मेगर पावती क्रमांक" },
+    { "name": "earth_tester_receipt_no", "label_en": "Earth Tester Receipt Number", "label_mr": "अर्थ टेस्टर पावती क्रमांक" },
+    { "name": "namuna_v_name", "label_en": "Namuna V - Supervisor Name", "label_mr": "नमुना व - पर्यवेक्षकाचे नाव" },
+    { "name": "namuna_v_age", "label_en": "Namuna V - Age", "label_mr": "नमुना व - वय" },
+    { "name": "namuna_v_address", "label_en": "Namuna V - Address", "label_mr": "नमुना व - पत्ता" },
+    { "name": "namuna_v_firm", "label_en": "Namuna V - Firm", "label_mr": "नमुना व - संस्था" },
+    { "name": "namuna_v_start_date", "label_en": "Namuna V - Start Date", "label_mr": "नमुना व - सुरुवात दिनांक" },
+    { "name": "namuna_v_place", "label_en": "Namuna V - Place", "label_mr": "नमुना व - स्थळ" },
+    { "name": "namuna_v_date", "label_en": "Namuna V - Date", "label_mr": "नमुना व - दिनांक" },
+    { "name": "namuna_w_name", "label_en": "Namuna W - Owner Name", "label_mr": "नमुना डब्लु - मालकाचे नाव" },
+    { "name": "namuna_w_address", "label_en": "Namuna W - Address", "label_mr": "नमुना डब्लु - पत्ता" },
+    { "name": "namuna_w_firm", "label_en": "Namuna W - Firm", "label_mr": "नमुना डब्लु - संस्था" },
+    { "name": "namuna_w_supervisor_name", "label_en": "Namuna W - Supervisor Name", "label_mr": "नमुना डब्लु - पर्यवेक्षकाचे नाव" },
+    { "name": "namuna_w_supervisor_license_no", "label_en": "Namuna W - Supervisor License", "label_mr": "नमुना डब्लु - पर्यवेक्षक परवाना" },
+    { "name": "namuna_w_place", "label_en": "Namuna W - Place", "label_mr": "नमुना डब्लु - स्थळ" },
+    { "name": "namuna_w_date", "label_en": "Namuna W - Date", "label_mr": "नमुना डब्लु - दिनांक" }
+  ]
+}

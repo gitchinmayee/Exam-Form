@@ -1,0 +1,26 @@
+{
+  "form_type": "contractor_renewal_form",
+  "title": "Contractor License Renewal Application",
+  "title_en": "Contractor License Renewal Application",
+  "title_mr": "विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरण अर्ज",
+  "fields": [
+    { "name": "inspector_office", "label_en": "Electrical Inspector Office", "label_mr": "विद्युत निरीक्षक कार्यालय" },
+    { "name": "applicant_name", "label_en": "Applicant Name", "label_mr": "अर्जदाराचे नाव" },
+    { "name": "firm_display_name_arja", "label_en": "Firm Name", "label_mr": "संस्थेचे नाव" },
+    { "name": "mthe_no_arja", "label_en": "License Number", "label_mr": "म. ठे. क्र." },
+    { "name": "renewal_start_year", "label_en": "Renewal Start Year", "label_mr": "नूतनीकरण सुरुवात वर्ष" },
+    { "name": "renewal_end_year", "label_en": "Renewal End Year", "label_mr": "नूतनीकरण समाप्ती वर्ष" },
+    { "name": "arja_applicant_name", "label_en": "Applicant Name (Sign)", "label_mr": "अर्जदाराचे नाव (सही)" },
+    { "name": "arja_firm_name", "label_en": "Firm Name (Sign)", "label_mr": "संस्थेचे नाव (सही)" },
+    { "name": "arja_date", "label_en": "Application Date", "label_mr": "अर्जाचा दिनांक" },
+    { "name": "namuna_s_date", "label_en": "Namuna S - Date", "label_mr": "नमुना स - दिनांक" },
+    { "name": "namuna_s_place", "label_en": "Namuna S - Place", "label_mr": "नमुना स - स्थळ" },
+    { "name": "py_name", "label_en": "Supervisor Name", "label_mr": "पर्यवेक्षकाचे नाव" },
+    { "name": "py_age", "label_en": "Supervisor Age", "label_mr": "पर्यवेक्षकाचे वय" },
+    { "name": "py_address", "label_en": "Supervisor Address", "label_mr": "पर्यवेक्षकाचा पत्ता" },
+    { "name": "py_supervisor", "label_en": "Supervisor", "label_mr": "पर्यवेक्षक" },
+    { "name": "py_supervisor_license", "label_en": "Supervisor License No.", "label_mr": "पर्यवेक्षक परवाना क्र." },
+    { "name": "py_place", "label_en": "Place", "label_mr": "स्थळ" },
+    { "name": "py_date_affidavit", "label_en": "Affidavit Date", "label_mr": "प्रतिज्ञापत्र दिनांक" }
+  ]
+}

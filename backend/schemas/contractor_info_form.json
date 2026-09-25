@@ -1,0 +1,29 @@
+{
+  "form_type": "contractor_info_form",
+  "title": "Information for Contractor License Renewal",
+  "title_en": "Information for Contractor License Renewal",
+  "title_mr": "विद्युत ठेकेदार लायसन्स नुतनीकरणा करीता आवश्यक माहिती",
+  "fields": [
+    { "name": "firm_name", "label_en": "Firm Name", "label_mr": "व्यवसाय संस्थेचे नाव" },
+    { "name": "firm_address", "label_en": "Firm Address", "label_mr": "व्यवसाय संस्थेचा पत्ता" },
+    { "name": "owner_name", "label_en": "Owner Full Name", "label_mr": "मालकाचे पूर्ण नाव" },
+    { "name": "owner_address", "label_en": "Owner Address", "label_mr": "मालकाचा पत्ता" },
+    { "name": "owner_father_name", "label_en": "Owner Father Name", "label_mr": "मालकाच्या वडिलांचे नाव" },
+    { "name": "owner_dob", "label_en": "Owner Date of Birth", "label_mr": "मालकाची जन्म दिनांक" },
+    { "name": "owner_email", "label_en": "Owner Email", "label_mr": "मालकाचा ई मेल" },
+    { "name": "owner_education", "label_en": "Owner Education", "label_mr": "मालकाचे शिक्षण" },
+    { "name": "owner_pan", "label_en": "Owner PAN Number", "label_mr": "मालकाचा पॅन कार्ड क्रमांक" },
+    { "name": "supervisor_name", "label_en": "Supervisor Full Name", "label_mr": "सुपरवायजरचे पूर्ण नाव" },
+    { "name": "supervisor_address", "label_en": "Supervisor Address", "label_mr": "सुपरवायजरचा पत्ता" },
+    { "name": "supervisor_dob", "label_en": "Supervisor Date of Birth", "label_mr": "सुपरवायजरची जन्म दिनांक" },
+    { "name": "supervisor_email", "label_en": "Supervisor Email", "label_mr": "सुपरवायजर ई मेल" },
+    { "name": "supervisor_mobile", "label_en": "Supervisor Mobile", "label_mr": "सुपरवायजरचा मोबाइल" },
+    { "name": "previous_contractor_name", "label_en": "Previous Contractor/Company", "label_mr": "काम केलेल्या ठेकेदार/कंपनीचे नाव" },
+    { "name": "previous_contractor_mc", "label_en": "Previous Contractor MC Number", "label_mr": "ठेकेदार क्रमांक व दिनांक" },
+    { "name": "previous_job_dates", "label_en": "Previous Job Dates", "label_mr": "कधी पासून कधी पर्यंत" },
+    { "name": "megar_make", "label_en": "Megar Make", "label_mr": "मेगर बनावट" },
+    { "name": "earth_tester_make", "label_en": "Earth Tester Make", "label_mr": "अर्थ टेस्टर बनावट" },
+    { "name": "megar_serial", "label_en": "Megar Serial Number", "label_mr": "मेगर सिरीयल क्रमांक" },
+    { "name": "earth_tester_serial", "label_en": "Earth Tester Serial Number", "label_mr": "अर्थ टेस्टर सिरीयल क्रमांक" }
+  ]
+}
