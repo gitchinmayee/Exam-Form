@@ -57,94 +57,55 @@ app.post("/submit", async (req, res) => {
         }
         const schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
 
-        // 1) Generate PDF (Marathi or English labels depending on lang)
+        // 1) Generate PDF
         const timestamp = Date.now();
-        const fileName = `${form_type}_${timestamp}_${(form_data.fullname||"user").replace(/\s+/g,'_')}.pdf`;
+        const fileName = `${form_type}_${timestamp}_${(form_data.fullname||form_data.candidate_name||form_data.applicant_name||form_data.b1_full_name||"user").replace(/\s+/g,'_')}.pdf`;
         const pdfPath = path.join(__dirname, fileName);
 
-        const doc = new PDFDocument({ margin: 40, size: "A4" });
-
-        // Register fonts
         const devanagariFontPath = path.join(__dirname, "fonts", "NotoSansDevanagari-Regular.ttf");
-        if (fs.existsSync(devanagariFontPath)) {
-            doc.registerFont("NotoDeva", devanagariFontPath);
-        } else {
-            console.warn("Devanagari font not found at", devanagariFontPath, "— Marathi may not render correctly in PDF.");
-        }
-        // default fonts
-        doc.fontSize(16);
-        // Header: use selected language or fallback
-        const header = (lang === 'mr' && schema.title_mr) ? schema.title_mr : (schema.title || schema.title_en || "Form");
-        if (lang === 'mr' && fs.existsSync(devanagariFontPath)) doc.font("NotoDeva");
-        else doc.font("Helvetica");
-        doc.text(header, { align: "center" });
-        doc.moveDown(0.5);
+        const header = (lang === 'mr' && schema.title_mr) ? schema.title_mr : (schema.title_en || schema.title || form_type);
 
-        // Body: iterate schema.fields
-        doc.fontSize(12);
+        const doc2 = new PDFDocument({ margin: 40, size: "A4" });
+        const writeStream = fs.createWriteStream(pdfPath);
+        doc2.pipe(writeStream);
+
+        if (fs.existsSync(devanagariFontPath)) doc2.registerFont("NotoDeva", devanagariFontPath);
+        const useMr = lang === 'mr' && fs.existsSync(devanagariFontPath);
+
+        // Header
+        doc2.fontSize(16).font(useMr ? "NotoDeva" : "Helvetica-Bold").text(header, { align: "center" });
+        doc2.moveDown(0.5);
+        doc2.moveTo(40, doc2.y).lineTo(555, doc2.y).stroke();
+        doc2.moveDown(0.5);
+
+        // Fields as a styled table-like layout
+        doc2.fontSize(11);
         for (const fld of schema.fields) {
-            const label = (lang === 'mr' && fld.label_mr) ? fld.label_mr : (fld.label_en || fld.label);
-            // choose font for label
-            if (lang === 'mr' && fs.existsSync(devanagariFontPath)) doc.font("NotoDeva");
-            else doc.font("Helvetica");
+            const label = (useMr && fld.label_mr) ? fld.label_mr : (fld.label_en || fld.label || fld.name);
             const valueRaw = form_data[fld.name];
-            let value = "";
-            if (Array.isArray(valueRaw)) value = valueRaw.join(", ");
-            else if (valueRaw === undefined || valueRaw === null) value = "";
-            else value = String(valueRaw);
+            const value = Array.isArray(valueRaw) ? valueRaw.join(", ") : (valueRaw != null ? String(valueRaw) : "—");
 
-            // write label and value
-            doc.text(`${label}: ${value}`, { lineGap: 6 });
-            doc.moveDown(0.2);
+            const rowY = doc2.y;
+            // Label in bold
+            doc2.font(useMr ? "NotoDeva" : "Helvetica-Bold").text(label + ":", 40, rowY, { width: 220, continued: false });
+            // Value in normal weight on same row
+            doc2.font(useMr ? "NotoDeva" : "Helvetica").text(value, 270, rowY, { width: 285 });
+            // Light separator line
+            doc2.moveTo(40, doc2.y + 2).lineTo(555, doc2.y + 2).strokeColor("#e0e0e0").stroke();
+            doc2.strokeColor("black");
+            doc2.moveDown(0.3);
         }
 
-        doc.end();
+        // Footer
+        doc2.moveDown(1);
+        doc2.fontSize(9).font("Helvetica").fillColor("#888")
+            .text(`Generated: ${new Date().toLocaleString("en-IN")} | Form: ${form_type}`, { align: "center" });
 
-        // wait until finished writing
+        doc2.end();
         await new Promise((resolve, reject) => {
-            const stream = fs.createWriteStream(pdfPath);
-            const doc2 = new PDFDocument({ margin: 40, size: "A4" });
-            // We already created doc and ended it; but pdfkit pipe trick - simpler approach: create write via original doc
-            // Actually we created doc above with default stream; we need to ensure it's piped. To keep code simple, we instead
-            // rewrite generation to use piping to file. However we already used doc; work-around: regenerate with proper piping.
-            // Simpler approach: generate again but pipe to file. We'll regenerate below synchronously.
-            resolve();
+            writeStream.on("finish", resolve);
+            writeStream.on("error", reject);
         });
-
-        // Regenerate with proper pipe (to ensure file exists)
-        // (Recreate the PDF properly)
-        {
-            const doc2 = new PDFDocument({ margin: 40, size: "A4" });
-            const writeStream = fs.createWriteStream(pdfPath);
-            doc2.pipe(writeStream);
-
-            if (fs.existsSync(devanagariFontPath)) doc2.registerFont("NotoDeva", devanagariFontPath);
-
-            if (lang === 'mr' && fs.existsSync(devanagariFontPath)) doc2.font("NotoDeva");
-            else doc2.font("Helvetica");
-            doc2.fontSize(16).text(header, { align: "center" });
-            doc2.moveDown(0.5);
-
-            doc2.fontSize(12);
-            for (const fld of schema.fields) {
-                const label = (lang === 'mr' && fld.label_mr) ? fld.label_mr : (fld.label_en || fld.label);
-                if (lang === 'mr' && fs.existsSync(devanagariFontPath)) doc2.font("NotoDeva");
-                else doc2.font("Helvetica");
-                const valueRaw = form_data[fld.name];
-                let value = "";
-                if (Array.isArray(valueRaw)) value = valueRaw.join(", ");
-                else if (valueRaw === undefined || valueRaw === null) value = "";
-                else value = String(valueRaw);
-                doc2.text(`${label}: ${value}`, { lineGap: 6 });
-                doc2.moveDown(0.2);
-            }
-
-            doc2.end();
-            await new Promise((resolve, reject) => {
-                writeStream.on("finish", resolve);
-                writeStream.on("error", reject);
-            });
-        }
 
         // 2) Upload PDF to Supabase Storage
         const pdfBuffer = fs.readFileSync(pdfPath);
@@ -248,6 +209,7 @@ app.post("/admin-notify", async (req, res) => {
             to: admin_email,
             subject: `New Form Submission — ${form_type}`,
             html: htmlBody,
+            attachments: pdf_url && !pdf_url.startsWith("data:") ? [{ filename: `${form_type}.pdf`, path: pdf_url }] : []
         });
 
         console.log(`Admin email sent to ${admin_email} for form: ${form_type}`);
