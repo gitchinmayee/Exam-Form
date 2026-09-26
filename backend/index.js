@@ -78,21 +78,15 @@ app.post("/submit", async (req, res) => {
         doc2.moveTo(40, doc2.y).lineTo(555, doc2.y).stroke();
         doc2.moveDown(0.5);
 
-        // Fields as a styled table-like layout
+        // Fields
         doc2.fontSize(11);
         for (const fld of schema.fields) {
             const label = (useMr && fld.label_mr) ? fld.label_mr : (fld.label_en || fld.label || fld.name);
             const valueRaw = form_data[fld.name];
-            const value = Array.isArray(valueRaw) ? valueRaw.join(", ") : (valueRaw != null ? String(valueRaw) : "—");
+            const value = Array.isArray(valueRaw) ? valueRaw.join(", ") : (valueRaw != null && valueRaw !== "" ? String(valueRaw) : "—");
 
-            const rowY = doc2.y;
-            // Label in bold
-            doc2.font(useMr ? "NotoDeva" : "Helvetica-Bold").text(label + ":", 40, rowY, { width: 220, continued: false });
-            // Value in normal weight on same row
-            doc2.font(useMr ? "NotoDeva" : "Helvetica").text(value, 270, rowY, { width: 285 });
-            // Light separator line
-            doc2.moveTo(40, doc2.y + 2).lineTo(555, doc2.y + 2).strokeColor("#e0e0e0").stroke();
-            doc2.strokeColor("black");
+            doc2.font(useMr ? "NotoDeva" : "Helvetica-Bold").text(label + ":", { continued: false });
+            doc2.font(useMr ? "NotoDeva" : "Helvetica").text(value, { indent: 10 });
             doc2.moveDown(0.3);
         }
 
