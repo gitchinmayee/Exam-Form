@@ -396,9 +396,20 @@
   }
 
   async function submitFormToBackend(form) {
+    // Capture the filled form HTML to use as PDF content
+    const formHtml = form.outerHTML;
+    // Also grab the page's <style> tags for styling
+    const styles = Array.from(document.querySelectorAll("style, link[rel='stylesheet']"))
+      .map(el => el.outerHTML).join("\n");
+
     const payload = {
       form_type: getFormType(form),
       form_data: collectFormData(form),
+      form_html: `<!DOCTYPE html><html><head><meta charset="UTF-8">${styles}<style>
+        body{font-family:Arial,sans-serif;margin:20px;background:#fff;}
+        button{display:none!important;}
+        #global-lang-toggle{display:none!important;}
+      </style></head><body>${formHtml}</body></html>`,
       user_id: getUserId(),
       lang: localStorage.getItem("myexam_lang") || "mr",
     };
