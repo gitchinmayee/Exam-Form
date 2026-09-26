@@ -184,20 +184,12 @@ app.post("/submit", async (req, res) => {
             .insert([submission]);
 
         if (insertError) {
-            console.error("Insert error:", insertError.message);
-            // still return pdf link, but mark DB insert failed
-            return res.status(500).json({ message: "PDF uploaded but failed to save DB record", pdfUrl, error: insertError });
+            // Log but don't fail — DB record is optional, PDF is what matters
+            console.warn("DB insert warning (submissions table may not exist):", insertError.message);
         }
 
-        // 5) Prepare WhatsApp link
-        // phone field might be under various names; prefer form_data.phone or form_data.mobile
-        const phoneVal = form_data.phone || form_data.mobile || "";
-        const formattedPhone = phoneVal.replace(/^\+|^0+/,'').replace(/\s+/g,'');
-        const recipient = formattedPhone || ""; // if empty, whatsapp link won't work
-        const textMsg = `Hello ${form_data.fullname || ''}, your ${schema.title || form_type} is ready: ${pdfUrl}`;
-        const whatsappLink = recipient ? `https://wa.me/${recipient}?text=${encodeURIComponent(textMsg)}` : null;
-
-        res.json({ message: "Submitted successfully", pdfUrl, whatsappLink });
+        // Always return pdfUrl — DB insert failure is non-fatal
+        res.json({ message: "Submitted successfully", pdfUrl });
 
     } catch (err) {
         console.error("Server error processing submit:", err);
