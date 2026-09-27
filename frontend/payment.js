@@ -10,7 +10,7 @@
 (function () {
   "use strict";
 
-  const BACKEND_URL = "http://localhost:3000";
+  const BACKEND_URL = (typeof CONFIG !== "undefined" ? CONFIG.BACKEND_URL : null) || "http://localhost:3000";
   const ADMIN_EMAIL = "ichinmayees4@gmail.com";
 
   // ─── 1. SCREENSHOT / PRINT BLOCKING ───────────────────────────────────────
