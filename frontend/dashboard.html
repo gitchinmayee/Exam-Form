@@ -3,108 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MyExam — Dashboard</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+        }
+
+        /* ── Header ── */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0 32px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0056b3;
+            letter-spacing: -0.3px;
+        }
+        .logo span { color: #28a745; }
+        .header-right { display: flex; align-items: center; gap: 12px; }
+        .btn-lang {
+            background: none; border: 1px solid #cbd5e0;
+            border-radius: 20px; padding: 5px 14px;
+            font-size: 0.82rem; cursor: pointer; color: #555;
+            transition: all 0.2s;
+        }
+        .btn-lang:hover { background: #0056b3; color: #fff; border-color: #0056b3; }
+        .user-badge {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.88rem; color: #555;
+        }
+        .user-avatar {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: #0056b3; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.85rem;
+        }
+        .btn-logout {
+            background: none; border: 1px solid #e2e8f0;
+            border-radius: 6px; padding: 5px 14px;
+            font-size: 0.82rem; cursor: pointer; color: #e53e3e;
+            transition: all 0.2s;
+        }
+        .btn-logout:hover { background: #e53e3e; color: #fff; border-color: #e53e3e; }
+
+        /* ── Main ── */
+        main {
+            max-width: 900px;
+            margin: 48px auto;
+            padding: 0 20px;
+        }
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+        .page-subtitle {
+            font-size: 0.92rem;
+            color: #718096;
+            margin-bottom: 32px;
+        }
+
+        /* ── Form Cards ── */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+        }
+        .form-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 22px 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .form-card:hover {
+            border-color: #0056b3;
+            box-shadow: 0 4px 16px rgba(0,86,179,0.1);
+            transform: translateY(-2px);
+        }
+        .card-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: #ebf4ff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a202c;
+            line-height: 1.4;
+        }
+        .card-arrow {
+            font-size: 0.8rem;
+            color: #0056b3;
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 32px 0 16px;
+            font-size: 0.78rem;
+            color: #a0aec0;
+        }
+    </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2 id="welcome-message"></h2>
-        <h2 data-lang-en="Select Form Type" data-lang-mr="फॉर्म प्रकार निवडा">
-            Select Form Type
-        </h2>
-        <label for="formType" 
-            data-lang-en="Choose Form Type" 
-            data-lang-mr="फॉर्म प्रकार निवडा">
-            Choose Form Type
-        </label>
-        <select id="formType"></select>
-        <button id="goBtn">Go</button>
+
+<header>
+    <div class="logo">My<span>Exam</span> Forms</div>
+    <div class="header-right">
+        <button class="btn-lang" id="lang-toggle">🌐 मराठी</button>
+        <div class="user-badge">
+            <div class="user-avatar" id="user-avatar">U</div>
+            <span id="welcome-message">User</span>
+        </div>
+        <button class="btn-logout" id="logoutBtn" data-lang-en="Logout" data-lang-mr="बाहेर पडा">Logout</button>
     </div>
+</header>
 
-    <div class="dashboard-actions">
-        <button id="lang-toggle">मराठी / English</button>
-        <button id="logoutBtn" data-lang-en="Logout" data-lang-mr="लॉगआउट">Logout</button>
-    </div>
+<main>
+    <div class="page-title" data-lang-en="Select a Form" data-lang-mr="फॉर्म निवडा">Select a Form</div>
+    <div class="page-subtitle" data-lang-en="Choose the form you want to fill and submit." data-lang-mr="भरण्यासाठी फॉर्म निवडा.">Choose the form you want to fill and submit.</div>
 
-    <script>
-        // In a real application, you would get the username from a backend after authentication.
-        // For this example, we'll use a placeholder.
-        const username = "User"; // Replace with actual username from your login process
-        document.getElementById("welcome-message").innerText = `Welcome, ${username}!`;
+    <div class="form-grid" id="form-grid"></div>
+</main>
 
-        const forms = {
-            'contractor_info_form.html': { en: 'Information for Contractor license Renewal Form', mr: 'कंत्राटदार परवाना नूतनीकरण फॉर्मसाठी माहिती' },
-            'contractor_renewal_form.html': { en: 'Contractor License Renewal Form', mr: 'कंत्राटदार परवाना नूतनीकरण फॉर्म' },
-            'contractor_newlicense_form.html': { en: 'Information for New Contractor license Form', mr: 'नवीन कंत्राटदार परवाना फॉर्मसाठी माहिती' },
-            'contractor_newlicense_application_form.html': { en: 'New Contractor license application Form', mr: 'नवीन कंत्राटदार परवाना अर्ज फॉर्म' },
-            'supervisor_exam_suit_form.html': { en: 'Supervisor Exam  Suit Form', mr: 'पर्यवेक्षक परीक्षा फॉर्म' },
-            'wireman_suit_application.html': { en: 'Wireman Suit Application Form', mr: 'तारतंत्री सूट अर्ज' }
-        };
+<footer>© 2026 MyExam Forms. All rights reserved.</footer>
 
-        const formSelect = document.getElementById('formType');
+<script>
+    const forms = {
+        'contractor_info_form.html':              { en: 'Information for Contractor License Renewal',  mr: 'कंत्राटदार परवाना नूतनीकरणासाठी माहिती',  icon: '📋' },
+        'contractor_renewal_form.html':           { en: 'Contractor License Renewal Form',             mr: 'कंत्राटदार परवाना नूतनीकरण फॉर्म',          icon: '🔄' },
+        'contractor_newlicense_form.html':        { en: 'Information for New Contractor License',      mr: 'नवीन कंत्राटदार परवान्यासाठी माहिती',        icon: '📝' },
+        'contractor_newlicense_application_form.html': { en: 'New Contractor License Application',    mr: 'नवीन कंत्राटदार परवाना अर्ज',               icon: '📄' },
+        'supervisor_exam_suit_form.html':         { en: 'Supervisor Exam Suit Form',                   mr: 'पर्यवेक्षक परीक्षा सूट फॉर्म',              icon: '🎓' },
+        'wireman_suit_application.html':          { en: 'Wireman Suit Application',                    mr: 'तारतंत्री सूट अर्ज',                          icon: '⚡' },
+    };
 
-        function populateDropdown(language = 'en') {
-            formSelect.innerHTML = '<option value="">-- Select --</option>';
-            for (const [file, name] of Object.entries(forms)) {
-                const option = document.createElement('option');
-                option.value = file;
-                option.textContent = name[language];
-                formSelect.appendChild(option);
-            }
+    let currentLang = localStorage.getItem("myexam_lang") || 'en';
+
+    function renderCards() {
+        const grid = document.getElementById("form-grid");
+        grid.innerHTML = "";
+        for (const [file, info] of Object.entries(forms)) {
+            const a = document.createElement("a");
+            a.className = "form-card";
+            a.href = file;
+            a.innerHTML = `
+                <div class="card-icon">${info.icon}</div>
+                <div class="card-title">${info[currentLang]}</div>
+                <div class="card-arrow">Open form →</div>
+            `;
+            grid.appendChild(a);
         }
+    }
 
-        let currentLang = localStorage.getItem("myexam_lang") || 'en';
-
-        function toggleLanguage() {
-            const elementsToTranslate = document.querySelectorAll('[data-lang-en]');
-            currentLang = currentLang === 'en' ? 'mr' : 'en';
-            localStorage.setItem("myexam_lang", currentLang);
-
-            elementsToTranslate.forEach(el => {
-                el.innerText = el.getAttribute(`data-lang-${currentLang}`);
-            });
-
-            // Update the welcome message in Marathi
-            if (currentLang === 'mr') {
-                document.getElementById("welcome-message").innerText = `सुस्वागतम्, ${username}!`;
-                document.getElementById("lang-toggle").textContent = "🌐 English";
-            } else {
-                document.getElementById("welcome-message").innerText = `Welcome, ${username}!`;
-                document.getElementById("lang-toggle").textContent = "🌐 मराठी";
-            }
-
-            populateDropdown(currentLang);
-        }
-        
-        // Initial population of the dropdown
-        populateDropdown(currentLang);
-
-        // Apply initial language state
-        if (currentLang === 'mr') {
-            document.querySelectorAll('[data-lang-en]').forEach(el => {
-                el.innerText = el.getAttribute('data-lang-mr');
-            });
-            document.getElementById("welcome-message").innerText = `सुस्वागतम्, ${username}!`;
-            document.getElementById("lang-toggle").textContent = "🌐 English";
-        } else {
-            document.getElementById("lang-toggle").textContent = "🌐 मराठी";
-        }
-
-        document.getElementById("goBtn").addEventListener("click", () => {
-            const formPage = formSelect.value;
-            if (formPage) {
-                window.location.href = formPage;
-            } else {
-                alert("Please select a form");
-            }
+    function applyLang() {
+        document.querySelectorAll("[data-lang-en]").forEach(el => {
+            el.textContent = el.getAttribute(`data-lang-${currentLang}`);
         });
+        document.getElementById("lang-toggle").textContent = currentLang === 'en' ? '🌐 मराठी' : '🌐 English';
+        renderCards();
+    }
 
-        document.getElementById("lang-toggle").addEventListener("click", toggleLanguage);
+    // Get user email from Supabase session for avatar/name
+    async function loadUser() {
+        try {
+            const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
+            const supabase = createClient(
+                "https://vaibfaqweevjdtbwkkye.supabase.co",
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZhaWJmYXF3ZWV2amR0Yndra3llIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzMjY4MTgsImV4cCI6MjEwNTkwMjgxOH0._Ck_2K0MydGkgPXiEQIDPeUsRtZS95Andvj5Nk3HsQA"
+            );
+            const { data } = await supabase.auth.getSession();
+            if (data.session) {
+                const email = data.session.user.email;
+                const name = email.split("@")[0];
+                document.getElementById("welcome-message").textContent = name;
+                document.getElementById("user-avatar").textContent = name[0].toUpperCase();
 
-        document.getElementById("logoutBtn").addEventListener("click", () => {
-            // Redirect to login page
-            window.location.href = "login.html";
-        });
-    </script>
+                // Logout
+                document.getElementById("logoutBtn").addEventListener("click", async () => {
+                    await supabase.auth.signOut();
+                    window.location.href = "login.html";
+                });
+            } else {
+                window.location.href = "login.html";
+            }
+        } catch(e) {
+            document.getElementById("logoutBtn").addEventListener("click", () => {
+                window.location.href = "login.html";
+            });
+        }
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+        currentLang = currentLang === 'en' ? 'mr' : 'en';
+        localStorage.setItem("myexam_lang", currentLang);
+        applyLang();
+    });
+
+    applyLang();
+    loadUser();
+</script>
 </body>
 </html>
