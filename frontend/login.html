@@ -13,12 +13,12 @@
       cursor:pointer; font-weight:bold;
     }
     .password-wrapper { position:relative; margin-bottom:20px; }
-    .password-wrapper input { margin-bottom:0; padding-right:44px; }
+    .password-wrapper input { margin-bottom:0; width:100%; box-sizing:border-box; }
     .toggle-pw {
       position:absolute; right:10px; top:50%;
       transform:translateY(-50%);
       background:none; border:none; cursor:pointer;
-      color:#888; font-size:1rem; padding:0;
+      color:#0056b3; font-size:0.8rem; padding:0; font-weight:bold;
     }
     .field-error { color:#c00; font-size:0.8rem; margin:-14px 0 10px; display:none; text-align:left; }
   </style>
@@ -37,7 +37,7 @@
       <label for="password">Password:</label>
       <div class="password-wrapper">
         <input type="password" id="password" name="password" placeholder="Enter password" required>
-        <button type="button" class="toggle-pw" onclick="togglePw('password', this)" title="Show/Hide password">👁</button>
+        <button type="button" class="toggle-pw" onclick="togglePw('password', this)" title="Show/Hide password">Show</button>
       </div>
       <div class="field-error" id="pw-error">Password is required.</div>
 
@@ -50,8 +50,8 @@
   <script>
     function togglePw(id, btn) {
       const inp = document.getElementById(id);
-      if (inp.type === "password") { inp.type = "text"; btn.textContent = "🙈"; }
-      else { inp.type = "password"; btn.textContent = "👁"; }
+      if (inp.type === "password") { inp.type = "text"; btn.textContent = "Hide"; }
+      else { inp.type = "password"; btn.textContent = "Show"; }
     }
 
     // Inline validation

@@ -81,7 +81,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       try {
         const { data, error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) return alert("Login failed: " + error.message);
-        // success
+        // Block unverified users
+        if (!data.user.email_confirmed_at) {
+          await supabase.auth.signOut();
+          return alert("Please verify your email first. Check your inbox for the verification link.");
+        }
         window.location = "dashboard.html";
       } catch (err) { console.error(err); alert("Login error"); }
     });

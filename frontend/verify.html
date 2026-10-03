@@ -8,31 +8,25 @@
 </head>
 <body>
   <div class="container" style="text-align:center">
-    <div id="message">
-      <p>Verifying...</p>
-    </div>
+    <div id="message"><p>Verifying your email...</p></div>
   </div>
-
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-    const SUPABASE_URL = "https://vaibfaqweevjdtbwkkye.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZhaWJmYXF3ZWV2amR0Yndra3llIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzMjY4MTgsImV4cCI6MjEwNTkwMjgxOH0._Ck_2K0MydGkgPXiEQIDPeUsRtZS95Andvj5Nk3HsQA";
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const supabase = createClient(
+      "https://vaibfaqweevjdtbwkkye.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZhaWJmYXF3ZWV2amR0Yndra3llIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzMjY4MTgsImV4cCI6MjEwNTkwMjgxOH0._Ck_2K0MydGkgPXiEQIDPeUsRtZS95Andvj5Nk3HsQA"
+    );
 
+    // Supabase puts the token in the URL hash — let it process automatically
     const { data, error } = await supabase.auth.getSession();
     const div = document.getElementById("message");
 
-    if (error || !data.session) {
-      div.innerHTML = `
-        <div style="font-size:3rem">✅</div>
-        <h2 style="color:#28a745">Email Verified!</h2>
-        <p>Your email has been verified successfully.</p>
-        <a href="login.html" style="display:inline-block;margin-top:16px;background:#0056b3;color:#fff;padding:10px 28px;border-radius:8px;text-decoration:none">Go to Login</a>
-      `;
-    } else {
-      // Already has session — go straight to dashboard
-      window.location.href = "dashboard.html";
-    }
+    div.innerHTML = `
+      <div style="font-size:3rem">✅</div>
+      <h2 style="color:#28a745">Email Verified!</h2>
+      <p>Your email has been verified successfully.<br>You can now log in.</p>
+      <a href="login.html" style="display:inline-block;margin-top:16px;background:#0056b3;color:#fff;padding:10px 28px;border-radius:8px;text-decoration:none;font-weight:bold">Go to Login →</a>
+    `;
   </script>
 </body>
 </html>
