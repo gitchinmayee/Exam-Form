@@ -1,106 +1,217 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title data-i18n="title_register">Register</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — MyExam Forms</title>
   <style>
-    .toggle-lang-btn {
-      display:block; margin: 0 0 14px auto;
-      background:#0056b3; color:#fff; border:none;
-      border-radius:20px; padding:6px 16px; font-size:0.85rem;
-      cursor:pointer; font-weight:bold;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f0f4f8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .password-wrapper { position:relative; margin-bottom:6px; }
-    .password-wrapper input { margin-bottom:0; width:100%; box-sizing:border-box; }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 40px 36px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .brand {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .brand-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0056b3;
+      letter-spacing: -0.5px;
+    }
+    .brand-logo span { color: #28a745; }
+    .brand-sub {
+      font-size: 0.8rem;
+      color: #a0aec0;
+      margin-top: 2px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 0.85rem;
+      color: #718096;
+      margin-bottom: 24px;
+    }
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 5px;
+    }
+    input[type="email"], input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #1a202c;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 16px;
+    }
+    input:focus { border-color: #0056b3; }
+    .field-error {
+      color: #e53e3e;
+      font-size: 0.78rem;
+      margin: -12px 0 12px;
+      display: none;
+    }
+    .password-wrapper { position: relative; }
+    .password-wrapper input { margin-bottom: 8px; }
     .toggle-pw {
-      position:absolute; right:10px; top:50%;
-      transform:translateY(-50%);
-      background:none; border:none; cursor:pointer;
-      color:#0056b3; font-size:0.8rem; padding:0; font-weight:bold;
+      position: absolute; right: 12px; top: 11px;
+      background: none; border: none; cursor: pointer;
+      color: #0056b3; font-size: 0.78rem; font-weight: 700;
     }
-    .field-error { color:#c00; font-size:0.8rem; margin:0 0 10px; display:none; text-align:left; }
-    .pw-rules { font-size:0.78rem; color:#888; text-align:left; margin-bottom:14px; line-height:1.6; }
-    .pw-rules span { display:block; }
-    .pw-rules .ok { color:#28a745; }
-    .pw-rules .fail { color:#aaa; }
+    .pw-rules {
+      font-size: 0.78rem;
+      color: #718096;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .pw-rules .ok  { color: #28a745; }
+    .pw-rules .fail { color: #a0aec0; }
+    .btn-primary {
+      width: 100%;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 4px;
+    }
+    .btn-primary:hover { background: #1e7e34; }
+    .footer-text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.83rem;
+      color: #718096;
+    }
+    .footer-text a { color: #0056b3; font-weight: 600; text-decoration: none; }
+    .lang-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+    .btn-lang {
+      background: none;
+      border: 1px solid #cbd5e0;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      color: #555;
+      transition: all 0.2s;
+    }
+    .btn-lang:hover { background: #0056b3; color: #fff; border-color: #0056b3; }
+    .divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <button type="button" class="toggle-lang-btn" onclick="toggleLang()" data-i18n="toggle_lang">English</button>
-
-    <h2 data-i18n="title_register">Register</h2>
-
-    <form id="registerForm" novalidate>
-      <label for="reg_email" data-i18n="label_email">Email:</label>
-      <input type="email" id="reg_email" name="reg_email" placeholder="name@example.com" required>
-      <div class="field-error" id="email-error">Please enter a valid email (must contain @ and .).</div>
-
-      <label for="reg_password">Password:</label>
-      <div class="password-wrapper">
-        <input type="password" id="reg_password" name="reg_password" placeholder="Enter password" required>
-        <button type="button" class="toggle-pw" onclick="togglePw('reg_password', this)" title="Show/Hide password">Show</button>
-      </div>
-      <div class="pw-rules" id="pw-rules">
-        <span id="rule-len"  class="fail">✗ At least 8 characters</span>
-        <span id="rule-num"  class="fail">✗ At least one number</span>
-        <span id="rule-char" class="fail">✗ At least one letter</span>
-      </div>
-      <div class="field-error" id="pw-error">Password does not meet requirements.</div>
-
-      <button type="submit">Register</button>
-    </form>
-
-    <p>Already have an account? <a href="login.html">Login</a></p>
+<div class="card">
+  <div class="brand">
+    <div class="brand-logo">My<span>Exam</span> Forms</div>
+    <div class="brand-sub">Maharashtra Electrical Licensing Portal</div>
   </div>
 
-  <script>
-    function togglePw(id, btn) {
-      const inp = document.getElementById(id);
-      if (inp.type === "password") { inp.type = "text"; btn.textContent = "Hide"; }
-      else { inp.type = "password"; btn.textContent = "Show"; }
+  <div class="lang-row">
+    <button class="btn-lang" onclick="toggleLang()" data-i18n="toggle_lang">मराठी</button>
+  </div>
+
+  <h2 data-i18n="title_register">Create an account</h2>
+  <p class="subtitle" data-lang-en="Register to access and submit forms." data-lang-mr="फॉर्म भरण्यासाठी नोंदणी करा.">Register to access and submit forms.</p>
+
+  <form id="registerForm" novalidate>
+    <label for="reg_email" data-i18n="label_email">Email address</label>
+    <input type="email" id="reg_email" name="reg_email" placeholder="name@example.com" required>
+    <div class="field-error" id="email-error">Please enter a valid email (must contain @ and .).</div>
+
+    <label for="reg_password">Password</label>
+    <div class="password-wrapper">
+      <input type="password" id="reg_password" name="reg_password" placeholder="Create a password" required>
+      <button type="button" class="toggle-pw" onclick="togglePw('reg_password', this)">Show</button>
+    </div>
+    <div class="pw-rules" id="pw-rules">
+      <span id="rule-len"  class="fail">✗ At least 8 characters</span>
+      <span id="rule-num"  class="fail">✗ At least one number</span>
+      <span id="rule-char" class="fail">✗ At least one letter</span>
+    </div>
+    <div class="field-error" id="pw-error">Password does not meet requirements.</div>
+
+    <button type="submit" class="btn-primary">Create Account →</button>
+  </form>
+
+  <hr class="divider">
+  <p class="footer-text">Already have an account? <a href="login.html">Sign in</a></p>
+</div>
+
+<script>
+  function togglePw(id, btn) {
+    const inp = document.getElementById(id);
+    inp.type = inp.type === "password" ? "text" : "password";
+    btn.textContent = inp.type === "password" ? "Show" : "Hide";
+  }
+
+  document.getElementById("reg_email").addEventListener("blur", function () {
+    const err = document.getElementById("email-error");
+    err.style.display = (!this.value.includes("@") || !this.value.includes(".")) ? "block" : "none";
+  });
+
+  document.getElementById("reg_password").addEventListener("input", function () {
+    const v = this.value;
+    const set = (id, pass) => {
+      const el = document.getElementById(id);
+      el.textContent = (pass ? "✓ " : "✗ ") + el.textContent.slice(2);
+      el.className = pass ? "ok" : "fail";
+    };
+    set("rule-len",  v.length >= 8);
+    set("rule-num",  /\d/.test(v));
+    set("rule-char", /[a-zA-Z]/.test(v));
+  });
+
+  document.getElementById("registerForm").addEventListener("submit", function (e) {
+    const email = document.getElementById("reg_email").value;
+    const pw = document.getElementById("reg_password").value;
+    let valid = true;
+    if (!email.includes("@") || !email.includes(".")) {
+      document.getElementById("email-error").style.display = "block"; valid = false;
     }
-
-    // Email validation
-    document.getElementById("reg_email").addEventListener("blur", function() {
-      const err = document.getElementById("email-error");
-      err.style.display = !this.value.includes("@") || !this.value.includes(".") ? "block" : "none";
-    });
-
-    // Live password rules
-    document.getElementById("reg_password").addEventListener("input", function() {
-      const v = this.value;
-      const setRule = (id, pass) => {
-        const el = document.getElementById(id);
-        el.textContent = (pass ? "✓ " : "✗ ") + el.textContent.slice(2);
-        el.className = pass ? "ok" : "fail";
-      };
-      setRule("rule-len",  v.length >= 8);
-      setRule("rule-num",  /\d/.test(v));
-      setRule("rule-char", /[a-zA-Z]/.test(v));
-    });
-
-    // Block submit if rules not met
-    document.getElementById("registerForm").addEventListener("submit", function(e) {
-      const email = document.getElementById("reg_email").value;
-      const pw = document.getElementById("reg_password").value;
-      let valid = true;
-
-      if (!email.includes("@") || !email.includes(".")) {
-        document.getElementById("email-error").style.display = "block";
-        valid = false;
-      }
-      if (pw.length < 8 || !/\d/.test(pw) || !/[a-zA-Z]/.test(pw)) {
-        document.getElementById("pw-error").style.display = "block";
-        valid = false;
-      } else {
-        document.getElementById("pw-error").style.display = "none";
-      }
-      if (!valid) e.stopImmediatePropagation();
-    }, true); // capture phase — runs before auth.js
-  </script>
-  <script type="module" src="auth.js"></script>
+    if (pw.length < 8 || !/\d/.test(pw) || !/[a-zA-Z]/.test(pw)) {
+      document.getElementById("pw-error").style.display = "block"; valid = false;
+    } else {
+      document.getElementById("pw-error").style.display = "none";
+    }
+    if (!valid) e.stopImmediatePropagation();
+  }, true);
+</script>
+<script type="module" src="auth.js"></script>
 </body>
 </html>
