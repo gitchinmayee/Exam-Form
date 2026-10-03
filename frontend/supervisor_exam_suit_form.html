@@ -1,143 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supervisor Exam Suit Application</title>
+    <title>पर्यवेक्षक सूट - उमेदवाराची माहिती</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2, h3 {
-            text-align: center;
-            color: #333;
-        }
-        .form-section {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="date"],
-        input[type="email"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .button-group {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .button-group button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .submit-button { background-color: #28a745; color: white; }
-        .back-button { background-color: #007bff; color: white; }
-        .print-button { background-color: #6c757d; color: white; }
-        .whatsapp-button { background-color: #25d366; color: white; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+        .page { max-width: 850px; margin: 0 auto; background: #fff; padding: 36px 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.12); }
+        .form-header { text-align: center; margin-bottom: 18px; border-bottom: 2px solid #000; padding-bottom: 12px; }
+        .form-header h1 { font-size: 1.15rem; font-weight: bold; line-height: 1.5; }
+        .form-header p { font-size: 0.9rem; color: #333; margin-top: 3px; }
+        .form-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .form-table th, .form-table td { border: 1px solid #888; padding: 7px 10px; vertical-align: middle; font-size: 0.88rem; }
+        .form-table thead th { background: #e8e8e8; font-weight: bold; text-align: center; font-size: 0.9rem; }
+        .col-no { width: 4%; text-align: center; font-weight: bold; }
+        .col-label { width: 48%; line-height: 1.5; }
+        .col-input { width: 48%; }
+        .col-input input { width: 100%; border: none; border-bottom: 1px solid #555; outline: none; font-size: 0.88rem; padding: 3px 4px; background: transparent; font-family: Arial, sans-serif; }
+        .col-input input:focus { border-bottom-color: #0056b3; background: #f0f7ff; }
+        .sub-label { font-size: 0.82rem; color: #444; }
+        .section-row td { background: #f5f5f5; font-weight: bold; font-size: 0.88rem; text-align: center; padding: 5px 10px; }
+        .button-group { display: flex; justify-content: center; gap: 14px; margin-top: 28px; padding-top: 18px; border-top: 1px solid #ddd; }
+        .btn { padding: 10px 26px; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: bold; cursor: pointer; transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.85; }
+        .btn-back { background: #0056b3; color: #fff; }
+        .btn-submit { background: #28a745; color: #fff; }
+        @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; } .button-group, #global-lang-toggle { display: none; } }
     </style>
 </head>
 <body>
+<div class="page">
+    <div class="form-header">
+        <h1>पर्यवेक्षक सूट करीता उमेदवाराची माहिती</h1>
+        <p>Supervisor Exam Suit — Candidate Information</p>
+    </div>
 
-<div class="container">
-    <h2>पर्यवेक्षक सूट करीता उमेदवाराची माहिती</h2>
-    <h3>Supervisor Exam Suit Information</h3>
+    <form id="supervisorExamForm">
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th class="col-no">अ. क्र.</th>
+                    <th class="col-label">माहिती (Information)</th>
+                    <th class="col-input">तपशील भरा (Fill Details)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="section-row"><td colspan="3">उमेदवाराची माहिती (Candidate Information)</td></tr>
+                <tr><td class="col-no">१</td><td class="col-label">अर्जदाराचे पूर्ण नांव <span class="sub-label">Name of Candidate</span></td><td class="col-input"><input type="text" id="candidate_name" name="candidate_name" required></td></tr>
+                <tr><td class="col-no">२</td><td class="col-label">उमेदवाराच्या वडिलांचे / पतीचे संपूर्ण नांव <span class="sub-label">Father's / Husband's Full Name</span></td><td class="col-input"><input type="text" id="father_name" name="father_name" required></td></tr>
+                <tr><td class="col-no">३</td><td class="col-label">उमेदवाराचा स्थानिक पत्ता <span class="sub-label">Local Address of Candidate</span></td><td class="col-input"><input type="text" id="local_address" name="local_address" required></td></tr>
+                <tr><td class="col-no">४</td><td class="col-label">मोबाईल क्रमांक <span class="sub-label">Mobile Number</span></td><td class="col-input"><input type="tel" id="mobile_number" name="mobile_number" required></td></tr>
+                <tr><td class="col-no">५</td><td class="col-label">ई-मेल पत्ता <span class="sub-label">Email ID</span></td><td class="col-input"><input type="email" id="email_id" name="email_id" required></td></tr>
+                <tr><td class="col-no">६</td><td class="col-label">आधार क्रमांक <span class="sub-label">Aadhaar Card Number</span></td><td class="col-input"><input type="text" id="adhar_number" name="adhar_number" required></td></tr>
+                <tr><td class="col-no">७</td><td class="col-label">पॅन कार्ड क्रमांक <span class="sub-label">PAN Card Number</span></td><td class="col-input"><input type="text" id="pan_number" name="pan_number" required></td></tr>
+                <tr><td class="col-no">८</td><td class="col-label">उमेदवार कोणती परीक्षा उत्तीर्ण झाला आहे <span class="sub-label">Exam Passed (Diploma/Degree/ITI NCTVT)</span></td><td class="col-input"><input type="text" id="exam_passed" name="exam_passed" required></td></tr>
+                <tr><td class="col-no">९</td><td class="col-label">जन्म दिनांक व जन्म ठिकाण <span class="sub-label">Date of Birth and Birth Place</span></td><td class="col-input"><input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY, Place" required></td></tr>
+                <tr><td class="col-no">१०</td><td class="col-label">उंची <span class="sub-label">Height</span></td><td class="col-input"><input type="text" id="height" name="height"></td></tr>
+                <tr><td class="col-no">११</td><td class="col-label">शरीरावरील ओळख चिन्हे <span class="sub-label">Identification Mark on Body</span></td><td class="col-input"><input type="text" id="identification_mark" name="identification_mark"></td></tr>
 
-    <form id="supervisorExamForm" action="/submit-exam-suit" method="post">
-        
-        <div class="form-section">
-            <h3>उमेदवाराची माहिती (Candidate Information)</h3>
-            <label for="candidate_name">१. अर्जदाराचे पूर्ण नांव (Name of Candidate)</label>
-            <input type="text" id="candidate_name" name="candidate_name" required>
-
-            <label for="father_name">२. उमेदवाराच्या वडिलांचे / पतीचे संपूर्ण नांव (Father's full name)</label>
-            <input type="text" id="father_name" name="father_name" required>
-
-            <label for="local_address">३. उमेदवाराचा स्थानिक पत्ता (Local Address of candidate)</label>
-            <input type="text" id="local_address" name="local_address" required>
-
-            <label for="mobile_number">४. मोबाईल क्रमांक (Mobile number)</label>
-            <input type="tel" id="mobile_number" name="mobile_number" required>
-
-            <label for="email_id">५. ई-मेल पत्ता (Email Id)</label>
-            <input type="email" id="email_id" name="email_id" required>
-
-            <label for="adhar_number">६. आधार क्रमांक (Adhar card number)</label>
-            <input type="text" id="adhar_number" name="adhar_number" required>
-
-            <label for="pan_number">७. पॅन कार्ड क्रमांक (Pan card number)</label>
-            <input type="text" id="pan_number" name="pan_number" required>
-
-            <label for="exam_passed">८. उमेदवार कोणती परीक्षा उत्तीर्ण झाला आहे (उदा: Diploma/Degree or ITI nctvt) (Candidate which Exam passed)</label>
-            <input type="text" id="exam_passed" name="exam_passed" required>
-
-            <label for="dob">९. जन्म दिनांक व जन्म ठिकाण (Date of Birth and Birth place)</label>
-            <input type="text" id="dob" name="dob" placeholder="उदा. DD/MM/YYYY, Place" required>
-
-            <label for="height">१०. उंची (Height)</label>
-            <input type="text" id="height" name="height">
-
-            <label for="identification_mark">११. शरीरावरीक ओळख चिन्हे (Identification mark on body)</label>
-            <input type="text" id="identification_mark" name="identification_mark">
-        </div>
-
-        <div class="form-section">
-            <h3>Information For MCVC candidate only</h3>
-            <label for="company_name">१२. ठेकेदाराचे अथवा कंपनीचे नाव (Company/Contractor firm name with MC number)</label>
-            <input type="text" id="company_name" name="company_name">
-
-            <label for="joining_date">१३. जॉइनिंग तारीख (Joining date)</label>
-            <input type="date" id="joining_date" name="joining_date">
-
-            <label for="service_end_date">१३. सेवा समाप्त तारीख (Service end date)</label>
-            <input type="date" id="service_end_date" name="service_end_date">
-
-            <label for="supervisor_name">१४. विद्युत पर्यवेक्षक विद्युत अभियंता यांचे नांव (Supervisor/Electrical Inspector name)</label>
-            <input type="text" id="supervisor_name" name="supervisor_name">
-
-            <label for="ms_number">१४. पर्यवेक्षक क्रमांक (Supervisor MS Number)</label>
-            <input type="text" id="ms_number" name="ms_number">
-            
-            <label for="mcvc_joining_date">१५. जॉइनिंग तारीख (Joining date) (for mcvc candidate)</label>
-            <input type="date" id="mcvc_joining_date" name="mcvc_joining_date">
-
-            <label for="mcvc_service_end_date">१५. सेवा समाप्त तारीख (Service end date) (for mcvc candidate)</label>
-            <input type="date" id="mcvc_service_end_date" name="mcvc_service_end_date">
-        </div>
+                <tr class="section-row"><td colspan="3">MCVC उमेदवारांसाठी माहिती (Information For MCVC Candidate Only)</td></tr>
+                <tr><td class="col-no">१२</td><td class="col-label">ठेकेदाराचे अथवा कंपनीचे नाव <span class="sub-label">Company / Contractor Firm Name with MC Number</span></td><td class="col-input"><input type="text" id="company_name" name="company_name"></td></tr>
+                <tr>
+                    <td class="col-no" rowspan="2">१३</td>
+                    <td class="col-label">जॉइनिंग तारीख <span class="sub-label">Joining Date</span></td>
+                    <td class="col-input"><input type="date" id="joining_date" name="joining_date"></td>
+                </tr>
+                <tr>
+                    <td class="col-label">सेवा समाप्त तारीख <span class="sub-label">Service End Date</span></td>
+                    <td class="col-input"><input type="date" id="service_end_date" name="service_end_date"></td>
+                </tr>
+                <tr>
+                    <td class="col-no" rowspan="2">१४</td>
+                    <td class="col-label">विद्युत पर्यवेक्षक / विद्युत अभियंता यांचे नांव <span class="sub-label">Supervisor / Electrical Inspector Name</span></td>
+                    <td class="col-input"><input type="text" id="supervisor_name" name="supervisor_name"></td>
+                </tr>
+                <tr>
+                    <td class="col-label">पर्यवेक्षक MS क्रमांक <span class="sub-label">Supervisor MS Number</span></td>
+                    <td class="col-input"><input type="text" id="ms_number" name="ms_number"></td>
+                </tr>
+                <tr>
+                    <td class="col-no" rowspan="2">१५</td>
+                    <td class="col-label">जॉइनिंग तारीख (MCVC) <span class="sub-label">Joining Date (for MCVC candidate)</span></td>
+                    <td class="col-input"><input type="date" id="mcvc_joining_date" name="mcvc_joining_date"></td>
+                </tr>
+                <tr>
+                    <td class="col-label">सेवा समाप्त तारीख (MCVC) <span class="sub-label">Service End Date (for MCVC candidate)</span></td>
+                    <td class="col-input"><input type="date" id="mcvc_service_end_date" name="mcvc_service_end_date"></td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="button-group">
-            <button type="button" class="back-button" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
-            <button type="submit" class="submit-button">Submit & Download</button>
+            <button type="button" class="btn btn-back" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
+            <button type="submit" class="btn btn-submit">Submit & Download</button>
         </div>
     </form>
 </div>
 <script src="lang-toggle.js"></script>
+<script src="config.js"></script>
 <script src="payment.js"></script>
-
 </body>
 </html>

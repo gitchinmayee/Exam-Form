@@ -1,294 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Contractor License Application</title>
-    <link rel="stylesheet" href="style.css">
+    <title>नवीन विद्युत ठेकेदार अनुज्ञप्ती अर्ज</title>
     <style>
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-section {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="date"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="number"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .photo-box, .signature-box {
-            border: 1px dashed #000;
-            height: 150px;
-            width: 150px;
-            margin: 10px;
-            text-align: center;
-            line-height: 150px;
-            font-style: italic;
-            color: #888;
-            float: left;
-            position: relative;
-        }
-        .photo-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .button-group {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .button-group button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .submit-button { background-color: #28a745; color: white; }
-        .back-button { background-color: #007bff; color: white; }
-        .print-button { background-color: #6c757d; color: white; }
-        .whatsapp-button { background-color: #25d366; color: white; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+        .page { max-width: 900px; margin: 0 auto; background: #fff; padding: 36px 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.12); }
+
+        /* Header */
+        .form-header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 12px; }
+        .form-header h1 { font-size: 1.15rem; font-weight: bold; line-height: 1.6; }
+        .form-header p { font-size: 0.88rem; color: #333; margin-top: 3px; }
+
+        /* Section titles */
+        .section-title { font-size: 1rem; font-weight: bold; background: #0056b3; color: #fff; padding: 7px 12px; margin: 22px 0 8px; border-radius: 4px; }
+
+        /* Checklist table */
+        .check-table { width: 100%; border-collapse: collapse; }
+        .check-table th, .check-table td { border: 1px solid #888; padding: 7px 10px; font-size: 0.87rem; vertical-align: middle; }
+        .check-table thead th { background: #e8e8e8; text-align: center; font-weight: bold; }
+        .check-table td:first-child { width: 5%; text-align: center; }
+        .check-table td:last-child { width: 10%; text-align: center; }
+        .check-table input[type="checkbox"] { transform: scale(1.3); cursor: pointer; }
+        .receipt-input { border: none; border-bottom: 1px solid #555; width: 140px; outline: none; font-size: 0.87rem; padding: 2px 4px; }
+
+        /* Form table */
+        .form-table { width: 100%; border-collapse: collapse; }
+        .form-table th, .form-table td { border: 1px solid #888; padding: 7px 10px; font-size: 0.87rem; vertical-align: middle; }
+        .form-table thead th { background: #e8e8e8; font-weight: bold; text-align: center; }
+        .col-label { width: 48%; line-height: 1.5; }
+        .col-input { width: 52%; }
+        .col-input input, .col-input textarea { width: 100%; border: none; border-bottom: 1px solid #555; outline: none; font-size: 0.87rem; padding: 3px 4px; background: transparent; font-family: Arial, sans-serif; resize: vertical; }
+        .col-input input:focus, .col-input textarea:focus { border-bottom-color: #0056b3; background: #f0f7ff; }
+        .sub-label { font-size: 0.8rem; color: #555; }
+
+        /* Affidavit prose sections */
+        .prose-section { border: 1px solid #ccc; border-radius: 6px; padding: 16px 18px; margin-top: 8px; font-size: 0.88rem; line-height: 2; }
+        .prose-section p { margin-bottom: 8px; }
+        .prose-input { border: none; border-bottom: 1px solid #555; outline: none; font-size: 0.88rem; padding: 2px 4px; min-width: 120px; background: transparent; font-family: Arial, sans-serif; }
+        .prose-input:focus { border-bottom-color: #0056b3; background: #f0f7ff; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+        .field-group { display: flex; flex-direction: column; gap: 4px; }
+        .field-group label { font-size: 0.8rem; color: #555; font-weight: bold; }
+        .field-group input { border: none; border-bottom: 1px solid #555; outline: none; font-size: 0.88rem; padding: 3px 0; background: transparent; }
+        .field-group input:focus { border-bottom-color: #0056b3; }
+
+        /* Buttons */
+        .button-group { display: flex; justify-content: center; gap: 14px; margin-top: 28px; padding-top: 18px; border-top: 1px solid #ddd; }
+        .btn { padding: 10px 26px; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: bold; cursor: pointer; transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.85; }
+        .btn-back { background: #0056b3; color: #fff; }
+        .btn-submit { background: #28a745; color: #fff; }
+
+        @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; } .button-group, #global-lang-toggle { display: none; } }
     </style>
 </head>
 <body>
+<div class="page">
+    <div class="form-header">
+        <h1>नवीन विद्युत ठेकेदार अनुज्ञप्ती अर्ज</h1>
+        <p>New Contractor License Application Form</p>
+        <p>सचिव अनुज्ञापक मंडळ तथा विद्युत निरीक्षक, उद्योग ऊर्जा व कामगार विभाग, चेंबूर मुंबई</p>
+    </div>
 
-<div class="container">
-    <h2>नवीन विद्युत ठेकेदार अनुज्ञप्ती अर्ज</h2>
-    <h3>New Contractor License Application Form</h3>
+    <form id="newContractorForm">
 
-    <form id="newContractorForm" action="/submit-new-contractor" method="post">
-        
-        <div class="form-section">
-            <h3>तपासणी सूची (Checklist)</h3>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_1" name="checklist[]" value="संस्थेच्या नावाची मंजुरी जोडली आहे.">
-                <label for="check_1">१) संबंधित विद्युत निरीक्षकाकडून मिळालेली संस्थेच्या नावाची मंजुरी जोडली आहे.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_2" name="checklist[]" value="मेगर (नमुना 'एस') व अर्थ टेस्टर (नमुना 'टी')">
-                <label for="check_2">२) मेगर (नमुना 'एस') व अर्थ टेस्टर (नमुना 'टी') यांचा साहाय्यक विद्युत निरीक्षक / विद्युत ठेकेदार अनुज्ञप्ती नवीन करिता मालक व विद्युत पर्यवेक्षक यांच्या नमुना स्वाक्षरी जोडली आहे.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_3" name="checklist[]" value="नमुना 'यु' छायाचित्र">
-                <label for="check_3">3) विद्युत ठेकेदार अनुज्ञप्ती नवीन करिता मालक व विद्युत पर्यवेक्षक यांच्या नमुना स्वाक्षरी (नमुना) 'यु' छायाचित्र तसेच प्रमाणपत्र व परवान्याची पडताळणी अहवाल जोडले आहे.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_4" name="checklist[]" value="अनुज्ञप्ती शुल्क">
-                <label for="check_4">४) अर्जदाराने अनुज्ञप्ती शुल्क रुपये २५००/- भरले.</label>
-            </div>
-            <div class="checklist-item">
-                <label for="megger_receipt_no">५) मेगरची पावती मिळाली. (पावती क्रमांक:</label>
-                <input type="text" id="megger_receipt_no" name="megger_receipt_no" style="width:150px; display:inline-block;">
-            </div>
-            <div class="checklist-item">
-                <label for="earth_tester_receipt_no">६) अर्थ टेस्टरची पावती मिळाली. (पावती क्रमांक:</label>
-                <input type="text" id="earth_tester_receipt_no" name="earth_tester_receipt_no" style="width:150px; display:inline-block;">
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_7" name="checklist[]" value="बँकेचे प्रमाणपत्र">
-                <label for="check_7">७) कमीत कमी शिलकी बाबतचे बँकेचे प्रमाणपत्र मिळाले/शिल्लकीची पडताळणी केली आहे.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_8" name="checklist[]" value="विद्युत ठेकेदाराच्या अनुज्ञप्तीसाठी अर्ज (नमुना 'एन')">
-                <label for="check_8">८) विद्युत ठेकेदाराच्या अनुज्ञप्तीसाठी अर्ज जोडले आहे. (नमुना 'एन')</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_9" name="checklist[]" value="विद्युत पर्यवेक्षाचे प्रतिज्ञापत्र (नमुना 'व्ही')">
-                <label for="check_9">९) विद्युत पर्यवेक्षाचे (नमुना "व्ही") प्रतिज्ञापत्र जोडले आहे.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_10" name="checklist[]" value="विद्युत ठेकेदाराचे प्रतिज्ञापत्र (नमुना 'डब्लू')">
-                <label for="check_10">१०) विद्युत ठेकेदाराचे) नमुना 'डब्लू) प्रतिज्ञापत्र जोडले आहे.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_11" name="checklist[]" value="मालक व विद्युत पर्यवेक्षक दोन्ही एकाच व्यक्तीचे प्रतिज्ञापत्र (नमुना 'एक्स')">
-                <label for="check_11">११) मालक व विद्युत पर्यवेक्षक दोन्ही एकाच व्यक्तीचे प्रतिज्ञापत्र जोडले आहे (नमुना 'एक्स')</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_12" name="checklist[]" value="भागीदाराची प्रतिज्ञापत्र (नमुना 'वाय')">
-                <label for="check_12">१२) भागीदाराची प्रतिज्ञापत्र जोडले आहे (नमुना 'वाय')</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_13" name="checklist[]" value="विद्युत पर्यवेक्षकाची पृवीची नोकरी सोडल्या संबंधीचा दाखल">
-                <label for="check_13">१३) विद्युत पर्यवेक्षकाची पूर्वीची नोकरी सोडल्या संबंधीचा दाखल मिळाला.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_14" name="checklist[]" value="पूर्वीची नोकरी व सध्याची नोकरीत एक महिन्यापेक्षा रास्त अवधी">
-                <label for="check_14">१४) पूर्वीची नोकरी व सध्याची नोकरी यात एक महिन्यापेक्षा रास्त अवधी आहे.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_15" name="checklist[]" value="विद्युत पर्यवेक्षक प्रमाणपत्र व परवाना यांच्या स्वयंसाक्षांकीत प्रति">
-                <label for="check_15">१५) विद्युत पर्यवेक्षक प्रमाणपत्र व परवाना यांच्या स्वयंसाक्षांकीत प्रति जोडल्या आहेत.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_16" name="checklist[]" value="पूर्वी कुठल्याही संस्थेस दिली गेली आहे काय">
-                <label for="check_16">१६) विद्युत ठेकेदारी अनुज्ञप्तीच्या उल्लेखिलेल्या नावावर यापूर्वी कुठल्याही संस्थेस दिली गेली आहे काय, याची पडताळणी केली आहे.</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="check_17" name="checklist[]" value="विद्युत ठेकेदारीचा निवासी पुरावा">
-                <label for="check_17">१७) विद्युत ठेकेदारीचा निवासी पुरावा जोडला आहे. (उदा. पासपोर्ट, ड्रायविंग लायसन्स, आधार कार्ड, दूरध्वनी देयक, वीज देयकांची सत्यप्रत)</label>
+        <!-- ── SECTION 1: Checklist ── -->
+        <div class="section-title">तपासणी सूची (Checklist)</div>
+        <table class="check-table">
+            <thead><tr><th>अ.क्र.</th><th>दस्तऐवज (Document)</th><th>✓</th></tr></thead>
+            <tbody>
+                <tr><td>१</td><td>संबंधित विद्युत निरीक्षकाकडून मिळालेली संस्थेच्या नावाची मंजुरी जोडली आहे.</td><td><input type="checkbox" id="check_1" name="checklist[]" value="संस्थेच्या नावाची मंजुरी"></td></tr>
+                <tr><td>२</td><td>मेगर (नमुना 'एस') व अर्थ टेस्टर (नमुना 'टी') यांचा साहाय्यक विद्युत निरीक्षक / मालक व विद्युत पर्यवेक्षक यांच्या नमुना स्वाक्षरी जोडली आहे.</td><td><input type="checkbox" id="check_2" name="checklist[]" value="मेगर व अर्थ टेस्टर स्वाक्षरी"></td></tr>
+                <tr><td>३</td><td>नमुना 'यु' छायाचित्र तसेच प्रमाणपत्र व परवान्याची पडताळणी अहवाल जोडले आहे.</td><td><input type="checkbox" id="check_3" name="checklist[]" value="नमुना यु छायाचित्र"></td></tr>
+                <tr><td>४</td><td>अर्जदाराने अनुज्ञप्ती शुल्क रुपये २५००/- भरले.</td><td><input type="checkbox" id="check_4" name="checklist[]" value="अनुज्ञप्ती शुल्क"></td></tr>
+                <tr><td>५</td><td>मेगरची पावती मिळाली. पावती क्रमांक: <input type="text" id="megger_receipt_no" name="megger_receipt_no" class="receipt-input"></td><td></td></tr>
+                <tr><td>६</td><td>अर्थ टेस्टरची पावती मिळाली. पावती क्रमांक: <input type="text" id="earth_tester_receipt_no" name="earth_tester_receipt_no" class="receipt-input"></td><td></td></tr>
+                <tr><td>७</td><td>कमीत कमी शिलकी बाबतचे बँकेचे प्रमाणपत्र मिळाले/शिल्लकीची पडताळणी केली आहे.</td><td><input type="checkbox" id="check_7" name="checklist[]" value="बँकेचे प्रमाणपत्र"></td></tr>
+                <tr><td>८</td><td>विद्युत ठेकेदाराच्या अनुज्ञप्तीसाठी अर्ज जोडले आहे. (नमुना 'एन')</td><td><input type="checkbox" id="check_8" name="checklist[]" value="नमुना एन"></td></tr>
+                <tr><td>९</td><td>विद्युत पर्यवेक्षाचे (नमुना "व्ही") प्रतिज्ञापत्र जोडले आहे.</td><td><input type="checkbox" id="check_9" name="checklist[]" value="नमुना व्ही"></td></tr>
+                <tr><td>१०</td><td>विद्युत ठेकेदाराचे नमुना 'डब्लू' प्रतिज्ञापत्र जोडले आहे.</td><td><input type="checkbox" id="check_10" name="checklist[]" value="नमुना डब्लू"></td></tr>
+                <tr><td>११</td><td>मालक व विद्युत पर्यवेक्षक दोन्ही एकाच व्यक्तीचे प्रतिज्ञापत्र जोडले आहे (नमुना 'एक्स')</td><td><input type="checkbox" id="check_11" name="checklist[]" value="नमुना एक्स"></td></tr>
+                <tr><td>१२</td><td>भागीदाराची प्रतिज्ञापत्र जोडले आहे (नमुना 'वाय')</td><td><input type="checkbox" id="check_12" name="checklist[]" value="नमुना वाय"></td></tr>
+                <tr><td>१३</td><td>विद्युत पर्यवेक्षकाची पूर्वीची नोकरी सोडल्या संबंधीचा दाखल मिळाला.</td><td><input type="checkbox" id="check_13" name="checklist[]" value="नोकरी सोडल्याचा दाखल"></td></tr>
+                <tr><td>१४</td><td>पूर्वीची नोकरी व सध्याची नोकरी यात एक महिन्यापेक्षा रास्त अवधी आहे.</td><td><input type="checkbox" id="check_14" name="checklist[]" value="एक महिन्याचा अवधी"></td></tr>
+                <tr><td>१५</td><td>विद्युत पर्यवेक्षक प्रमाणपत्र व परवाना यांच्या स्वयंसाक्षांकीत प्रति जोडल्या आहेत.</td><td><input type="checkbox" id="check_15" name="checklist[]" value="स्वयंसाक्षांकीत प्रति"></td></tr>
+                <tr><td>१६</td><td>विद्युत ठेकेदारी अनुज्ञप्तीच्या नावावर यापूर्वी कुठल्याही संस्थेस दिली गेली आहे काय, याची पडताळणी केली आहे.</td><td><input type="checkbox" id="check_16" name="checklist[]" value="पूर्वीची पडताळणी"></td></tr>
+                <tr><td>१७</td><td>विद्युत ठेकेदारीचा निवासी पुरावा जोडला आहे. (पासपोर्ट/ड्रायविंग लायसन्स/आधार/दूरध्वनी देयक)</td><td><input type="checkbox" id="check_17" name="checklist[]" value="निवासी पुरावा"></td></tr>
+            </tbody>
+        </table>
+
+        <!-- ── SECTION 2: Application Details ── -->
+        <div class="section-title">अर्ज तपशील (Application Details)</div>
+        <table class="form-table">
+            <thead><tr><th class="col-label">माहिती</th><th class="col-input">तपशील भरा</th></tr></thead>
+            <tbody>
+                <tr><td class="col-label">मेसर्स (संस्थेचे नाव) <span class="sub-label">Firm Name</span></td><td class="col-input"><input type="text" id="firm_name" name="firm_name"></td></tr>
+                <tr><td class="col-label">मुखत्यारधारक / भागीदारक / मालक : श्री/श्रीमती <span class="sub-label">Owner Name</span></td><td class="col-input"><input type="text" id="owner_name" name="owner_name"></td></tr>
+                <tr><td class="col-label">पर्यवेक्षकाचे नाव : श्री/श्रीमती <span class="sub-label">Supervisor Name</span></td><td class="col-input"><input type="text" id="supervisor_name" name="supervisor_name"></td></tr>
+                <tr><td class="col-label">परवाना क्रमांक <span class="sub-label">License Number</span></td><td class="col-input"><input type="text" id="license_number" name="license_number"></td></tr>
+                <tr><td class="col-label">दिनांक <span class="sub-label">Date</span></td><td class="col-input"><input type="date" id="application_date" name="application_date"></td></tr>
+            </tbody>
+        </table>
+
+        <!-- ── SECTION 3: Megar & Earth Tester ── -->
+        <div class="section-title">मेगर व अर्थ टेस्टर तपशील (Megger & Earth Tester Details)</div>
+        <table class="form-table">
+            <thead><tr><th class="col-label">माहिती</th><th class="col-input">तपशील भरा</th></tr></thead>
+            <tbody>
+                <tr><td class="col-label">मेगर बनावट <span class="sub-label">Megger Make</span></td><td class="col-input"><input type="text" id="megger_make" name="megger_make"></td></tr>
+                <tr><td class="col-label">व्होल्टेज <span class="sub-label">Voltage</span></td><td class="col-input"><input type="text" id="megger_voltage" name="megger_voltage" value="५००/१०००" readonly></td></tr>
+                <tr><td class="col-label">मेगर क्रमांक <span class="sub-label">Megger Serial No.</span></td><td class="col-input"><input type="text" id="megger_serial_no" name="megger_serial_no"></td></tr>
+                <tr><td class="col-label">अर्थ टेस्टर बनावट <span class="sub-label">Earth Tester Make</span></td><td class="col-input"><input type="text" id="earth_tester_make" name="earth_tester_make"></td></tr>
+                <tr><td class="col-label">रेंज <span class="sub-label">Range</span></td><td class="col-input"><input type="text" id="earth_tester_range" name="earth_tester_range" value="०-१०-१०० ओहम्स" readonly></td></tr>
+                <tr><td class="col-label">अर्थ टेस्टर क्रमांक <span class="sub-label">Earth Tester Serial No.</span></td><td class="col-input"><input type="text" id="earth_tester_serial_no" name="earth_tester_serial_no"></td></tr>
+            </tbody>
+        </table>
+
+        <!-- ── SECTION 4: Namuna S ── -->
+        <div class="section-title">नमुना "एस" — मेगर परीक्षण तपासणी अहवाल</div>
+        <table class="form-table">
+            <tbody>
+                <tr><td class="col-label">मेसर्स <span class="sub-label">Firm Name</span></td><td class="col-input"><input type="text" id="namuna_s_firm" name="namuna_s_firm"></td></tr>
+                <tr><td class="col-label">नवीन अनुज्ञाचे अर्जदार श्री/श्रीमती</td><td class="col-input"><input type="text" id="namuna_s_applicant" name="namuna_s_applicant"></td></tr>
+                <tr><td class="col-label">विद्युत पर्यवेक्षकाचे नाव श्री/श्रीमती</td><td class="col-input"><input type="text" id="namuna_s_supervisor" name="namuna_s_supervisor"></td></tr>
+                <tr><td class="col-label">परीक्षण ठिकाण <span class="sub-label">Testing Place</span></td><td class="col-input"><input type="text" id="namuna_s_place" name="namuna_s_place"></td></tr>
+                <tr><td class="col-label">परीक्षण दिनांक <span class="sub-label">Testing Date</span></td><td class="col-input"><input type="date" id="namuna_s_date" name="namuna_s_date"></td></tr>
+                <tr><td class="col-label">शेरा <span class="sub-label">Remarks</span></td><td class="col-input"><textarea id="namuna_s_remarks" name="namuna_s_remarks" rows="2"></textarea></td></tr>
+            </tbody>
+        </table>
+
+        <!-- ── SECTION 5: Namuna T ── -->
+        <div class="section-title">नमुना "टी" — अर्थ टेस्टर परीक्षण तपासणी अहवाल</div>
+        <table class="form-table">
+            <tbody>
+                <tr><td class="col-label">मेसर्स <span class="sub-label">Firm Name</span></td><td class="col-input"><input type="text" id="namuna_t_firm" name="namuna_t_firm"></td></tr>
+                <tr><td class="col-label">नवीन अनुज्ञाचे अर्जदार श्री/श्रीमती</td><td class="col-input"><input type="text" id="namuna_t_applicant" name="namuna_t_applicant"></td></tr>
+                <tr><td class="col-label">विद्युत पर्यवेक्षकाचे नाव श्री/श्रीमती</td><td class="col-input"><input type="text" id="namuna_t_supervisor" name="namuna_t_supervisor"></td></tr>
+                <tr><td class="col-label">परीक्षण ठिकाण <span class="sub-label">Testing Place</span></td><td class="col-input"><input type="text" id="namuna_t_place" name="namuna_t_place"></td></tr>
+                <tr><td class="col-label">परीक्षण दिनांक <span class="sub-label">Testing Date</span></td><td class="col-input"><input type="date" id="namuna_t_date" name="namuna_t_date"></td></tr>
+                <tr><td class="col-label">शेरा <span class="sub-label">Remarks</span></td><td class="col-input"><textarea id="namuna_t_remarks" name="namuna_t_remarks" rows="2"></textarea></td></tr>
+            </tbody>
+        </table>
+
+        <!-- ── SECTION 6: Namuna V ── -->
+        <div class="section-title">नमुना "व्ही" — विद्युत पर्यवेक्षकाचे प्रतिज्ञापत्र</div>
+        <div class="prose-section">
+            <p>मी श्री/श्रीमती: <input type="text" id="namuna_v_name" name="namuna_v_name" class="prose-input" style="width:180px">
+            वय: <input type="text" id="namuna_v_age" name="namuna_v_age" class="prose-input" style="width:50px"> वर्ष,
+            राहणार: <input type="text" id="namuna_v_address" name="namuna_v_address" class="prose-input" style="width:250px"></p>
+            <p>असे जाहीर करतो/करते कि मी मेसर्स: <input type="text" id="namuna_v_firm" name="namuna_v_firm" class="prose-input" style="width:200px">
+            यांच्या कडे दिनांक: <input type="date" id="namuna_v_start_date" name="namuna_v_start_date" class="prose-input"> पासून काम करीत आहे.</p>
+            <p>माझा पर्यवेक्षक परवाना क्रमांक म.प.क्र. <input type="text" name="namuna_v_license_no" class="prose-input" style="width:150px">
+            माझी शेवटची नोकरी मेसर्स: <input type="text" name="namuna_v_last_firm" class="prose-input" style="width:180px">
+            दिनांक: <input type="date" name="namuna_v_last_job_start" class="prose-input"> पासून
+            दिनांक: <input type="date" name="namuna_v_last_job_end" class="prose-input"> पर्यंत केली.</p>
+            <div class="two-col" style="margin-top:16px">
+                <div class="field-group"><label>स्थळ (Place)</label><input type="text" id="namuna_v_place" name="namuna_v_place"></div>
+                <div class="field-group"><label>दिनांक (Date)</label><input type="date" id="namuna_v_date" name="namuna_v_date"></div>
             </div>
         </div>
 
-        <div class="form-section">
-            <h3>अर्ज (Application)</h3>
-            <p><strong>प्रति,</strong><br>
-            सचिव अनुज्ञापक मंडळ तथा विद्युत निरीक्षक<br>
-            उद्योग ऊर्जा व कामगार विभाग, चेंबूर मुंबई</p>
-            <label for="firm_name">मेसर्स (संस्थेचे नाव):</label>
-            <input type="text" id="firm_name" name="firm_name">
-            <label for="owner_name">मुखत्यारधारक/भागीदारक/मालक : श्री/श्रीमती.</label>
-            <input type="text" id="owner_name" name="owner_name">
-            <label for="supervisor_name">पर्यवेक्षकाचे नाव: श्री/श्रीमती.</label>
-            <input type="text" id="supervisor_name" name="supervisor_name">
-            <label for="license_number">परवाना क्रमांक :</label>
-            <input type="text" id="license_number" name="license_number">
-            <label for="application_date">दिनांक :</label>
-            <input type="date" id="application_date" name="application_date">
-        </div>
-
-        <div class="form-section">
-            <h3>मेगर व अर्थ टेस्टर तपशील (Megger & Earth Tester Details)</h3>
-            <label for="megger_make">मेगर बनावट :</label>
-            <input type="text" id="megger_make" name="megger_make">
-            <label for="megger_voltage">व्होल्टेज :</label>
-            <input type="text" id="megger_voltage" name="megger_voltage" value="५००/१०००" readonly>
-            <label for="megger_serial_no">क्रमांक :</label>
-            <input type="text" id="megger_serial_no" name="megger_serial_no">
-            <label for="earth_tester_make">अर्थ टेस्टर बनावट :</label>
-            <input type="text" id="earth_tester_make" name="earth_tester_make">
-            <label for="earth_tester_range">रेंज :</label>
-            <input type="text" id="earth_tester_range" name="earth_tester_range" value="०-१०-१०० ओहम्स" readonly>
-            <label for="earth_tester_serial_no">क्रमांक :</label>
-            <input type="text" id="earth_tester_serial_no" name="earth_tester_serial_no">
-        </div>
-
-        <div class="form-section">
-            <h3>नमुना "एस" - मेगर परीक्षण तपासणी अहवाल</h3>
-            <label for="namuna_s_firm">प्रमाणित करण्यात येते कि मेसर्स:</label>
-            <input type="text" id="namuna_s_firm" name="namuna_s_firm" style="width:200px; display:inline-block;">
-            <label for="namuna_s_applicant">नवीन अनुज्ञाचे अर्जदार श्री/श्रीमती:</label>
-            <input type="text" id="namuna_s_applicant" name="namuna_s_applicant" style="width:200px; display:inline-block;">
-            <label for="namuna_s_supervisor">विद्युत पर्यवेक्षकाचे नाव: श्री/श्रीमती:</label>
-            <input type="text" id="namuna_s_supervisor" name="namuna_s_supervisor" style="width:200px; display:inline-block;">
-            <label for="namuna_s_place">परीक्षण ठिकाण (Testing Place):</label>
-            <input type="text" id="namuna_s_place" name="namuna_s_place">
-            <label for="namuna_s_date">परीक्षण दिनांक (Testing Date):</label>
-            <input type="date" id="namuna_s_date" name="namuna_s_date">
-            <label for="namuna_s_remarks">शेरा (Remarks):</label>
-            <textarea id="namuna_s_remarks" name="namuna_s_remarks"></textarea>
-        </div>
-
-        <div class="form-section">
-            <h3>नमुना "टी" - अर्थ टेस्टर परीक्षण तपासणी अहवाल</h3>
-            <label for="namuna_t_firm">प्रमाणित करण्यात येते कि मेसर्स:</label>
-            <input type="text" id="namuna_t_firm" name="namuna_t_firm" style="width:200px; display:inline-block;">
-            <label for="namuna_t_applicant">नवीन अनुज्ञाचे अर्जदार श्री/श्रीमती:</label>
-            <input type="text" id="namuna_t_applicant" name="namuna_t_applicant" style="width:200px; display:inline-block;">
-            <label for="namuna_t_supervisor">विद्युत पर्यवेक्षकाचे नाव: श्री/श्रीमती:</label>
-            <input type="text" id="namuna_t_supervisor" name="namuna_t_supervisor" style="width:200px; display:inline-block;">
-            <label for="namuna_t_place">परीक्षण ठिकाण (Testing Place):</label>
-            <input type="text" id="namuna_t_place" name="namuna_t_place">
-            <label for="namuna_t_date">परीक्षण दिनांक (Testing Date):</label>
-            <input type="date" id="namuna_t_date" name="namuna_t_date">
-            <label for="namuna_t_remarks">शेरा (Remarks):</label>
-            <textarea id="namuna_t_remarks" name="namuna_t_remarks"></textarea>
-        </div>
-
-        <div class="form-section">
-            <h3>नमुना "यु" - स्वाक्षरी, छायाचित्र व पडताळणी अहवाल</h3>
-            <div class="photo-container">
-                <div>
-                    <div class="photo-box">मालकाचा फोटो</div>
-                    <p>विद्युत ठेकेदाराची (मालक) स्वाक्षरी</p>
-                    <div class="signature-box">स्वाक्षरी</div>
-                </div>
-                <div>
-                    <div class="photo-box">विद्युत पर्यवेक्षकाचा फोटो</div>
-                    <p>विद्युत पर्यवेक्षकाची स्वाक्षरी</p>
-                    <div class="signature-box">स्वाक्षरी</div>
-                </div>
+        <!-- ── SECTION 7: Namuna W ── -->
+        <div class="section-title">नमुना "डब्लु" — विद्युत ठेकेदाराचे प्रतिज्ञापत्र</div>
+        <div class="prose-section">
+            <p>मी श्री/श्रीमती: <input type="text" id="namuna_w_name" name="namuna_w_name" class="prose-input" style="width:180px">
+            राहणार: <input type="text" id="namuna_w_address" name="namuna_w_address" class="prose-input" style="width:250px"></p>
+            <p>असे जाहीर करतो/करते कि मी मेसर्स: <input type="text" id="namuna_w_firm" name="namuna_w_firm" class="prose-input" style="width:200px">
+            या संस्थेचा एकमेव मालक असून मी इतर कोणत्याही कंपनीत पदावर व भागीदार म्हणून काम करीत नाही.</p>
+            <p>श्री/श्रीमती: <input type="text" id="namuna_w_supervisor_name" name="namuna_w_supervisor_name" class="prose-input" style="width:180px">
+            विद्युत पर्यवेक्षक परवाना क्रमांक म.प.क्र. <input type="text" id="namuna_w_supervisor_license_no" name="namuna_w_supervisor_license_no" class="prose-input" style="width:150px">
+            दिनांक: <input type="date" id="namuna_w_supervisor_license_date" name="namuna_w_supervisor_license_date" class="prose-input">
+            यांना माझ्या वरील संस्थेत पूर्ण वेळ पर्यवेक्षक म्हणून दिनांक:
+            <input type="date" id="namuna_w_supervisor_start_date" name="namuna_w_supervisor_start_date" class="prose-input"> पासून नेमले आहे.</p>
+            <div class="two-col" style="margin-top:16px">
+                <div class="field-group"><label>स्थळ (Place)</label><input type="text" id="namuna_w_place" name="namuna_w_place"></div>
+                <div class="field-group"><label>दिनांक (Date)</label><input type="date" id="namuna_w_date" name="namuna_w_date"></div>
             </div>
-            <div style="clear:both;"></div>
-        </div>
-
-        <div class="form-section">
-            <h3>नमुना "व्ही" - विद्युत पर्यवेक्षकाचे प्रतिज्ञापत्र</h3>
-            <label for="namuna_v_name">मी श्री/श्रीमती:</label>
-            <input type="text" id="namuna_v_name" name="namuna_v_name" style="width:200px; display:inline-block;">
-            <label for="namuna_v_age">वय:</label>
-            <input type="text" id="namuna_v_age" name="namuna_v_age" style="width:50px; display:inline-block;">
-            <label for="namuna_v_address">वर्ष, राहणार:</label>
-            <input type="text" id="namuna_v_address" name="namuna_v_address" style="width:300px; display:inline-block;">
-            <label for="namuna_v_firm">असे जाहीर करतो/करते कि मी मेसर्स:</label>
-            <input type="text" id="namuna_v_firm" name="namuna_v_firm" style="width:200px; display:inline-block;">
-            <label for="namuna_v_start_date">यांच्या कडे दिनांक:</label>
-            <input type="date" id="namuna_v_start_date" name="namuna_v_start_date" style="width:150px; display:inline-block;">
-            <p>माझा पर्यवेक्षक परवाना क्रमांक म.प.क्र. <input type="text" name="namuna_v_license_no" style="width:150px; display:inline-block;"> असा आहे. माझी शेवटची नोकरी मेसर्स: <input type="text" name="namuna_v_last_firm" style="width:200px; display:inline-block;"> मध्ये दिनांक: <input type="date" name="namuna_v_last_job_start" style="width:150px; display:inline-block;"> पासून दिनांक <input type="date" name="namuna_v_last_job_end" style="width:150px; display:inline-block;"> पर्यंत केली.</p>
-            <p>तरी नोकरी सोडल्याच्या दिनांका पासून आज पर्यंत कोणत्याही कंपनीत कोणत्याच पदावर / पर्यवेक्षक म्हणून सेवेत नव्हतो नव्हते या काळात इतर काम करीत होतो/होते.</p>
-            <label for="namuna_v_place">स्थळ (Place):</label>
-            <input type="text" id="namuna_v_place" name="namuna_v_place">
-            <label for="namuna_v_date">दिनांक (Date):</label>
-            <input type="date" id="namuna_v_date" name="namuna_v_date">
-        </div>
-        
-        <div class="form-section">
-            <h3>नमुना "डब्लु" - विद्युत ठेकेदाराचे प्रतिज्ञापत्र</h3>
-            <label for="namuna_w_name">मी श्री/श्रीमती:</label>
-            <input type="text" id="namuna_w_name" name="namuna_w_name" style="width:200px; display:inline-block;">
-            <label for="namuna_w_address">राहणार:</label>
-            <input type="text" id="namuna_w_address" name="namuna_w_address" style="width:300px; display:inline-block;">
-            <label for="namuna_w_firm">असे जाहीर करतो/ करते कि मी मेसर्स:</label>
-            <input type="text" id="namuna_w_firm" name="namuna_w_firm" style="width:200px; display:inline-block;">
-            <p>या संस्थेचा एकमेव मालक असून मी इतर कोणत्याही कंपनीत पदावर व भागीदार म्हणून काम करीत नाही.</p>
-            <label for="namuna_w_supervisor_name">श्री/श्रीमती:</label>
-            <input type="text" id="namuna_w_supervisor_name" name="namuna_w_supervisor_name" style="width:200px; display:inline-block;">
-            <label for="namuna_w_supervisor_license_no">विद्युत पर्यवेक्षक परवाना क्रमांक म.प. क्र</label>
-            <input type="text" id="namuna_w_supervisor_license_no" name="namuna_w_supervisor_license_no" style="width:150px; display:inline-block;">
-            <label for="namuna_w_supervisor_license_date">दिनांक:</label>
-            <input type="date" id="namuna_w_supervisor_license_date" name="namuna_w_supervisor_license_date" style="width:150px; display:inline-block;">
-            <label for="namuna_w_supervisor_start_date">यांना माझ्या वरील संस्थेत पूर्ण वेळ पर्यवेक्षक म्हणून दिनांक:</label>
-            <input type="date" id="namuna_w_supervisor_start_date" name="namuna_w_supervisor_start_date" style="width:150px; display:inline-block;">
-            <p>पासून नेमले आहे.</p>
-            <label for="namuna_w_place">स्थळ (Place):</label>
-            <input type="text" id="namuna_w_place" name="namuna_w_place">
-            <label for="namuna_w_date">दिनांक (Date):</label>
-            <input type="date" id="namuna_w_date" name="namuna_w_date">
         </div>
 
         <div class="button-group">
-            <button type="button" class="back-button" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
-            <button type="submit" class="submit-button">Submit & Download</button>
+            <button type="button" class="btn btn-back" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
+            <button type="submit" class="btn btn-submit">Submit & Download</button>
         </div>
     </form>
 </div>
 <script src="lang-toggle.js"></script>
+<script src="config.js"></script>
 <script src="payment.js"></script>
-
 </body>
 </html>

@@ -1,221 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Contractor License Application</title>
+    <title>नवीन विद्युत ठेकेदार लायसन्स - माहिती</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-        .form-section {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .form-section h3 {
-            margin-top: 0;
-            color: #555;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="date"],
-        input[type="email"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .button-group {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .button-group button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .submit-button {
-            background-color: #28a745;
-            color: white;
-        }
-        .back-button {
-            background-color: #007bff;
-            color: white;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+        .page { max-width: 850px; margin: 0 auto; background: #fff; padding: 36px 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.12); }
+        .form-header { text-align: center; margin-bottom: 18px; border-bottom: 2px solid #000; padding-bottom: 12px; }
+        .form-header h1 { font-size: 1.15rem; font-weight: bold; line-height: 1.5; }
+        .form-header p { font-size: 0.9rem; color: #333; margin-top: 3px; }
+        .form-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .form-table th, .form-table td { border: 1px solid #888; padding: 7px 10px; vertical-align: middle; font-size: 0.88rem; }
+        .form-table thead th { background: #e8e8e8; font-weight: bold; text-align: center; }
+        .col-no { width: 4%; text-align: center; font-weight: bold; }
+        .col-label { width: 48%; line-height: 1.5; }
+        .col-input { width: 48%; }
+        .col-input input, .col-input textarea { width: 100%; border: none; border-bottom: 1px solid #555; outline: none; font-size: 0.88rem; padding: 3px 4px; background: transparent; font-family: Arial, sans-serif; resize: none; }
+        .col-input input:focus, .col-input textarea:focus { border-bottom-color: #0056b3; background: #f0f7ff; }
+        .sub-label { font-size: 0.82rem; color: #444; }
+        .section-row td { background: #f5f5f5; font-weight: bold; font-size: 0.88rem; text-align: center; padding: 5px 10px; }
+        .button-group { display: flex; justify-content: center; gap: 14px; margin-top: 28px; padding-top: 18px; border-top: 1px solid #ddd; }
+        .btn { padding: 10px 26px; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: bold; cursor: pointer; transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.85; }
+        .btn-back { background: #0056b3; color: #fff; }
+        .btn-submit { background: #28a745; color: #fff; }
+        @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; } .button-group, #global-lang-toggle { display: none; } }
     </style>
 </head>
 <body>
+<div class="page">
+    <div class="form-header">
+        <h1>नवीन विद्युत ठेकेदार लायसन्स करीता आवश्यक माहिती</h1>
+        <p>Information For New Contractor License</p>
+        <p><em>कृपया माहिती मराठीत द्यावी</em></p>
+    </div>
 
-<div class="container">
-    <h2>नवीन विद्युत ठेकेदार लायसन्स करीता आवश्यक माहिती</h2>
-    <p>Information For New Contractor License</p>
-    <p>कृपया माहिती मराठीत द्यावी</p>
+    <form id="newlicenseForm">
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th class="col-no">अ. क्र.</th>
+                    <th class="col-label">माहिती (Information)</th>
+                    <th class="col-input">तपशील भरा (Fill Details)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="section-row"><td colspan="3">व्यवसाय संस्थेची माहिती (Firm Information)</td></tr>
+                <tr><td class="col-no">१</td><td class="col-label">व्यवसाय संस्थेचे नाव <span class="sub-label">Firm Name</span></td><td class="col-input"><input type="text" id="firm_name" name="firm_name"></td></tr>
+                <tr><td class="col-no">२</td><td class="col-label">व्यवसाय संस्थेचा पत्ता <span class="sub-label">Firm Address</span></td><td class="col-input"><input type="text" id="firm_address" name="firm_address"></td></tr>
 
-    <form action="/submit-form" method="post">
-        <div class="form-section">
-            <h3>व्यवसाय संस्थेची माहिती (Firm Information)</h3>
-            <label for="firm_name">व्यवसाय संस्थेचे नाव (Firm Name)</label>
-            <input type="text" id="firm_name" name="firm_name">
+                <tr class="section-row"><td colspan="3">मालकाची माहिती (Owner Information)</td></tr>
+                <tr><td class="col-no">३</td><td class="col-label">मालकाचे पूर्ण नाव <span class="sub-label">Owner Full Name</span></td><td class="col-input"><input type="text" id="owner_name" name="owner_name"></td></tr>
+                <tr><td class="col-no">४</td><td class="col-label">मालकाचा पत्ता <span class="sub-label">Owner Address</span></td><td class="col-input"><input type="text" id="owner_address" name="owner_address"></td></tr>
+                <tr><td class="col-no">५</td><td class="col-label">मालकाच्या वडिलांचे पूर्ण नाव <span class="sub-label">Owner Father Full Name</span></td><td class="col-input"><input type="text" id="owner_father_name" name="owner_father_name"></td></tr>
+                <tr><td class="col-no">६</td><td class="col-label">मालकाची जन्म दिनांक <span class="sub-label">Owner Date Of Birth</span></td><td class="col-input"><input type="date" id="owner_dob" name="owner_dob"></td></tr>
+                <tr><td class="col-no">७</td><td class="col-label">मालकाचा ई मेल पत्ता <span class="sub-label">Owner Email Address</span></td><td class="col-input"><input type="email" id="owner_email" name="owner_email"></td></tr>
+                <tr><td class="col-no">८</td><td class="col-label">मालकाचे शिक्षण <span class="sub-label">Owner Education Qualification</span></td><td class="col-input"><input type="text" id="owner_education" name="owner_education"></td></tr>
+                <tr><td class="col-no">९</td><td class="col-label">मालकाचा पॅन कार्ड क्रमांक <span class="sub-label">Owner PAN Card Number</span></td><td class="col-input"><input type="text" id="owner_pan" name="owner_pan"></td></tr>
 
-            <label for="firm_address">व्यवसाय संस्थेचा पत्ता (Firm Address)</label>
-            <input type="text" id="firm_address" name="firm_address">
-        </div>
+                <tr class="section-row"><td colspan="3">बँक तपशील (Bank Details)</td></tr>
+                <tr>
+                    <td class="col-no" rowspan="4">१०</td>
+                    <td class="col-label">बँकेचे नाव <span class="sub-label">Name of Bank</span></td>
+                    <td class="col-input"><input type="text" id="bank_name" name="bank_name"></td>
+                </tr>
+                <tr><td class="col-label sub-label">शाखा <span class="sub-label">Branch</span></td><td class="col-input"><input type="text" id="bank_branch" name="bank_branch"></td></tr>
+                <tr><td class="col-label sub-label">खाते क्रमांक <span class="sub-label">Account Number</span></td><td class="col-input"><input type="text" id="bank_account" name="bank_account"></td></tr>
+                <tr><td class="col-label sub-label">शिल्लक रक्कम <span class="sub-label">Balance</span></td><td class="col-input"><input type="text" id="balance" name="balance"></td></tr>
 
-        <div class="form-section">
-            <h3>मालकाची माहिती (Owner Information)</h3>
-            <label for="owner_name">मालकाचे पूर्ण नाव (Owner Full Name)</label>
-            <input type="text" id="owner_name" name="owner_name">
+                <tr class="section-row"><td colspan="3">सुपरवायजरची माहिती (Supervisor Information)</td></tr>
+                <tr><td class="col-no">११</td><td class="col-label">सुपरवायजरचे पूर्ण नाव <span class="sub-label">Supervisor Full Name</span></td><td class="col-input"><input type="text" id="supervisor_name" name="supervisor_name"></td></tr>
+                <tr><td class="col-no">१२</td><td class="col-label">सुपरवायजरचे वडिलांचे पूर्ण नाव <span class="sub-label">Supervisor Father Full Name</span></td><td class="col-input"><input type="text" id="supervisor_father_name" name="supervisor_father_name"></td></tr>
+                <tr><td class="col-no">१३</td><td class="col-label">सुपरवायजरचा पूर्ण पत्ता <span class="sub-label">Supervisor Address</span></td><td class="col-input"><input type="text" id="supervisor_address" name="supervisor_address"></td></tr>
+                <tr><td class="col-no">१४</td><td class="col-label">सुपरवायजरची जन्म दिनांक <span class="sub-label">Supervisor Date of Birth</span></td><td class="col-input"><input type="date" id="supervisor_dob" name="supervisor_dob"></td></tr>
+                <tr><td class="col-no">१५</td><td class="col-label">सुपरवायजर ई मेल पत्ता <span class="sub-label">Supervisor Email Address</span></td><td class="col-input"><input type="email" id="supervisor_email" name="supervisor_email"></td></tr>
+                <tr><td class="col-no">१६</td><td class="col-label">सुपरवायजरचा मोबाइल क्रमांक <span class="sub-label">Supervisor Mobile Number</span></td><td class="col-input"><input type="tel" id="supervisor_mobile" name="supervisor_mobile"></td></tr>
+                <tr><td class="col-no">१७</td><td class="col-label">सुपरवायजरचा आधार क्रमांक <span class="sub-label">Supervisor Aadhaar Number</span></td><td class="col-input"><input type="text" id="supervisor_adhar" name="supervisor_adhar"></td></tr>
+                <tr><td class="col-no">१८</td><td class="col-label">सुपरवायजरची नेमणूक दिनांक <span class="sub-label">Supervisor Appointment Date</span></td><td class="col-input"><input type="date" id="supervisor_appointment_date" name="supervisor_appointment_date"></td></tr>
+                <tr><td class="col-no">१९</td><td class="col-label">सुपरवायजर परवाना क्रमांक व दिनांक <span class="sub-label">Supervisor License No. &amp; Date</span></td><td class="col-input"><input type="text" id="sup_license" name="sup_license"></td></tr>
+                <tr>
+                    <td class="col-no" rowspan="3">२०</td>
+                    <td class="col-label">सुपरवायजरची पूर्वीची नोकरी<br><span class="sub-label">Contractor / Company Name</span></td>
+                    <td class="col-input"><input type="text" id="sup_company" name="sup_company"></td>
+                </tr>
+                <tr><td class="col-label sub-label">Contractor MC No. &amp; Date</td><td class="col-input"><input type="text" id="sup_mc" name="sup_mc"></td></tr>
+                <tr><td class="col-label sub-label">Date of Joining – End Date</td><td class="col-input"><input type="text" id="sup_period" name="sup_period" placeholder="Start Date — End Date"></td></tr>
 
-            <label for="owner_address">मालकाचा पत्ता (Owner Address)</label>
-            <input type="text" id="owner_address" name="owner_address">
-
-            <label for="owner_father_name">मालकाच्या वडिलांचे पूर्ण नाव (Owner Father Full Name)</label>
-            <input type="text" id="owner_father_name" name="owner_father_name">
-
-            <label for="owner_dob">मालकाची जन्म दिनांक (Owner Date Of Birth)</label>
-            <input type="date" id="owner_dob" name="owner_dob">
-
-            <label for="owner_email">मालकाचा ई मेल पत्ता (Owner Email Address)</label>
-            <input type="email" id="owner_email" name="owner_email">
-
-            <label for="owner_education">मालकाचे शिक्षण (Owner Education Qualification)</label>
-            <input type="text" id="owner_education" name="owner_education">
-
-            <label for="owner_pan">मालकाचा पॅन कार्ड क्रमांक (Owner Pan card Number)</label>
-            <input type="text" id="owner_pan" name="owner_pan">
-        </div>
-        
-        <div class="form-section">
-            <h3>बँक तपशील (Bank Details)</h3>
-            <label for="bank_name">बँकेचे नाव (Name of Bank)</label>
-            <input type="text" id="bank_name" name="bank_name">
-
-            <label for="bank_branch">बॅच (Branch)</label>
-            <input type="text" id="bank_branch" name="bank_branch">
-
-            <label for="bank_account">खाते क्रमांक (Account Number)</label>
-            <input type="text" id="bank_account" name="bank_account">
-
-            <label for="balance">शिल्लक रक्कम (Balance)</label>
-            <input type="text" id="balance" name="balance">
-        </div>
-        
-        <div class="form-section">
-            <h3>सुपरवायजरची माहिती (Supervisor Information)</h3>
-            <label for="supervisor_name">सुपरवायजरचे पूर्ण नाव (Supervisor Full Name)</label>
-            <input type="text" id="supervisor_name" name="supervisor_name">
-
-            <label for="supervisor_father_name">सुपरवायजरचे वडिलांचे पूर्ण नाव (Supervisor Father Full Name)</label>
-            <input type="text" id="supervisor_father_name" name="supervisor_father_name">
-
-            <label for="supervisor_address">सुपरवायजरचा पूर्ण पत्ता (Supervisor Address)</label>
-            <input type="text" id="supervisor_address" name="supervisor_address">
-
-            <label for="supervisor_dob">सुपरवायजरची जन्म दिनांक (Supervisor Date of Birth)</label>
-            <input type="date" id="supervisor_dob" name="supervisor_dob">
-
-            <label for="supervisor_email">सुपरवायजर चा ई मेल पत्ता (Supervisor Email Address)</label>
-            <input type="email" id="supervisor_email" name="supervisor_email">
-
-            <label for="supervisor_mobile">सुपरवायजरचा मोबाइल क्रमांक (Supervisor Mobile number)</label>
-            <input type="tel" id="supervisor_mobile" name="supervisor_mobile">
-
-            <label for="supervisor_adhar">सुपरवायजरचा आधार क्रमांक (Supervisor Adhar Kramank)</label>
-            <input type="text" id="supervisor_adhar" name="supervisor_adhar">
-
-            <label for="supervisor_appointment_date">सुपरवायजरची सध्याची नेमणूक दिनांक (Supervisor Appointment Date)</label>
-            <input type="date" id="supervisor_appointment_date" name="supervisor_appointment_date">
-
-            <tr>
-          
-          <td><label for="sup_license" id="f19label">Supervisor License No. & Date</label></td>
-          <td><input type="text" id="sup_license" name="sup_license" placeholder="Licence No. / Date"></td>
-        </tr>
-
-        <!-- Row 20 (previously missing) - Supervisor previous work details with subfields -->
-        <tr>
-          
-          <td><label for="sup_prev" id="f20label">Supervisor Previous Work Details</label></td>
-          <td><textarea id="sup_prev" name="sup_prev" rows="3" placeholder="Previous work details"></textarea></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><label for="sup_company" id="f20sublabel">Contractor/Company Name</label></td>
-          <td><input type="text" id="sup_company" name="sup_company"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><label for="sup_mc" id="f20sublabel2">Contractor MC No. & Date</label></td>
-          <td><input type="text" id="sup_mc" name="sup_mc"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><label for="sup_period" id="f20sublabel3">Date of Joining – End Date</label></td>
-          <td><input type="text" id="sup_period" name="sup_period" placeholder="Start Date — End Date"></td>
-        </tr>
-
-        <!-- Row 21 (previously missing) - Megar & Earth Tester -->
-        <tr>
-          <td><label id="f21label">Megar & Earth Tester Details</label></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><label for="megar_make" id="f21sublabel1">Megar Make</label></td>
-          <td><input type="text" id="megar_make" name="megar_make"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><label for="earth_make" id="f21sublabel2">Earth Tester Make</label></td>
-          <td><input type="text" id="earth_make" name="earth_make"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><label for="megar_serial" id="f21sublabel3">Megar Serial Number</label></td>
-          <td><input type="text" id="megar_serial" name="megar_serial"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><label for="earth_serial" id="f21sublabel4">Earth Tester Serial Number</label></td>
-          <td><input type="text" id="earth_serial" name="earth_serial"></td>
-        </tr>
-
-        </div>
+                <tr class="section-row"><td colspan="3">मेगर व अर्थ टेस्टर तपशील (Megar & Earth Tester Details)</td></tr>
+                <tr>
+                    <td class="col-no" rowspan="4">२१</td>
+                    <td class="col-label">मेगर बनावट (मेक) <span class="sub-label">Megar Make</span></td>
+                    <td class="col-input"><input type="text" id="megar_make" name="megar_make"></td>
+                </tr>
+                <tr><td class="col-label sub-label">अर्थ टेस्टर बनावट <span class="sub-label">Earth Tester Make</span></td><td class="col-input"><input type="text" id="earth_make" name="earth_make"></td></tr>
+                <tr><td class="col-label sub-label">मेगर सिरीयल क्रमांक <span class="sub-label">Megar Serial Number</span></td><td class="col-input"><input type="text" id="megar_serial" name="megar_serial"></td></tr>
+                <tr><td class="col-label sub-label">अर्थ टेस्टर सिरीयल क्रमांक <span class="sub-label">Earth Tester Serial Number</span></td><td class="col-input"><input type="text" id="earth_serial" name="earth_serial"></td></tr>
+            </tbody>
+        </table>
 
         <div class="button-group">
-            <button type="button" class="back-button" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
-            <button type="submit" class="submit-button">Submit & Download</button>
+            <button type="button" class="btn btn-back" onclick="window.location.href='dashboard.html'">← Back to Form Selection</button>
+            <button type="submit" class="btn btn-submit">Submit & Download</button>
         </div>
     </form>
-    <script src="lang-toggle.js"></script>
-    <script src="payment.js"></script>
 </div>
-
+<script src="lang-toggle.js"></script>
+<script src="config.js"></script>
+<script src="payment.js"></script>
 </body>
 </html>
