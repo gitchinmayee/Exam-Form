@@ -1,6 +1,6 @@
-// config.js — update BACKEND_URL when deploying to production
+// config.js — backend URL config
 const CONFIG = {
   BACKEND_URL: window.location.hostname === "localhost"
     ? "http://localhost:3000"
-    : "https://spectrum-enhance-prize.ngrok-free.dev"
+    : "https://exam-form-ofmg.onrender.com"
 };
