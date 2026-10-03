@@ -5,20 +5,50 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title data-i18n="title_register">Register</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .toggle-lang-btn {
+      display:block; margin: 0 0 14px auto;
+      background:#0056b3; color:#fff; border:none;
+      border-radius:20px; padding:6px 16px; font-size:0.85rem;
+      cursor:pointer; font-weight:bold;
+    }
+    .password-wrapper { position:relative; margin-bottom:6px; }
+    .password-wrapper input { margin-bottom:0; padding-right:44px; }
+    .toggle-pw {
+      position:absolute; right:10px; top:50%;
+      transform:translateY(-50%);
+      background:none; border:none; cursor:pointer;
+      color:#888; font-size:1rem; padding:0;
+    }
+    .field-error { color:#c00; font-size:0.8rem; margin:0 0 10px; display:none; text-align:left; }
+    .pw-rules { font-size:0.78rem; color:#888; text-align:left; margin-bottom:14px; line-height:1.6; }
+    .pw-rules span { display:block; }
+    .pw-rules .ok { color:#28a745; }
+    .pw-rules .fail { color:#aaa; }
+  </style>
 </head>
 <body>
   <div class="container">
-    <div style="text-align:right; margin-bottom: 10px;">
-      <button type="button" onclick="toggleLang()" data-i18n="toggle_lang" style="padding:5px 14px; border-radius:6px; border:1px solid #ccc; cursor:pointer; background:#f0f0f0; font-size:14px;">English</button>
-    </div>
+    <button type="button" class="toggle-lang-btn" onclick="toggleLang()" data-i18n="toggle_lang">English</button>
+
     <h2 data-i18n="title_register">Register</h2>
 
     <form id="registerForm" novalidate>
       <label for="reg_email" data-i18n="label_email">Email:</label>
-      <input type="email" id="reg_email" name="reg_email" data-i18n-placeholder="placeholder_email" placeholder="name@example.com" required>
+      <input type="email" id="reg_email" name="reg_email" placeholder="name@example.com" required>
+      <div class="field-error" id="email-error">Please enter a valid email (must contain @ and .).</div>
 
       <label for="reg_password">Password:</label>
-      <input type="password" id="reg_password" name="reg_password" placeholder="Enter password" required>
+      <div class="password-wrapper">
+        <input type="password" id="reg_password" name="reg_password" placeholder="Enter password" required>
+        <button type="button" class="toggle-pw" onclick="togglePw('reg_password', this)" title="Show/Hide password">👁</button>
+      </div>
+      <div class="pw-rules" id="pw-rules">
+        <span id="rule-len"  class="fail">✗ At least 8 characters</span>
+        <span id="rule-num"  class="fail">✗ At least one number</span>
+        <span id="rule-char" class="fail">✗ At least one letter</span>
+      </div>
+      <div class="field-error" id="pw-error">Password does not meet requirements.</div>
 
       <button type="submit">Register</button>
     </form>
@@ -26,6 +56,51 @@
     <p>Already have an account? <a href="login.html">Login</a></p>
   </div>
 
+  <script>
+    function togglePw(id, btn) {
+      const inp = document.getElementById(id);
+      if (inp.type === "password") { inp.type = "text"; btn.textContent = "🙈"; }
+      else { inp.type = "password"; btn.textContent = "👁"; }
+    }
+
+    // Email validation
+    document.getElementById("reg_email").addEventListener("blur", function() {
+      const err = document.getElementById("email-error");
+      err.style.display = !this.value.includes("@") || !this.value.includes(".") ? "block" : "none";
+    });
+
+    // Live password rules
+    document.getElementById("reg_password").addEventListener("input", function() {
+      const v = this.value;
+      const setRule = (id, pass) => {
+        const el = document.getElementById(id);
+        el.textContent = (pass ? "✓ " : "✗ ") + el.textContent.slice(2);
+        el.className = pass ? "ok" : "fail";
+      };
+      setRule("rule-len",  v.length >= 8);
+      setRule("rule-num",  /\d/.test(v));
+      setRule("rule-char", /[a-zA-Z]/.test(v));
+    });
+
+    // Block submit if rules not met
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      const email = document.getElementById("reg_email").value;
+      const pw = document.getElementById("reg_password").value;
+      let valid = true;
+
+      if (!email.includes("@") || !email.includes(".")) {
+        document.getElementById("email-error").style.display = "block";
+        valid = false;
+      }
+      if (pw.length < 8 || !/\d/.test(pw) || !/[a-zA-Z]/.test(pw)) {
+        document.getElementById("pw-error").style.display = "block";
+        valid = false;
+      } else {
+        document.getElementById("pw-error").style.display = "none";
+      }
+      if (!valid) e.stopImmediatePropagation();
+    }, true); // capture phase — runs before auth.js
+  </script>
   <script type="module" src="auth.js"></script>
 </body>
 </html>

@@ -2,5 +2,5 @@
 const CONFIG = {
   BACKEND_URL: window.location.hostname === "localhost"
     ? "http://localhost:3000"
-    : "https://your-backend.onrender.com"  // ← replace with your Render URL after deploying
+    : "https://spectrum-enhance-prize.ngrok-free.dev"
 };
