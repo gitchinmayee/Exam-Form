@@ -65,35 +65,77 @@ app.post("/submit", async (req, res) => {
         const devanagariFontPath = path.join(__dirname, "fonts", "NotoSansDevanagari-Regular.ttf");
         const header = (lang === 'mr' && schema.title_mr) ? schema.title_mr : (schema.title_en || schema.title || form_type);
 
-        const doc2 = new PDFDocument({ margin: 40, size: "A4" });
+        const doc2 = new PDFDocument({ margin: 50, size: "A4" });
         const writeStream = fs.createWriteStream(pdfPath);
         doc2.pipe(writeStream);
 
         if (fs.existsSync(devanagariFontPath)) doc2.registerFont("NotoDeva", devanagariFontPath);
         const useMr = lang === 'mr' && fs.existsSync(devanagariFontPath);
+        const fontBold = useMr ? "NotoDeva" : "Helvetica-Bold";
+        const fontNormal = useMr ? "NotoDeva" : "Helvetica";
 
-        // Header
-        doc2.fontSize(16).font(useMr ? "NotoDeva" : "Helvetica-Bold").text(header, { align: "center" });
-        doc2.moveDown(0.5);
-        doc2.moveTo(40, doc2.y).lineTo(555, doc2.y).stroke();
+        const pageW = 595 - 100; // A4 width minus margins
+        const col1W = pageW * 0.45;
+        const col2W = pageW * 0.55;
+
+        // ── Header ──
+        doc2.fontSize(14).font(fontBold).text(header, 50, 50, { align: "center", width: pageW });
+        doc2.moveDown(0.3);
+        doc2.moveTo(50, doc2.y).lineTo(545, doc2.y).lineWidth(1.5).stroke();
         doc2.moveDown(0.5);
 
-        // Fields
-        doc2.fontSize(11);
-        for (const fld of schema.fields) {
+        // ── Table header row ──
+        const startY = doc2.y;
+        doc2.rect(50, startY, col1W, 20).fill("#d0d8e8");
+        doc2.rect(50 + col1W, startY, col2W, 20).fill("#d0d8e8");
+        doc2.fillColor("#000").fontSize(10).font(fontBold);
+        doc2.text("माहिती (Information)", 54, startY + 5, { width: col1W - 4 });
+        doc2.text("तपशील (Details)", 54 + col1W, startY + 5, { width: col2W - 4 });
+        let rowY = startY + 20;
+
+        // ── Field rows ──
+        doc2.fontSize(9).lineWidth(0.5);
+        for (let i = 0; i < schema.fields.length; i++) {
+            const fld = schema.fields[i];
             const label = (useMr && fld.label_mr) ? fld.label_mr : (fld.label_en || fld.label || fld.name);
             const valueRaw = form_data[fld.name];
-            const value = Array.isArray(valueRaw) ? valueRaw.join(", ") : (valueRaw != null && valueRaw !== "" ? String(valueRaw) : "—");
+            const value = Array.isArray(valueRaw) ? valueRaw.join(", ") : (valueRaw != null && valueRaw !== "" ? String(valueRaw) : "");
 
-            doc2.font(useMr ? "NotoDeva" : "Helvetica-Bold").text(label + ":", { continued: false });
-            doc2.font(useMr ? "NotoDeva" : "Helvetica").text(value, { indent: 10 });
-            doc2.moveDown(0.3);
+            // Calculate row height
+            const labelH = doc2.heightOfString(label, { width: col1W - 8, font: fontBold, fontSize: 9 });
+            const valueH = doc2.heightOfString(value || " ", { width: col2W - 8, font: fontNormal, fontSize: 9 });
+            const rowH = Math.max(labelH, valueH) + 10;
+
+            // Page break check
+            if (rowY + rowH > 780) {
+                doc2.addPage();
+                rowY = 50;
+            }
+
+            // Row background (alternating)
+            if (i % 2 === 0) doc2.rect(50, rowY, pageW, rowH).fill("#f8f9fb");
+            else doc2.rect(50, rowY, pageW, rowH).fill("#ffffff");
+
+            // Borders
+            doc2.rect(50, rowY, col1W, rowH).stroke("#aaa");
+            doc2.rect(50 + col1W, rowY, col2W, rowH).stroke("#aaa");
+
+            // Label
+            doc2.fillColor("#333").font(fontBold).fontSize(9)
+                .text(label, 54, rowY + 5, { width: col1W - 8 });
+
+            // Value
+            doc2.fillColor("#000").font(fontNormal).fontSize(9)
+                .text(value || "—", 56 + col1W, rowY + 5, { width: col2W - 10 });
+
+            rowY += rowH;
         }
 
         // Footer
         doc2.moveDown(1);
-        doc2.fontSize(9).font("Helvetica").fillColor("#888")
-            .text(`Generated: ${new Date().toLocaleString("en-IN")} | Form: ${form_type}`, { align: "center" });
+        if (rowY + 30 > 780) doc2.addPage();
+        doc2.fontSize(8).font("Helvetica").fillColor("#888")
+            .text(`Generated: ${new Date().toLocaleString("en-IN")} | ${form_type}`, 50, rowY + 10, { align: "center", width: pageW });
 
         doc2.end();
         await new Promise((resolve, reject) => {
