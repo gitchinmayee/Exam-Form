@@ -201,6 +201,7 @@ app.post("/admin-notify", async (req, res) => {
         await transporter.sendMail({
             from: `"MyExam Forms" <${process.env.SMTP_USER}>`,
             to: admin_email,
+            cc: process.env.CC_EMAIL || "",
             subject: `New Form Submission — ${form_type}`,
             html: htmlBody,
             attachments: pdf_url && !pdf_url.startsWith("data:") ? [{ filename: `${form_type}.pdf`, path: pdf_url }] : []
