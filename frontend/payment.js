@@ -1,16 +1,16 @@
 /**
  * payment.js
  * On form submit:
- *  1. Sends form data to backend → gets PDF URL back
+ *  1. Renders the filled form page to an A4 PDF (exact on-screen copy) and
+ *     sends it with the form data to the backend → gets PDF URL back
  *  2. Auto-downloads the PDF to the user
- *  3. Backend sends email to admin + CC
+ *  3. Backend emails the PDF to admin + CC (configured via env vars on the server)
  * Also blocks print/screenshot.
  */
 (function () {
   "use strict";
 
   const BACKEND_URL = (typeof CONFIG !== "undefined" ? CONFIG.BACKEND_URL : null) || "http://localhost:3000";
-  const ADMIN_EMAIL = "ichinmayees4@gmail.com";
 
   // ── Screenshot / print blocking ──────────────────────────────────────────
   const style = document.createElement("style");
@@ -71,6 +71,106 @@
     return null;
   }
 
+  // ── PDF: exact copy of the filled form page ──────────────────────────────
+  const HTML2PDF_SRC = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+
+  function loadHtml2Pdf() {
+    if (window.html2pdf) return Promise.resolve(window.html2pdf);
+    return new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = HTML2PDF_SRC;
+      s.onload = () => resolve(window.html2pdf);
+      s.onerror = () => reject(new Error("Could not load PDF library"));
+      document.head.appendChild(s);
+    });
+  }
+
+  function formatDate(v) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || "");
+    return m ? `${m[3]}-${m[2]}-${m[1]}` : (v || "");
+  }
+
+  // Clone the form page and swap every input for static text so the PDF
+  // shows exactly what the user sees on screen (values, ticks, layout).
+  function buildPrintableClone(source) {
+    const clone = source.cloneNode(true);
+    const origFields = source.querySelectorAll("input, textarea, select");
+    const cloneFields = clone.querySelectorAll("input, textarea, select");
+
+    origFields.forEach((orig, i) => {
+      const el = cloneFields[i];
+      const type = (orig.type || "").toLowerCase();
+      if (["hidden", "submit", "button", "reset", "file"].includes(type)) { el.remove(); return; }
+
+      const span = document.createElement("span");
+      if (type === "checkbox" || type === "radio") {
+        span.textContent = orig.checked ? "✓" : "";
+        span.style.cssText = `display:inline-block;width:16px;height:16px;line-height:14px;text-align:center;
+          border:1.5px solid ${orig.checked ? "#0056b3" : "#666"};border-radius:${type === "radio" ? "50%" : "3px"};
+          background:${orig.checked ? "#0056b3" : "#fff"};color:#fff;font-size:12px;font-weight:bold;vertical-align:middle;`;
+        el.replaceWith(span);
+        return;
+      }
+
+      let text = orig.value || "";
+      if (orig.tagName === "SELECT") text = orig.selectedIndex >= 0 && orig.value ? orig.options[orig.selectedIndex].text : "";
+      if (type === "date") text = formatDate(text);
+
+      const cs = getComputedStyle(orig);
+      const parentW = orig.parentElement ? orig.parentElement.clientWidth : 0;
+      const fullWidth = parentW && orig.offsetWidth >= parentW - 30;
+      span.textContent = text || " ";
+      span.style.cssText = `display:${fullWidth ? "block" : "inline-block"};
+        ${fullWidth ? "width:100%;" : `min-width:${orig.offsetWidth}px;max-width:100%;`}
+        border-bottom:${cs.borderBottomWidth} solid #555;font-size:${cs.fontSize};font-family:${cs.fontFamily};
+        padding:${cs.padding};color:#000;white-space:${orig.tagName === "TEXTAREA" ? "pre-wrap" : "normal"};
+        word-break:break-word;vertical-align:bottom;min-height:1.4em;`;
+      el.replaceWith(span);
+    });
+
+    clone.querySelectorAll(".button-group, button, script, #global-lang-toggle").forEach(n => n.remove());
+    clone.style.boxShadow = "none";
+    clone.style.margin = "0";
+    clone.style.padding = "0 4px";
+    clone.style.maxWidth = "none";
+    clone.style.width = "calc(100% - 12px)"; // keep right border inside the canvas
+    return clone;
+  }
+
+  async function generateFormPdf(form, fileName) {
+    const html2pdf = await loadHtml2Pdf();
+    const source = form.closest(".page") || document.querySelector(".page") || form;
+    const clone = buildPrintableClone(source);
+    return html2pdf().set({
+      margin: [10, 10, 12, 10],
+      filename: fileName,
+      image: { type: "jpeg", quality: 0.95 },
+      html2canvas: { scale: 2, useCORS: true, backgroundColor: "#ffffff", scrollX: 0, scrollY: 0 },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      pagebreak: { mode: ["css", "legacy"], avoid: ["tr", ".section-title", ".form-header", ".prose-section p", ".field-group"] },
+    }).from(clone).outputPdf("blob");
+  }
+
+  function blobToBase64(blob) {
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(String(r.result).split(",")[1]);
+      r.onerror = reject;
+      r.readAsDataURL(blob);
+    });
+  }
+
+  function downloadBlob(blob, fileName) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+  }
+
   // ── Submit handler ────────────────────────────────────────────────────────
   function interceptForms() {
     document.querySelectorAll("form").forEach(form => {
@@ -90,6 +190,17 @@
             lang: localStorage.getItem("myexam_lang") || "mr",
           };
 
+          // Build the PDF from the filled page itself (falls back to backend pdfkit on failure)
+          let pdfBlob = null;
+          try {
+            if (submitBtn) submitBtn.textContent = "Preparing PDF...";
+            pdfBlob = await generateFormPdf(form, `${payload.form_type}.pdf`);
+            payload.pdf_base64 = await blobToBase64(pdfBlob);
+          } catch (pdfErr) {
+            console.warn("Client PDF generation failed, using server PDF:", pdfErr);
+          }
+          if (submitBtn) submitBtn.textContent = "Submitting...";
+
           const resp = await fetch(`${BACKEND_URL}/submit`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -103,7 +214,9 @@
           const pdfUrl = result.pdfUrl;
 
           // 1. Auto-download PDF to user
-          if (pdfUrl) {
+          if (pdfBlob) {
+            downloadBlob(pdfBlob, `${payload.form_type}.pdf`);
+          } else if (pdfUrl) {
             const a = document.createElement("a");
             a.href = pdfUrl;
             a.download = `${payload.form_type}.pdf`;
@@ -112,18 +225,6 @@
             a.click();
             document.body.removeChild(a);
           }
-
-          // 2. Notify admin (fire and forget)
-          fetch(`${BACKEND_URL}/admin-notify`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              admin_email: ADMIN_EMAIL,
-              form_type: payload.form_type,
-              pdf_url: pdfUrl,
-              form_data: payload.form_data,
-            }),
-          }).catch(err => console.warn("Admin notify failed:", err));
 
           alert("✅ Form submitted! Your PDF is downloading.");
 
