@@ -1,0 +1,2017 @@
+{
+ "form_type": "wireman_suit_application",
+ "title_mr": "विद्युत तारतंत्री सूट अर्ज",
+ "title_en": "Wireman Exam Suit Application",
+ "template": "template.pdf",
+ "pageSize": [
+  595.32,
+  841.92
+ ],
+ "pages": [
+  {
+   "n": 1,
+   "title_mr": "तपासणी सूची",
+   "title_en": "Checklist"
+  },
+  {
+   "n": 2,
+   "title_mr": "अर्ज",
+   "title_en": "Application letter"
+  },
+  {
+   "n": 3,
+   "title_mr": "प्रमाणपत्र तपशील",
+   "title_en": "Certificate record"
+  },
+  {
+   "n": 4,
+   "title_mr": "नमुना बी १",
+   "title_en": "Form B-1"
+  },
+  {
+   "n": 5,
+   "title_mr": "घोषणापत्र",
+   "title_en": "Declaration"
+  },
+  {
+   "n": 6,
+   "title_mr": "नमुना ई",
+   "title_en": "Form E – Experience"
+  },
+  {
+   "n": 7,
+   "title_mr": "जोडपत्र",
+   "title_en": "Attachment"
+  },
+  {
+   "n": 8,
+   "title_mr": "प्रपत्र ब",
+   "title_en": "Self declaration"
+  }
+ ],
+ "shifts": [],
+ "fields": [
+  {
+   "id": "ck_name",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    157.5,
+    107.9,
+    384,
+    121.3
+   ],
+   "base": 117.4,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "cover": true
+  },
+  {
+   "id": "ck_1",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      183.06,
+      498.37,
+      195.66
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      183.06,
+      518.63,
+      195.66
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    183.06,
+    518.63,
+    195.66
+   ],
+   "label_mr": "मुद्दा 1 – जोडले आहे/नाही",
+   "label_en": "Item 1 – attached / not"
+  },
+  {
+   "id": "ck_2",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      200.34,
+      498.37,
+      212.94
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      200.34,
+      518.63,
+      212.94
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    200.34,
+    518.63,
+    212.94
+   ],
+   "label_mr": "मुद्दा 2 – जोडले आहे/नाही",
+   "label_en": "Item 2 – attached / not"
+  },
+  {
+   "id": "ck_3",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      217.62,
+      498.37,
+      230.22
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      217.62,
+      518.63,
+      230.22
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    217.62,
+    518.63,
+    230.22
+   ],
+   "label_mr": "मुद्दा 3 – जोडले आहे/नाही",
+   "label_en": "Item 3 – attached / not"
+  },
+  {
+   "id": "ck_4",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      235.02,
+      498.37,
+      247.62
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      235.02,
+      518.63,
+      247.62
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    235.02,
+    518.63,
+    247.62
+   ],
+   "label_mr": "मुद्दा 4 – जोडले आहे/नाही",
+   "label_en": "Item 4 – attached / not"
+  },
+  {
+   "id": "ck_5",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      265.77,
+      498.37,
+      278.37
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      265.77,
+      518.63,
+      278.37
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    265.77,
+    518.63,
+    278.37
+   ],
+   "label_mr": "मुद्दा 5 – जोडले आहे/नाही",
+   "label_en": "Item 5 – attached / not"
+  },
+  {
+   "id": "ck_6",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      283.05,
+      498.37,
+      295.65
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      283.05,
+      518.63,
+      295.65
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    283.05,
+    518.63,
+    295.65
+   ],
+   "label_mr": "मुद्दा 6 – जोडले आहे/नाही",
+   "label_en": "Item 6 – attached / not"
+  },
+  {
+   "id": "ck_7",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      300.33,
+      498.37,
+      312.93
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      300.33,
+      518.63,
+      312.93
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    300.33,
+    518.63,
+    312.93
+   ],
+   "label_mr": "मुद्दा 7 – जोडले आहे/नाही",
+   "label_en": "Item 7 – attached / not"
+  },
+  {
+   "id": "ck_8",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      317.61,
+      498.37,
+      330.21
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      317.61,
+      518.63,
+      330.21
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    317.61,
+    518.63,
+    330.21
+   ],
+   "label_mr": "मुद्दा 8 – जोडले आहे/नाही",
+   "label_en": "Item 8 – attached / not"
+  },
+  {
+   "id": "ck_9",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      353.37,
+      498.37,
+      365.97
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      353.37,
+      518.63,
+      365.97
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    353.37,
+    518.63,
+    365.97
+   ],
+   "label_mr": "मुद्दा 9 – जोडले आहे/नाही",
+   "label_en": "Item 9 – attached / not"
+  },
+  {
+   "id": "ck_10",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      387.93,
+      498.37,
+      400.53
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      387.93,
+      518.69,
+      400.53
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    387.93,
+    518.69,
+    400.53
+   ],
+   "label_mr": "मुद्दा 10 – जोडले आहे/नाही",
+   "label_en": "Item 10 – attached / not"
+  },
+  {
+   "id": "ck_11",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      422.13,
+      498.37,
+      434.73
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      422.13,
+      518.63,
+      434.73
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    422.13,
+    518.63,
+    434.73
+   ],
+   "label_mr": "मुद्दा 11 – जोडले आहे/नाही",
+   "label_en": "Item 11 – attached / not"
+  },
+  {
+   "id": "ck_12",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      439.43,
+      498.37,
+      452.03
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      439.43,
+      518.63,
+      452.03
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    439.43,
+    518.63,
+    452.03
+   ],
+   "label_mr": "मुद्दा 12 – जोडले आहे/नाही",
+   "label_en": "Item 12 – attached / not"
+  },
+  {
+   "id": "ck_13",
+   "page": 1,
+   "type": "choice",
+   "options": [
+    {
+     "value": "जोडले आहे",
+     "label": "जोडले आहे",
+     "rect": [
+      451.9,
+      456.71,
+      498.37,
+      469.31
+     ]
+    },
+    {
+     "value": "नाही",
+     "label": "नाही",
+     "rect": [
+      495.97,
+      456.71,
+      518.63,
+      469.31
+     ]
+    }
+   ],
+   "rect": [
+    451.9,
+    456.71,
+    518.63,
+    469.31
+   ],
+   "label_mr": "मुद्दा 13 – जोडले आहे/नाही",
+   "label_en": "Item 13 – attached / not"
+  },
+  {
+   "id": "ck_14",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    449.7,
+    507.21,
+    526.86,
+    522.23
+   ],
+   "label_mr": "मुद्दा 14 पूर्ण",
+   "label_en": "Item 14 done"
+  },
+  {
+   "id": "ck_15",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    449.7,
+    526.23,
+    526.86,
+    556.37
+   ],
+   "label_mr": "मुद्दा 15 पूर्ण",
+   "label_en": "Item 15 done"
+  },
+  {
+   "id": "ck_officer1",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    93.82,
+    696.58,
+    193.53,
+    708.08
+   ],
+   "base": 705.58,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शाखा/सहा. अभियंता – नांव",
+   "label_en": "Branch / asst. engineer – name",
+   "onDots": true
+  },
+  {
+   "id": "ck_officer2",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    264.97,
+    696.58,
+    353.64,
+    708.08
+   ],
+   "base": 705.58,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "सहाय्यक विद्युत निरीक्षक – नांव",
+   "label_en": "Asst. electrical inspector – name",
+   "onDots": true
+  },
+  {
+   "id": "ck_officer3",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    443.1,
+    696.58,
+    517.21,
+    708.08
+   ],
+   "base": 705.58,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत निरीक्षक – नांव",
+   "label_en": "Electrical inspector – name",
+   "onDots": true
+  },
+  {
+   "id": "l_name",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    350.08,
+    74.76,
+    560,
+    86.26
+   ],
+   "base": 83.76,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "onDots": true
+  },
+  {
+   "id": "l_address",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    335.58,
+    91.58,
+    560,
+    103.08
+   ],
+   "base": 100.58,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवाराचा पत्ता",
+   "label_en": "Candidate address",
+   "key": "candidate_address",
+   "onDots": true
+  },
+  {
+   "id": "l_address2",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    329.11,
+    106.94,
+    560,
+    118.44
+   ],
+   "base": 115.94,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "पत्ता (ओळ २)",
+   "label_en": "Address (line 2)",
+   "onDots": true
+  },
+  {
+   "id": "l_date",
+   "page": 2,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    355.62,
+    121.82,
+    560,
+    133.32
+   ],
+   "base": 130.82,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अर्जाचा दिनांक",
+   "label_en": "Letter date",
+   "onDots": true
+  },
+  {
+   "id": "l_name2",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    355.48,
+    415.97,
+    447,
+    427.47
+   ],
+   "base": 424.97,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "onDots": true
+  },
+  {
+   "id": "l_mobile",
+   "page": 2,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    377.7,
+    432.79,
+    560,
+    444.29
+   ],
+   "base": 441.79,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा मोबाइल क्र.",
+   "label_en": "Candidate mobile no.",
+   "key": "candidate_mobile",
+   "onDots": true
+  },
+  {
+   "id": "r_name",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    205,
+    138.1,
+    560,
+    150.8
+   ],
+   "base": 147.6,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवाराचे नांव व आडनाव",
+   "label_en": "Candidate name & surname",
+   "key": "candidate_name"
+  },
+  {
+   "id": "r_parent",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    261,
+    154.9,
+    560,
+    167.6
+   ],
+   "base": 164.4,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "वडिलांचे / पतीचे नाव",
+   "label_en": "Father's / husband's name",
+   "key": "candidate_parent_name"
+  },
+  {
+   "id": "r_address",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    201,
+    171.7,
+    560,
+    200.5
+   ],
+   "base": 181.2,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवाराचा पत्ता",
+   "label_en": "Candidate address",
+   "key": "candidate_address",
+   "lines": 2
+  },
+  {
+   "id": "r_email",
+   "page": 3,
+   "type": "text",
+   "kind": "email",
+   "rect": [
+    201,
+    202.0,
+    560,
+    214.7
+   ],
+   "base": 211.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा ई-मेल",
+   "label_en": "Candidate e-mail",
+   "key": "candidate_email"
+  },
+  {
+   "id": "r_mobile",
+   "page": 3,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    202,
+    218.8,
+    560,
+    231.5
+   ],
+   "base": 228.3,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा मोबाइल क्र.",
+   "label_en": "Candidate mobile no.",
+   "key": "candidate_mobile"
+  },
+  {
+   "id": "r_certificate",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    236,
+    235.6,
+    560,
+    248.3
+   ],
+   "base": 245.1,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवारास कोणते प्रमाणपत्र पाहिजे",
+   "label_en": "Certificate required"
+  },
+  {
+   "id": "r_exam_experience",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    276,
+    286.0,
+    560,
+    298.7
+   ],
+   "base": 295.5,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "परवानगी वेळचा कामाचा अनुभव, कालावधी व ठिकाण",
+   "label_en": "Experience at permission – period & place"
+  },
+  {
+   "id": "r_seat_no",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    200,
+    302.7,
+    560,
+    315.4
+   ],
+   "base": 312.2,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "परीक्षा आसन क्रमांक",
+   "label_en": "Exam seat no."
+  },
+  {
+   "id": "r_exam_date",
+   "page": 3,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    200,
+    319.5,
+    560,
+    332.2
+   ],
+   "base": 329.0,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "परीक्षेचा दिनांक",
+   "label_en": "Exam date"
+  },
+  {
+   "id": "r_exam_place",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    200,
+    336.3,
+    560,
+    349.0
+   ],
+   "base": 345.8,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "परीक्षेचे ठिकाण",
+   "label_en": "Exam place"
+  },
+  {
+   "id": "r_result",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    200,
+    353.1,
+    560,
+    365.8
+   ],
+   "base": 362.6,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "निकाल",
+   "label_en": "Result"
+  },
+  {
+   "id": "r_exam_passed",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    290,
+    386.7,
+    560,
+    399.4
+   ],
+   "base": 396.2,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शैक्षणिक पात्रता / उत्तीर्ण परीक्षा",
+   "label_en": "Qualification / exam passed",
+   "key": "candidate_qualification"
+  },
+  {
+   "id": "r_experience",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    289,
+    403.5,
+    560,
+    416.2
+   ],
+   "base": 413.0,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "प्रत्यक्ष कामाचा अनुभव, कालावधी व ठिकाण",
+   "label_en": "Work experience – period & place"
+  },
+  {
+   "id": "r_dob",
+   "page": 3,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    257.5,
+    450.5,
+    338.5,
+    463.9
+   ],
+   "base": 460.0,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराची जन्म दिनांक",
+   "label_en": "Candidate date of birth",
+   "key": "candidate_dob",
+   "cover": true
+  },
+  {
+   "id": "r_birthplace",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    379,
+    450.5,
+    560,
+    463.2
+   ],
+   "base": 460.0,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "जन्म ठिकाण",
+   "label_en": "Place of birth",
+   "key": "candidate_birthplace"
+  },
+  {
+   "id": "r_height",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    258,
+    467.3,
+    560,
+    480.0
+   ],
+   "base": 476.8,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उंची",
+   "label_en": "Height",
+   "key": "candidate_height"
+  },
+  {
+   "id": "r_complexion",
+   "page": 3,
+   "type": "choice",
+   "options": [
+    {
+     "value": "गोरा",
+     "label": "गोरा",
+     "rect": [
+      258.8,
+      484.4,
+      278.2,
+      497.0
+     ]
+    },
+    {
+     "value": "सावळा",
+     "label": "सावळा",
+     "rect": [
+      283.8,
+      484.4,
+      312.2,
+      497.0
+     ]
+    }
+   ],
+   "rect": [
+    258.8,
+    484.4,
+    312.2,
+    497.0
+   ],
+   "label_mr": "वर्ण",
+   "label_en": "Complexion"
+  },
+  {
+   "id": "r_idmark",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    258,
+    500.9,
+    560,
+    513.6
+   ],
+   "base": 510.4,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शरीरावरील ओळख चिन्हे",
+   "label_en": "Identification mark",
+   "key": "candidate_idmark"
+  },
+  {
+   "id": "r_sig",
+   "page": 3,
+   "type": "signature",
+   "rect": [
+    72,
+    564,
+    172,
+    588
+   ],
+   "key": "candidate_signature",
+   "label_mr": "उमेदवाराची स्वाक्षरी",
+   "label_en": "Candidate signature"
+  },
+  {
+   "id": "b1_photo",
+   "page": 4,
+   "type": "photo",
+   "rect": [
+    484.3,
+    164.0,
+    530.3,
+    209.8
+   ],
+   "key": "candidate_photo",
+   "label_mr": "उमेदवाराचा फोटो",
+   "label_en": "Candidate photo"
+  },
+  {
+   "id": "b1_sig",
+   "page": 4,
+   "type": "signature",
+   "rect": [
+    427.5,
+    225.8,
+    576.8,
+    253.7
+   ],
+   "key": "candidate_signature",
+   "label_mr": "उमेदवाराची स्वाक्षरी",
+   "label_en": "Candidate signature"
+  },
+  {
+   "id": "b1_name",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    386.34,
+    305.33,
+    525,
+    316.83
+   ],
+   "base": 314.33,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "onDots": true
+  },
+  {
+   "id": "b1_address",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    339.67,
+    320.69,
+    525,
+    332.19
+   ],
+   "base": 329.69,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवाराचा पत्ता",
+   "label_en": "Candidate address",
+   "key": "candidate_address",
+   "onDots": true
+  },
+  {
+   "id": "b1_address2",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    339.67,
+    334.13,
+    525,
+    345.63
+   ],
+   "base": 343.13,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "पत्ता (ओळ २)",
+   "label_en": "Address (line 2)",
+   "onDots": true
+  },
+  {
+   "id": "b1_mobile",
+   "page": 4,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    340,
+    351.9,
+    525,
+    364.6
+   ],
+   "base": 361.4,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा मोबाइल क्र.",
+   "label_en": "Candidate mobile no.",
+   "key": "candidate_mobile"
+  },
+  {
+   "id": "b1_email",
+   "page": 4,
+   "type": "text",
+   "kind": "email",
+   "rect": [
+    340,
+    368.7,
+    525,
+    381.4
+   ],
+   "base": 378.2,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा ई-मेल",
+   "label_en": "Candidate e-mail",
+   "key": "candidate_email"
+  },
+  {
+   "id": "b1_dob",
+   "page": 4,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    340,
+    389.3,
+    525,
+    402.0
+   ],
+   "base": 398.8,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराची जन्म दिनांक",
+   "label_en": "Candidate date of birth",
+   "key": "candidate_dob"
+  },
+  {
+   "id": "b1_age",
+   "page": 4,
+   "type": "text",
+   "kind": "number",
+   "rect": [
+    357.9,
+    403.25,
+    393.94,
+    414.75
+   ],
+   "base": 412.25,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचे वय",
+   "label_en": "Candidate age",
+   "key": "candidate_age",
+   "onDots": true
+  },
+  {
+   "id": "b1_qualification",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    339.67,
+    439.27,
+    525,
+    450.77
+   ],
+   "base": 448.27,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शैक्षणिक पात्रता / उत्तीर्ण परीक्षा",
+   "label_en": "Qualification / exam passed",
+   "key": "candidate_qualification",
+   "onDots": true
+  },
+  {
+   "id": "b1_training_period",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    339.67,
+    473.35,
+    525,
+    484.85
+   ],
+   "base": 482.35,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "प्रशिक्षण कालावधी",
+   "label_en": "Training period",
+   "onDots": true
+  },
+  {
+   "id": "b1_training_place",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    339.67,
+    490.63,
+    525,
+    502.13
+   ],
+   "base": 499.63,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "प्रशिक्षण ठिकाण व संस्थेचे नांव",
+   "label_en": "Training place & institute",
+   "onDots": true
+  },
+  {
+   "id": "b1_challan_no",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    384.07,
+    519.43,
+    525,
+    530.93
+   ],
+   "base": 528.43,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "चलन क्रमांक",
+   "label_en": "Challan no.",
+   "key": "challan_no",
+   "onDots": true
+  },
+  {
+   "id": "b1_challan_date",
+   "page": 4,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    439.15,
+    536.23,
+    525,
+    547.73
+   ],
+   "base": 545.23,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "चलन भरल्याचा दिनांक",
+   "label_en": "Challan date",
+   "key": "challan_date",
+   "onDots": true
+  },
+  {
+   "id": "d_name",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    140.66,
+    118.46,
+    525,
+    129.96
+   ],
+   "base": 127.46,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "onDots": true
+  },
+  {
+   "id": "d_parent",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    113.3,
+    135.26,
+    236,
+    146.76
+   ],
+   "base": 144.26,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "वडिलांचे / पतीचे नाव",
+   "label_en": "Father's / husband's name",
+   "key": "candidate_parent_name",
+   "onDots": true
+  },
+  {
+   "id": "d_yanchi",
+   "page": 5,
+   "type": "choice",
+   "options": [
+    {
+     "value": "यांचा",
+     "label": "यांचा",
+     "rect": [
+      237.8,
+      135.1,
+      259.2,
+      147.7
+     ]
+    },
+    {
+     "value": "यांची",
+     "label": "यांची",
+     "rect": [
+      263.8,
+      135.1,
+      286.2,
+      147.7
+     ]
+    }
+   ],
+   "rect": [
+    237.8,
+    135.1,
+    286.2,
+    147.7
+   ],
+   "label_mr": "यांचा / यांची",
+   "label_en": "Of (his / her)"
+  },
+  {
+   "id": "d_relation",
+   "page": 5,
+   "type": "choice",
+   "options": [
+    {
+     "value": "मुलगा",
+     "label": "मुलगा",
+     "rect": [
+      286.8,
+      135.1,
+      313.2,
+      147.7
+     ]
+    },
+    {
+     "value": "मुलगी",
+     "label": "मुलगी",
+     "rect": [
+      317.8,
+      135.1,
+      345.2,
+      147.7
+     ]
+    }
+   ],
+   "rect": [
+    286.8,
+    135.1,
+    345.2,
+    147.7
+   ],
+   "label_mr": "मुलगा / मुलगी",
+   "label_en": "Son / daughter"
+  },
+  {
+   "id": "d_age",
+   "page": 5,
+   "type": "text",
+   "kind": "number",
+   "rect": [
+    90.26,
+    152.06,
+    133.85,
+    163.56
+   ],
+   "base": 161.06,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचे वय",
+   "label_en": "Candidate age",
+   "key": "candidate_age",
+   "onDots": true
+  },
+  {
+   "id": "d_address",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    108.02,
+    168.86,
+    525,
+    180.36
+   ],
+   "base": 177.86,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवाराचा पत्ता",
+   "label_en": "Candidate address",
+   "key": "candidate_address",
+   "onDots": true
+  },
+  {
+   "id": "d_aadhaar",
+   "page": 5,
+   "type": "text",
+   "kind": "aadhaar",
+   "rect": [
+    144.02,
+    199.1,
+    233.21,
+    210.6
+   ],
+   "base": 208.1,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा आधार क्रमांक",
+   "label_en": "Candidate Aadhaar no.",
+   "key": "candidate_aadhaar",
+   "onDots": true
+  },
+  {
+   "id": "d_place",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    105.5,
+    279.1,
+    250,
+    292.5
+   ],
+   "base": 288.6,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "स्थळ",
+   "label_en": "Place",
+   "key": "affidavit_place",
+   "cover": true
+  },
+  {
+   "id": "d_date",
+   "page": 5,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    107,
+    296.0,
+    250,
+    308.7
+   ],
+   "base": 305.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "दिनांक (प्रतिज्ञापत्र)",
+   "label_en": "Date (affidavit)",
+   "key": "affidavit_date"
+  },
+  {
+   "id": "e_name",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    354.79,
+    151.22,
+    560,
+    162.72
+   ],
+   "base": 160.22,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "onDots": true
+  },
+  {
+   "id": "e_join_date",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    300.97,
+    184.82,
+    560,
+    196.32
+   ],
+   "base": 193.82,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "प्रवेशाचा दिनांक",
+   "label_en": "Date of joining",
+   "onDots": true
+  },
+  {
+   "id": "e_work",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    306.67,
+    201.62,
+    560,
+    213.12
+   ],
+   "base": 210.62,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "कामाचे स्वरूप",
+   "label_en": "Nature of work",
+   "onDots": true
+  },
+  {
+   "id": "e_leave_date",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    306.67,
+    218.42,
+    560,
+    229.92
+   ],
+   "base": 227.42,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "काम सोडल्याचा दिनांक",
+   "label_en": "Date of leaving",
+   "onDots": true
+  },
+  {
+   "id": "e_sup",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    306.67,
+    268.85,
+    560,
+    280.35
+   ],
+   "base": 277.85,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षक / अभियंता यांचे नांव",
+   "label_en": "Supervisor / engineer name",
+   "onDots": true
+  },
+  {
+   "id": "e_sup_lic",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    303.67,
+    285.65,
+    560,
+    297.15
+   ],
+   "base": 294.65,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "परवाना क्रमांक / तांत्रिक अर्हता",
+   "label_en": "Licence no. / technical qualification",
+   "onDots": true
+  },
+  {
+   "id": "e_contractor_lic",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    306.67,
+    319.25,
+    560,
+    330.75
+   ],
+   "base": 328.25,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.)",
+   "label_en": "Contractor licence no.",
+   "key": "contractor_license_no",
+   "onDots": true
+  },
+  {
+   "id": "e_contractor_lic2",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    299.45,
+    333.77,
+    560,
+    345.27
+   ],
+   "base": 342.77,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "ठेकेदारीचा अनुज्ञप्ती क्रमांक (ओळ २)",
+   "label_en": "Contractor licence no. (line 2)",
+   "onDots": true
+  },
+  {
+   "id": "e_date",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    118,
+    381.4,
+    186,
+    394.1
+   ],
+   "base": 390.9,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "प्रमाणपत्र दिनांक",
+   "label_en": "Certificate date"
+  },
+  {
+   "id": "e_sup_sig",
+   "page": 6,
+   "type": "signature",
+   "rect": [
+    190,
+    396,
+    290,
+    418
+   ],
+   "key": "supervisor_signature",
+   "label_mr": "पर्यवेक्षकाची स्वाक्षरी",
+   "label_en": "Supervisor signature"
+  },
+  {
+   "id": "e_owner_sig",
+   "page": 6,
+   "type": "signature",
+   "rect": [
+    372,
+    396,
+    480,
+    418
+   ],
+   "key": "owner_signature",
+   "label_mr": "मालकाची स्वाक्षरी",
+   "label_en": "Owner signature"
+  },
+  {
+   "id": "j_name",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    146.99,
+    121.82,
+    400,
+    133.32
+   ],
+   "base": 130.82,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "onDots": true
+  },
+  {
+   "id": "j_inward",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    173.78,
+    138.62,
+    400,
+    150.12
+   ],
+   "base": 147.62,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "आवक क्रमांक / दिनांक",
+   "label_en": "Inward no. / date",
+   "onDots": true
+  },
+  {
+   "id": "j_dob",
+   "page": 7,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    133.83,
+    168.86,
+    400,
+    180.36
+   ],
+   "base": 177.86,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराची जन्म दिनांक",
+   "label_en": "Candidate date of birth",
+   "key": "candidate_dob",
+   "onDots": true
+  },
+  {
+   "id": "j_qualification",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    141.71,
+    185.66,
+    400,
+    197.16
+   ],
+   "base": 194.66,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शैक्षणिक पात्रता / उत्तीर्ण परीक्षा",
+   "label_en": "Qualification / exam passed",
+   "key": "candidate_qualification",
+   "onDots": true
+  },
+  {
+   "id": "j_sig",
+   "page": 7,
+   "type": "signature",
+   "rect": [
+    96,
+    210,
+    240,
+    228
+   ],
+   "key": "candidate_signature",
+   "label_mr": "उमेदवाराची स्वाक्षरी",
+   "label_en": "Candidate signature"
+  },
+  {
+   "id": "pb_photo",
+   "page": 8,
+   "type": "photo",
+   "rect": [
+    480.0,
+    184.7,
+    511.2,
+    218.4
+   ],
+   "key": "candidate_photo",
+   "label_mr": "उमेदवाराचा फोटो",
+   "label_en": "Candidate photo"
+  },
+  {
+   "id": "pb_name",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    131.05,
+    246.02,
+    400,
+    257.52
+   ],
+   "base": 255.02,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "onDots": true
+  },
+  {
+   "id": "pb_parent",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    118.69,
+    262.85,
+    224,
+    274.35
+   ],
+   "base": 271.85,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "वडिलांचे / पतीचे नाव",
+   "label_en": "Father's / husband's name",
+   "key": "candidate_parent_name",
+   "onDots": true
+  },
+  {
+   "id": "pb_relation",
+   "page": 8,
+   "type": "choice",
+   "options": [
+    {
+     "value": "मुलगा",
+     "label": "मुलगा",
+     "rect": [
+      247.8,
+      262.6,
+      274.2,
+      275.2
+     ]
+    },
+    {
+     "value": "मुलगी",
+     "label": "मुलगी",
+     "rect": [
+      278.8,
+      262.6,
+      306.2,
+      275.2
+     ]
+    }
+   ],
+   "rect": [
+    247.8,
+    262.6,
+    306.2,
+    275.2
+   ],
+   "label_mr": "मुलगा / मुलगी",
+   "label_en": "Son / daughter"
+  },
+  {
+   "id": "pb_age",
+   "page": 8,
+   "type": "text",
+   "kind": "number",
+   "rect": [
+    92.75,
+    279.65,
+    110.77,
+    291.15
+   ],
+   "base": 288.65,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचे वय",
+   "label_en": "Candidate age",
+   "key": "candidate_age",
+   "onDots": true
+  },
+  {
+   "id": "pb_address",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    108.01,
+    296.45,
+    525,
+    307.95
+   ],
+   "base": 305.45,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवाराचा पत्ता",
+   "label_en": "Candidate address",
+   "key": "candidate_address",
+   "onDots": true
+  },
+  {
+   "id": "pb_place",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    105.5,
+    420.1,
+    250,
+    433.5
+   ],
+   "base": 429.6,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "स्थळ",
+   "label_en": "Place",
+   "key": "affidavit_place",
+   "cover": true
+  },
+  {
+   "id": "pb_date",
+   "page": 8,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    107,
+    437.0,
+    250,
+    449.7
+   ],
+   "base": 446.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "दिनांक (प्रतिज्ञापत्र)",
+   "label_en": "Date (affidavit)",
+   "key": "affidavit_date"
+  },
+  {
+   "id": "pb_sig",
+   "page": 8,
+   "type": "signature",
+   "rect": [
+    358,
+    432,
+    470,
+    449
+   ],
+   "key": "candidate_signature",
+   "label_mr": "उमेदवाराची स्वाक्षरी",
+   "label_en": "Candidate signature"
+  },
+  {
+   "id": "pb_name2",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    403.86,
+    454.27,
+    560,
+    465.77
+   ],
+   "base": 463.27,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name",
+   "onDots": true
+  },
+  {
+   "id": "pb_mobile",
+   "page": 8,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    357.88,
+    471.07,
+    560,
+    482.57
+   ],
+   "base": 480.07,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा मोबाइल क्र.",
+   "label_en": "Candidate mobile no.",
+   "key": "candidate_mobile",
+   "onDots": true
+  }
+ ]
+}

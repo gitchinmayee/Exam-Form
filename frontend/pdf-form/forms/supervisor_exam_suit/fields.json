@@ -1,0 +1,424 @@
+{
+ "form_type": "supervisor_exam_suit_form",
+ "title_mr": "पर्यवेक्षक सूट करीता उमेदवाराची माहिती",
+ "title_en": "Supervisor Exam Suit – Candidate Information",
+ "template": "template.pdf",
+ "pageSize": [
+  595.32,
+  841.92
+ ],
+ "pages": [
+  {
+   "n": 1,
+   "title_mr": "उमेदवाराची माहिती",
+   "title_en": "Candidate information"
+  }
+ ],
+ "shifts": [],
+ "fields": [
+  {
+   "id": "c_name",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    294.77,
+    90.26,
+    525.82,
+    101.78
+   ],
+   "base": 98.9,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवार / अर्जदाराचे नाव",
+   "label_en": "Candidate / applicant name",
+   "key": "candidate_name"
+  },
+  {
+   "id": "c_father",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    294.77,
+    104.18,
+    525.82,
+    115.7
+   ],
+   "base": 112.82,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "वडिलांचे / पतीचे नाव",
+   "label_en": "Father's / husband's name",
+   "key": "candidate_parent_name"
+  },
+  {
+   "id": "c_address",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    293.27,
+    118.1,
+    527.32,
+    136.34
+   ],
+   "base": 126.4,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उमेदवाराचा पत्ता",
+   "label_en": "Candidate address",
+   "key": "candidate_address",
+   "lines": 2
+  },
+  {
+   "id": "c_mobile",
+   "page": 1,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    294.77,
+    138.74,
+    525.82,
+    150.26
+   ],
+   "base": 147.38,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा मोबाइल क्र.",
+   "label_en": "Candidate mobile no.",
+   "key": "candidate_mobile"
+  },
+  {
+   "id": "c_email",
+   "page": 1,
+   "type": "text",
+   "kind": "email",
+   "rect": [
+    294.77,
+    152.66,
+    525.82,
+    164.3
+   ],
+   "base": 161.36,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा ई-मेल",
+   "label_en": "Candidate e-mail",
+   "key": "candidate_email"
+  },
+  {
+   "id": "c_aadhaar",
+   "page": 1,
+   "type": "text",
+   "kind": "aadhaar",
+   "rect": [
+    294.77,
+    166.7,
+    525.82,
+    178.22
+   ],
+   "base": 175.34,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराचा आधार क्रमांक",
+   "label_en": "Candidate Aadhaar no.",
+   "key": "candidate_aadhaar"
+  },
+  {
+   "id": "c_pan",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    294.77,
+    180.62,
+    525.82,
+    192.14
+   ],
+   "base": 189.26,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पॅन कार्ड क्रमांक",
+   "label_en": "PAN card number"
+  },
+  {
+   "id": "c_exam",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    293.27,
+    194.54,
+    527.32,
+    226.22
+   ],
+   "base": 202.84,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शैक्षणिक पात्रता / उत्तीर्ण परीक्षा",
+   "label_en": "Qualification / exam passed",
+   "key": "candidate_qualification",
+   "lines": 3
+  },
+  {
+   "id": "c_dob",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    294.77,
+    228.62,
+    395.44,
+    240.14
+   ],
+   "base": 237.26,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "उमेदवाराची जन्म दिनांक",
+   "label_en": "Candidate date of birth",
+   "key": "candidate_dob"
+  },
+  {
+   "id": "c_birthplace",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    401.44,
+    228.62,
+    525.82,
+    240.14
+   ],
+   "base": 237.26,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "जन्म ठिकाण",
+   "label_en": "Place of birth",
+   "key": "candidate_birthplace"
+  },
+  {
+   "id": "c_height",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    294.77,
+    242.54,
+    525.82,
+    254.06
+   ],
+   "base": 251.18,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "उंची",
+   "label_en": "Height",
+   "key": "candidate_height"
+  },
+  {
+   "id": "c_idmark",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    294.77,
+    256.46,
+    525.82,
+    268.01
+   ],
+   "base": 265.12,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शरीरावरील ओळख चिन्हे",
+   "label_en": "Identification mark",
+   "key": "candidate_idmark"
+  },
+  {
+   "id": "c_mcvc_firm",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    294.77,
+    284.33,
+    525.82,
+    305.69
+   ],
+   "base": 297.89,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "ठेकेदाराचे / कंपनीचे नाव व MC क्रमांक",
+   "label_en": "Company / contractor firm with MC no."
+  },
+  {
+   "id": "c_mcvc_join",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    294.77,
+    306.99,
+    525.82,
+    319.69
+   ],
+   "base": 316.49,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "जॉइनिंग तारीख",
+   "label_en": "Joining date"
+  },
+  {
+   "id": "c_mcvc_end",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    294.77,
+    320.43,
+    525.82,
+    333.13
+   ],
+   "base": 329.93,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "सेवा समाप्त तारीख",
+   "label_en": "Service end date"
+  },
+  {
+   "id": "c_sup_name",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    322,
+    335.5,
+    525.82,
+    346.0
+   ],
+   "base": 343.8,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "पर्यवेक्षक / विद्युत अभियंता यांचे नांव",
+   "label_en": "Supervisor / electrical engineer name"
+  },
+  {
+   "id": "c_sup_ms",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    344,
+    346.2,
+    525.82,
+    357.4
+   ],
+   "base": 354.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक MS क्रमांक",
+   "label_en": "Supervisor MS number"
+  },
+  {
+   "id": "c_mcvc2_join",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    294.77,
+    361.71,
+    525.82,
+    374.41
+   ],
+   "base": 371.21,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "जॉइनिंग तारीख (MCVC)",
+   "label_en": "Joining date (MCVC)"
+  },
+  {
+   "id": "c_mcvc2_end",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    294.77,
+    375.15,
+    525.82,
+    387.85
+   ],
+   "base": 384.65,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "सेवा समाप्त तारीख (MCVC)",
+   "label_en": "Service end date (MCVC)"
+  },
+  {
+   "id": "c_extra16_label",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    91.58,
+    390.17,
+    288.77,
+    401.69
+   ],
+   "base": 398.81,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "ओळ 16 – माहिती",
+   "label_en": "Row 16 – item"
+  },
+  {
+   "id": "c_extra16_value",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    294.77,
+    390.17,
+    525.82,
+    401.69
+   ],
+   "base": 398.81,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "ओळ 16 – तपशील",
+   "label_en": "Row 16 – details"
+  },
+  {
+   "id": "c_extra17_label",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    91.58,
+    404.09,
+    288.77,
+    415.61
+   ],
+   "base": 412.73,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "ओळ 17 – माहिती",
+   "label_en": "Row 17 – item"
+  },
+  {
+   "id": "c_extra17_value",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    294.77,
+    404.09,
+    525.82,
+    415.61
+   ],
+   "base": 412.73,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "ओळ 17 – तपशील",
+   "label_en": "Row 17 – details"
+  }
+ ]
+}

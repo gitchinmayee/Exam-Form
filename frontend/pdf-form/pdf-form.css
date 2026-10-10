@@ -1,0 +1,119 @@
+/* pdf-form.css — overlay inputs on top of the original PDF pages.
+   Screen-only helpers (tints, hints) never reach the downloaded PDF. */
+:root {
+  --pf-accent: #0056b3;
+  --pf-fill: rgba(0, 86, 179, 0.07);
+  --pf-fill-hover: rgba(0, 86, 179, 0.14);
+  --pf-auto: rgba(40, 167, 69, 0.12);
+  --pf-bad: #d32f2f;
+}
+
+.pf-doc { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 12px 0 24px; }
+.pf-page {
+  position: relative; width: 100%; max-width: 900px; background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15); scroll-margin-top: 64px;
+}
+.pf-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.pf-layer { position: absolute; inset: 0; }
+
+/* ── fields ─────────────────────────────────────────── */
+.pf-field { position: absolute; box-sizing: border-box; margin: 0; }
+.pf-text {
+  border: none; outline: none; resize: none; overflow: hidden; color: #000;
+  background: var(--pf-fill); border-bottom: 1px dotted rgba(0, 86, 179, 0.45);
+  padding: 0 0 0 calc(var(--k) * 1px); line-height: 1; font-family: Arial, Helvetica, sans-serif;
+  border-radius: 2px;
+}
+.pf-text.pf-multi { padding-top: calc(var(--k) * 1.5px); white-space: pre-wrap; }
+.pf-text:hover { background: var(--pf-fill-hover); }
+.pf-text:focus { background: rgba(255, 235, 59, 0.28); box-shadow: 0 0 0 1px var(--pf-accent); }
+.pf-text.pf-auto { background: var(--pf-auto); }
+.pf-text.pf-invalid { border-bottom: 1.5px solid var(--pf-bad); }
+.pf-text.pf-reject { animation: pf-shake 0.3s; box-shadow: 0 0 0 1.5px var(--pf-bad); }
+.pf-text::placeholder { color: rgba(0, 0, 0, 0.28); }
+/* a value replaces the template's printed sample ("पुणे", "शांती" …) */
+.pf-cover { background: rgba(255, 152, 0, 0.10); }
+.pf-cover.pf-filled { background: #fff; }
+@keyframes pf-shake { 25% { transform: translateX(-2px); } 75% { transform: translateX(2px); } }
+
+.pf-check { display: flex; align-items: center; justify-content: center; cursor: pointer;
+  border: 1px dashed rgba(0, 86, 179, 0.5); border-radius: 2px; background: var(--pf-fill); }
+.pf-check input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.pf-check span { visibility: hidden; font-size: calc(var(--k) * 9px); line-height: 1; color: #000; font-weight: bold; }
+.pf-check input:checked + span { visibility: visible; }
+.pf-check:has(input:focus-visible) { box-shadow: 0 0 0 1px var(--pf-accent); }
+
+.pf-choice { cursor: pointer; border-radius: 50%; }
+.pf-choice:hover { background: var(--pf-fill-hover); }
+.pf-choice input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pf-choice span { position: absolute; inset: 0; border-radius: 50%; }
+.pf-choice input:checked + span { border: calc(var(--k) * 0.8px) solid #000; }
+.pf-choice:has(input:focus-visible) span { box-shadow: 0 0 0 1px var(--pf-accent); }
+
+.pf-photo, .pf-signature { cursor: pointer; display: flex; align-items: center; justify-content: center;
+  background: rgba(255, 152, 0, 0.08); outline: 1px dashed rgba(255, 152, 0, 0.7); }
+.pf-photo:hover, .pf-signature:hover { background: rgba(255, 152, 0, 0.18); }
+.pf-photo img, .pf-signature img { position: absolute; inset: 0; width: 100%; height: 100%; display: none; }
+.pf-photo img { object-fit: cover; background: #fff; }
+.pf-signature img { object-fit: contain; }
+.pf-filled img { display: block; }
+.pf-hint { font-size: calc(var(--k) * 12px); opacity: 0.55; pointer-events: none; }
+.pf-filled .pf-hint { display: none; }
+.pf-remove { position: absolute; top: -9px; right: -9px; width: 18px; height: 18px; border-radius: 50%;
+  border: none; background: var(--pf-bad); color: #fff; font-size: 12px; line-height: 18px; padding: 0;
+  cursor: pointer; display: none; z-index: 2; }
+.pf-filled:hover .pf-remove { display: block; }
+.pf-photo.pf-auto, .pf-signature.pf-auto { outline-color: rgba(40, 167, 69, 0.8); }
+
+/* print view: exactly what the PDF will look like */
+.pf-print-view .pf-text, .pf-print-view .pf-check, .pf-print-view .pf-photo, .pf-print-view .pf-signature,
+.pf-print-view .pf-text:hover, .pf-print-view .pf-choice:hover {
+  background: transparent; border-color: transparent; outline: none; box-shadow: none; }
+.pf-print-view .pf-cover.pf-filled { background: #fff; }
+.pf-print-view .pf-hint, .pf-print-view .pf-text::placeholder { visibility: hidden; color: transparent; }
+
+/* ── assist bar ─────────────────────────────────────── */
+.pf-assist {
+  position: absolute; z-index: 30; width: 310px; max-width: calc(100% - 8px); box-sizing: border-box;
+  background: #fff; border: 1px solid #c8d3e0; border-radius: 8px; padding: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18); font-family: Arial, "Noto Sans Devanagari", sans-serif;
+}
+.pf-assist[hidden] { display: none; }
+.pf-assist-label { font-size: 13px; font-weight: bold; color: #1a3a5c; margin-bottom: 6px; }
+.pf-assist-row { display: flex; gap: 6px; align-items: center; }
+.pf-assist-input, .pf-roman, .pf-deva {
+  flex: 1; min-width: 0; font-size: 16px; padding: 6px 8px; border: 1px solid #b8c4d2; border-radius: 6px;
+  font-family: Arial, "Noto Sans Devanagari", sans-serif;
+}
+.pf-btn { border: 1px solid #b8c4d2; background: #f4f7fb; border-radius: 6px; padding: 6px 9px;
+  font-size: 15px; cursor: pointer; line-height: 1; font-family: inherit; }
+.pf-btn:hover { background: #e3ecf7; }
+.pf-btn[hidden] { display: none; }
+.pf-done { background: var(--pf-accent); color: #fff; border-color: var(--pf-accent); }
+.pf-date-native { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.pf-translit { margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+.pf-translit[hidden] { display: none; }
+.pf-translit .pf-btn { flex: 1; font-size: 13px; }
+.pf-translit-help { font-size: 11px; color: #667; }
+.pf-assist-msg { font-size: 12px; color: var(--pf-bad); min-height: 0; margin-top: 4px; }
+.pf-assist-msg:empty { display: none; }
+
+/* ── page navigation ────────────────────────────────── */
+.pf-nav {
+  position: sticky; top: 0; z-index: 40; display: flex; align-items: center; gap: 6px;
+  background: #fff; border-bottom: 1px solid #dde3ea; padding: 8px 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  font-family: Arial, "Noto Sans Devanagari", sans-serif;
+}
+.pf-tabs { display: flex; gap: 4px; overflow-x: auto; flex: 1; scrollbar-width: thin; }
+.pf-tab { white-space: nowrap; border: 1px solid #d5dde7; background: #f7f9fc; border-radius: 16px;
+  padding: 5px 11px; font-size: 13px; cursor: pointer; color: #234; font-family: inherit; }
+.pf-tab b { color: var(--pf-accent); }
+.pf-tab.pf-on { background: var(--pf-accent); color: #fff; border-color: var(--pf-accent); }
+.pf-tab.pf-on b { color: #fff; }
+.pf-preview-toggle { white-space: nowrap; font-size: 13px; display: flex; gap: 4px; align-items: center; cursor: pointer; }
+
+@media (max-width: 640px) {
+  .pf-doc { gap: 10px; }
+  .pf-preview-toggle span { display: none; }
+  .pf-remove { display: block; }
+}

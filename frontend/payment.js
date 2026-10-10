@@ -138,6 +138,8 @@
   }
 
   async function generateFormPdf(form, fileName) {
+    // Forms built on their original PDF template supply their own exact builder
+    if (typeof window.MyExamBuildPdf === "function") return window.MyExamBuildPdf(form);
     const html2pdf = await loadHtml2Pdf();
     const source = form.closest(".page") || document.querySelector(".page") || form;
     const clone = buildPrintableClone(source);

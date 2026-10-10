@@ -1,0 +1,3239 @@
+{
+ "form_type": "contractor_renewal_form",
+ "title_mr": "विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरण अर्ज",
+ "title_en": "Electrical Contractor Licence Renewal",
+ "template": "template.pdf",
+ "pageSize": [
+  595.32,
+  841.92
+ ],
+ "pages": [
+  {
+   "n": 1,
+   "title_mr": "तपासणी सूची",
+   "title_en": "Checklist"
+  },
+  {
+   "n": 2,
+   "title_mr": "अर्ज",
+   "title_en": "Application letter"
+  },
+  {
+   "n": 3,
+   "title_mr": "नमुना एस",
+   "title_en": "Form S – Megger"
+  },
+  {
+   "n": 4,
+   "title_mr": "नमुना टी",
+   "title_en": "Form T – Earth tester"
+  },
+  {
+   "n": 5,
+   "title_mr": "नमुना यु",
+   "title_en": "Form U – Signatures"
+  },
+  {
+   "n": 6,
+   "title_mr": "नमुना व्ही",
+   "title_en": "Form V – Supervisor"
+  },
+  {
+   "n": 7,
+   "title_mr": "नमुना डब्लु",
+   "title_en": "Form W – Contractor"
+  },
+  {
+   "n": 8,
+   "title_mr": "नमुना एक्स",
+   "title_en": "Form X – Owner-supervisor"
+  },
+  {
+   "n": 9,
+   "title_mr": "नमुना वाय",
+   "title_en": "Form Y – Partners"
+  }
+ ],
+ "shifts": [
+  {
+   "page": 3,
+   "rect": [
+    87.5,
+    265.8,
+    272,
+    279.4
+   ],
+   "dx": 45
+  },
+  {
+   "page": 4,
+   "rect": [
+    87.5,
+    268.8,
+    272,
+    282.4
+   ],
+   "dx": 45
+  }
+ ],
+ "fields": [
+  {
+   "id": "ck_year",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    428,
+    74.3,
+    540,
+    87.0
+   ],
+   "base": 83.8,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "तपासणी सूची सन",
+   "label_en": "Checklist year"
+  },
+  {
+   "id": "ck_firm",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    156.02,
+    90.38,
+    280.24,
+    101.88
+   ],
+   "base": 99.38,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "ck_lic_no",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    460.42,
+    90.38,
+    545,
+    101.88
+   ],
+   "base": 99.38,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.)",
+   "label_en": "Contractor licence no.",
+   "key": "contractor_license_no",
+   "onDots": true
+  },
+  {
+   "id": "ck_1_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    129.82,
+    488.3,
+    143.22
+   ],
+   "label_mr": "मुद्दा 1 – वि. नि.",
+   "label_en": "Item 1 – V.N."
+  },
+  {
+   "id": "ck_1_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    129.82,
+    526.83,
+    143.22
+   ],
+   "label_mr": "मुद्दा 1 – अ. अ.",
+   "label_en": "Item 1 – A.A."
+  },
+  {
+   "id": "ck_2_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    147.22,
+    488.3,
+    160.5
+   ],
+   "label_mr": "मुद्दा 2 – वि. नि.",
+   "label_en": "Item 2 – V.N."
+  },
+  {
+   "id": "ck_2_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    147.22,
+    526.83,
+    160.5
+   ],
+   "label_mr": "मुद्दा 2 – अ. अ.",
+   "label_en": "Item 2 – A.A."
+  },
+  {
+   "id": "ck_3_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    164.5,
+    488.3,
+    177.78
+   ],
+   "label_mr": "मुद्दा 3 – वि. नि.",
+   "label_en": "Item 3 – V.N."
+  },
+  {
+   "id": "ck_3_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    164.5,
+    526.83,
+    177.78
+   ],
+   "label_mr": "मुद्दा 3 – अ. अ.",
+   "label_en": "Item 3 – A.A."
+  },
+  {
+   "id": "ck_4_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    181.78,
+    488.3,
+    195.06
+   ],
+   "label_mr": "मुद्दा 4 – वि. नि.",
+   "label_en": "Item 4 – V.N."
+  },
+  {
+   "id": "ck_4_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    181.78,
+    526.83,
+    195.06
+   ],
+   "label_mr": "मुद्दा 4 – अ. अ.",
+   "label_en": "Item 4 – A.A."
+  },
+  {
+   "id": "ck_5_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    199.06,
+    488.3,
+    222.42
+   ],
+   "label_mr": "मुद्दा 5 – वि. नि.",
+   "label_en": "Item 5 – V.N."
+  },
+  {
+   "id": "ck_5_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    199.06,
+    526.83,
+    222.42
+   ],
+   "label_mr": "मुद्दा 5 – अ. अ.",
+   "label_en": "Item 5 – A.A."
+  },
+  {
+   "id": "ck_6_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    226.42,
+    488.3,
+    249.78
+   ],
+   "label_mr": "मुद्दा 6 – वि. नि.",
+   "label_en": "Item 6 – V.N."
+  },
+  {
+   "id": "ck_6_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    226.42,
+    526.83,
+    249.78
+   ],
+   "label_mr": "मुद्दा 6 – अ. अ.",
+   "label_en": "Item 6 – A.A."
+  },
+  {
+   "id": "ck_7_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    253.78,
+    488.3,
+    277.17
+   ],
+   "label_mr": "मुद्दा 7 – वि. नि.",
+   "label_en": "Item 7 – V.N."
+  },
+  {
+   "id": "ck_7_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    253.78,
+    526.83,
+    277.17
+   ],
+   "label_mr": "मुद्दा 7 – अ. अ.",
+   "label_en": "Item 7 – A.A."
+  },
+  {
+   "id": "ck_8_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    281.17,
+    488.3,
+    318.09
+   ],
+   "label_mr": "मुद्दा 8 – वि. नि.",
+   "label_en": "Item 8 – V.N."
+  },
+  {
+   "id": "ck_8_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    281.17,
+    526.83,
+    318.09
+   ],
+   "label_mr": "मुद्दा 8 – अ. अ.",
+   "label_en": "Item 8 – A.A."
+  },
+  {
+   "id": "ck_9_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    322.09,
+    488.3,
+    335.37
+   ],
+   "label_mr": "मुद्दा 9 – वि. नि.",
+   "label_en": "Item 9 – V.N."
+  },
+  {
+   "id": "ck_9_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    322.09,
+    526.83,
+    335.37
+   ],
+   "label_mr": "मुद्दा 9 – अ. अ.",
+   "label_en": "Item 9 – A.A."
+  },
+  {
+   "id": "ck_10_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    339.37,
+    488.3,
+    376.17
+   ],
+   "label_mr": "मुद्दा 10 – वि. नि.",
+   "label_en": "Item 10 – V.N."
+  },
+  {
+   "id": "ck_10_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    339.37,
+    526.83,
+    376.17
+   ],
+   "label_mr": "मुद्दा 10 – अ. अ.",
+   "label_en": "Item 10 – A.A."
+  },
+  {
+   "id": "ck_11_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    380.17,
+    488.3,
+    393.45
+   ],
+   "label_mr": "मुद्दा 11 – वि. नि.",
+   "label_en": "Item 11 – V.N."
+  },
+  {
+   "id": "ck_11_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    380.17,
+    526.83,
+    393.45
+   ],
+   "label_mr": "मुद्दा 11 – अ. अ.",
+   "label_en": "Item 11 – A.A."
+  },
+  {
+   "id": "ck_12_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    397.45,
+    488.3,
+    420.81
+   ],
+   "label_mr": "मुद्दा 12 – वि. नि.",
+   "label_en": "Item 12 – V.N."
+  },
+  {
+   "id": "ck_12_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    397.45,
+    526.83,
+    420.81
+   ],
+   "label_mr": "मुद्दा 12 – अ. अ.",
+   "label_en": "Item 12 – A.A."
+  },
+  {
+   "id": "ck_13_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    424.81,
+    488.3,
+    448.19
+   ],
+   "label_mr": "मुद्दा 13 – वि. नि.",
+   "label_en": "Item 13 – V.N."
+  },
+  {
+   "id": "ck_13_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    424.81,
+    526.83,
+    448.19
+   ],
+   "label_mr": "मुद्दा 13 – अ. अ.",
+   "label_en": "Item 13 – A.A."
+  },
+  {
+   "id": "ck_14_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    452.19,
+    488.3,
+    465.47
+   ],
+   "label_mr": "मुद्दा 14 – वि. नि.",
+   "label_en": "Item 14 – V.N."
+  },
+  {
+   "id": "ck_14_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    452.19,
+    526.83,
+    465.47
+   ],
+   "label_mr": "मुद्दा 14 – अ. अ.",
+   "label_en": "Item 14 – A.A."
+  },
+  {
+   "id": "ck_15_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    469.47,
+    488.3,
+    506.27
+   ],
+   "label_mr": "मुद्दा 15 – वि. नि.",
+   "label_en": "Item 15 – V.N."
+  },
+  {
+   "id": "ck_15_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    469.47,
+    526.83,
+    506.27
+   ],
+   "label_mr": "मुद्दा 15 – अ. अ.",
+   "label_en": "Item 15 – A.A."
+  },
+  {
+   "id": "ck_16_vn",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    456.9,
+    510.27,
+    488.3,
+    533.8
+   ],
+   "label_mr": "मुद्दा 16 – वि. नि.",
+   "label_en": "Item 16 – V.N."
+  },
+  {
+   "id": "ck_16_aa",
+   "page": 1,
+   "type": "check",
+   "rect": [
+    492.3,
+    510.27,
+    526.83,
+    533.8
+   ],
+   "label_mr": "मुद्दा 16 – अ. अ.",
+   "label_en": "Item 16 – A.A."
+  },
+  {
+   "id": "ck_jawak",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    188,
+    574.8,
+    278,
+    587.5
+   ],
+   "base": 584.3,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "विद्युत निरीक्षक कार्यालय जावक",
+   "label_en": "Inspector office outward no."
+  },
+  {
+   "id": "ck_jawak_date",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    309,
+    574.8,
+    450,
+    587.5
+   ],
+   "base": 584.3,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "जावक दिनांक",
+   "label_en": "Outward date"
+  },
+  {
+   "id": "l_date",
+   "page": 2,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    463,
+    72.5,
+    560,
+    85.2
+   ],
+   "base": 82.0,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अर्जाचा दिनांक",
+   "label_en": "Letter date"
+  },
+  {
+   "id": "l_office",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    86.42,
+    136.94,
+    280,
+    148.44
+   ],
+   "base": 145.94,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत निरीक्षक कार्यालय (ठिकाण)",
+   "label_en": "Inspector office (place)",
+   "onDots": true
+  },
+  {
+   "id": "l_name",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    162.74,
+    171.62,
+    300,
+    183.12
+   ],
+   "base": 180.62,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मालक / अर्जदाराचे नाव",
+   "label_en": "Owner / applicant name",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "l_firm",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    93.5,
+    185.06,
+    215,
+    196.56
+   ],
+   "base": 194.06,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "l_lic_no",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    263.45,
+    185.06,
+    430,
+    196.56
+   ],
+   "base": 194.06,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.)",
+   "label_en": "Contractor licence no.",
+   "key": "contractor_license_no",
+   "onDots": true
+  },
+  {
+   "id": "l_name2",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    371.95,
+    425.83,
+    560,
+    437.33
+   ],
+   "base": 434.83,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मालक / अर्जदाराचे नाव",
+   "label_en": "Owner / applicant name",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "l_firm2",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    386.23,
+    439.15,
+    560,
+    450.65
+   ],
+   "base": 448.15,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "l_mobile",
+   "page": 2,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    400.15,
+    452.59,
+    560,
+    464.09
+   ],
+   "base": 461.59,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "मालकाचा मोबाइल क्र.",
+   "label_en": "Owner mobile no.",
+   "key": "owner_mobile",
+   "onDots": true
+  },
+  {
+   "id": "s_firm",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    272.81,
+    160.94,
+    525,
+    172.44
+   ],
+   "base": 169.94,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "s_lic_no",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    145.1,
+    176.18,
+    268,
+    187.68
+   ],
+   "base": 185.18,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.)",
+   "label_en": "Contractor licence no.",
+   "key": "contractor_license_no",
+   "onDots": true
+  },
+  {
+   "id": "s_lic_date",
+   "page": 3,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    295.49,
+    176.18,
+    525,
+    187.68
+   ],
+   "base": 185.18,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अनुज्ञप्ती दिनांक",
+   "label_en": "Licence date",
+   "key": "contractor_license_date",
+   "onDots": true
+  },
+  {
+   "id": "s_applicant",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    272.81,
+    187.82,
+    525,
+    199.32
+   ],
+   "base": 196.82,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "नवीन अनुज्ञाचे अर्जदार",
+   "label_en": "Applicant",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "s_sup_name",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    272.81,
+    201.26,
+    525,
+    212.76
+   ],
+   "base": 210.26,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षकाचे नाव",
+   "label_en": "Electrical supervisor name",
+   "key": "supervisor_name",
+   "onDots": true
+  },
+  {
+   "id": "s_sup_lic_no",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    179.06,
+    216.5,
+    268,
+    228.0
+   ],
+   "base": 225.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.)",
+   "label_en": "Supervisor licence no.",
+   "key": "sup_license_no",
+   "onDots": true
+  },
+  {
+   "id": "s_sup_lic_date",
+   "page": 3,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    299.09,
+    216.5,
+    525,
+    228.0
+   ],
+   "base": 225.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना दिनांक",
+   "label_en": "Supervisor licence date",
+   "key": "sup_license_date",
+   "onDots": true
+  },
+  {
+   "id": "s_test_date",
+   "page": 3,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    261,
+    252.7,
+    326,
+    265.4
+   ],
+   "base": 262.2,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "मेगर परीक्षण दिनांक",
+   "label_en": "Megger test date"
+  },
+  {
+   "id": "s_test_place",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    71.6,
+    266.1,
+    131,
+    279.5
+   ],
+   "base": 275.6,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेगर परीक्षण ठिकाण",
+   "label_en": "Megger test place",
+   "cover": true
+  },
+  {
+   "id": "s_make",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.83,
+    278.21,
+    560,
+    289.71
+   ],
+   "base": 287.21,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेगर बनावट",
+   "label_en": "Megger make",
+   "key": "megger_make",
+   "onDots": true
+  },
+  {
+   "id": "s_serial",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    310.63,
+    291.65,
+    560,
+    303.15
+   ],
+   "base": 300.65,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "मेगर क्रमांक",
+   "label_en": "Megger serial no.",
+   "key": "megger_serial",
+   "onDots": true
+  },
+  {
+   "id": "s_covering",
+   "page": 3,
+   "type": "choice",
+   "options": [
+    {
+     "value": "धातू",
+     "label": "धातू",
+     "rect": [
+      309.43,
+      306.7,
+      324.86,
+      319.3
+     ]
+    },
+    {
+     "value": "अधातू",
+     "label": "अधातू",
+     "rect": [
+      324.79,
+      306.7,
+      346.46,
+      319.3
+     ]
+    },
+    {
+     "value": "प्लास्टिक",
+     "label": "प्लास्टिक",
+     "rect": [
+      346.39,
+      306.7,
+      378.24,
+      319.3
+     ]
+    }
+   ],
+   "rect": [
+    309.43,
+    306.7,
+    378.24,
+    319.3
+   ],
+   "label_mr": "आवरणाचा तपशील",
+   "label_en": "Body material"
+  },
+  {
+   "id": "s_type",
+   "page": 3,
+   "type": "choice",
+   "options": [
+    {
+     "value": "हाताने फिरवणारे",
+     "label": "हाताने फिरवणारे",
+     "rect": [
+      313.65,
+      320.1,
+      368.99,
+      332.7
+     ]
+    },
+    {
+     "value": "इलेक्ट्रॉनिक",
+     "label": "इलेक्ट्रॉनिक",
+     "rect": [
+      372.89,
+      320.1,
+      411.32,
+      332.7
+     ]
+    }
+   ],
+   "rect": [
+    313.65,
+    320.1,
+    411.32,
+    332.7
+   ],
+   "label_mr": "प्रकार",
+   "label_en": "Type"
+  },
+  {
+   "id": "s_voltage",
+   "page": 3,
+   "type": "choice",
+   "options": [
+    {
+     "value": "५००",
+     "label": "५००",
+     "rect": [
+      315.45,
+      333.6,
+      330.42,
+      346.2
+     ]
+    },
+    {
+     "value": "१००",
+     "label": "१००",
+     "rect": [
+      330.33,
+      333.6,
+      345.3,
+      346.2
+     ]
+    },
+    {
+     "value": "२५००",
+     "label": "२५००",
+     "rect": [
+      345.19,
+      333.6,
+      364.25,
+      346.2
+     ]
+    },
+    {
+     "value": "५०००",
+     "label": "५०००",
+     "rect": [
+      364.17,
+      333.6,
+      383.22,
+      346.2
+     ]
+    }
+   ],
+   "rect": [
+    315.45,
+    333.6,
+    383.22,
+    346.2
+   ],
+   "label_mr": "कार्यदाब (वोल्ट)",
+   "label_en": "Working voltage (V)"
+  },
+  {
+   "id": "s_range",
+   "page": 3,
+   "type": "choice",
+   "options": [
+    {
+     "value": "० ते 200 मेगा ओहम",
+     "label": "० ते 200 मेगा ओहम",
+     "rect": [
+      310.8,
+      347.0,
+      387.2,
+      359.6
+     ]
+    },
+    {
+     "value": "इन्फिनिटी",
+     "label": "इन्फिनिटी",
+     "rect": [
+      393.8,
+      347.0,
+      428.2,
+      359.6
+     ]
+    }
+   ],
+   "rect": [
+    310.8,
+    347.0,
+    428.2,
+    359.6
+   ],
+   "label_mr": "तबकडील परिमाण",
+   "label_en": "Dial range"
+  },
+  {
+   "id": "s_condition",
+   "page": 3,
+   "type": "choice",
+   "options": [
+    {
+     "value": "चांगली",
+     "label": "चांगली",
+     "rect": [
+      315.45,
+      360.4,
+      339.11,
+      373.0
+     ]
+    },
+    {
+     "value": "समाधानकारक",
+     "label": "समाधानकारक",
+     "rect": [
+      338.94,
+      360.4,
+      386.51,
+      373.0
+     ]
+    },
+    {
+     "value": "असमाधानकारक",
+     "label": "असमाधानकारक",
+     "rect": [
+      386.46,
+      360.4,
+      440.38,
+      373.0
+     ]
+    }
+   ],
+   "rect": [
+    315.45,
+    360.4,
+    440.38,
+    373.0
+   ],
+   "label_mr": "सर्वसाधारण स्थिती",
+   "label_en": "General condition"
+  },
+  {
+   "id": "s_working",
+   "page": 3,
+   "type": "choice",
+   "options": [
+    {
+     "value": "चांगली",
+     "label": "चांगली",
+     "rect": [
+      315.45,
+      373.9,
+      339.11,
+      386.5
+     ]
+    },
+    {
+     "value": "समाधानकारक",
+     "label": "समाधानकारक",
+     "rect": [
+      338.94,
+      373.9,
+      386.51,
+      386.5
+     ]
+    },
+    {
+     "value": "असमाधानकारक",
+     "label": "असमाधानकारक",
+     "rect": [
+      386.46,
+      373.9,
+      440.38,
+      386.5
+     ]
+    }
+   ],
+   "rect": [
+    315.45,
+    373.9,
+    440.38,
+    386.5
+   ],
+   "label_mr": "कार्यस्थिती",
+   "label_en": "Working condition"
+  },
+  {
+   "id": "s_remarks",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308,
+    387.0,
+    560,
+    399.7
+   ],
+   "base": 396.5,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शेरा",
+   "label_en": "Remarks"
+  },
+  {
+   "id": "s_place",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    106,
+    443.2,
+    255,
+    455.9
+   ],
+   "base": 452.7,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "ठिकाण (स्वाक्षरीचे)",
+   "label_en": "Place (signing)"
+  },
+  {
+   "id": "s_date",
+   "page": 3,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    105,
+    466.5,
+    255,
+    479.2
+   ],
+   "base": 476.0,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "दिनांक (स्वाक्षरीचे)",
+   "label_en": "Date (signing)"
+  },
+  {
+   "id": "s_inspector",
+   "page": 3,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    286,
+    466.5,
+    560,
+    479.2
+   ],
+   "base": 476.0,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "सहाय्यक विद्युत निरीक्षकाचे नांव",
+   "label_en": "Asst. electrical inspector name"
+  },
+  {
+   "id": "t_firm",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    268.85,
+    163.82,
+    525,
+    172.92
+   ],
+   "base": 170.42,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "t_lic_no",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    145.1,
+    177.74,
+    260.95,
+    188.76
+   ],
+   "base": 186.26,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.)",
+   "label_en": "Contractor licence no.",
+   "key": "contractor_license_no",
+   "onDots": true
+  },
+  {
+   "id": "t_lic_date",
+   "page": 4,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    295.49,
+    177.74,
+    525,
+    188.76
+   ],
+   "base": 186.26,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अनुज्ञप्ती दिनांक",
+   "label_en": "Licence date",
+   "key": "contractor_license_date",
+   "onDots": true
+  },
+  {
+   "id": "t_applicant",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    268.85,
+    191.78,
+    525,
+    200.88
+   ],
+   "base": 198.38,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "नवीन अनुज्ञाचे अर्जदार",
+   "label_en": "Applicant",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "t_sup_name",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    268.85,
+    205.7,
+    525,
+    214.8
+   ],
+   "base": 212.3,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षकाचे नाव",
+   "label_en": "Electrical supervisor name",
+   "key": "supervisor_name",
+   "onDots": true
+  },
+  {
+   "id": "t_sup_lic_no",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    182.69,
+    219.62,
+    290,
+    230.52
+   ],
+   "base": 228.02,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.)",
+   "label_en": "Supervisor licence no.",
+   "key": "sup_license_no",
+   "onDots": true
+  },
+  {
+   "id": "t_sup_lic_date",
+   "page": 4,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    321.55,
+    219.62,
+    525,
+    230.52
+   ],
+   "base": 228.02,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना दिनांक",
+   "label_en": "Supervisor licence date",
+   "key": "sup_license_date",
+   "onDots": true
+  },
+  {
+   "id": "t_test_date",
+   "page": 4,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    261,
+    255.7,
+    326,
+    268.4
+   ],
+   "base": 265.2,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अर्थ टेस्टर परीक्षण दिनांक",
+   "label_en": "Earth tester test date"
+  },
+  {
+   "id": "t_test_place",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    71.6,
+    269.1,
+    131,
+    282.5
+   ],
+   "base": 278.6,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "अर्थ टेस्टर परीक्षण ठिकाण",
+   "label_en": "Earth tester test place",
+   "cover": true
+  },
+  {
+   "id": "t_make",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    307.03,
+    281.21,
+    560,
+    292.71
+   ],
+   "base": 290.21,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "अर्थ टेस्टर बनावट",
+   "label_en": "Earth tester make",
+   "key": "earth_make",
+   "onDots": true
+  },
+  {
+   "id": "t_serial",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    307.03,
+    294.65,
+    560,
+    306.15
+   ],
+   "base": 303.65,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अर्थ टेस्टर क्रमांक",
+   "label_en": "Earth tester serial no.",
+   "key": "earth_serial",
+   "onDots": true
+  },
+  {
+   "id": "t_covering",
+   "page": 4,
+   "type": "choice",
+   "options": [
+    {
+     "value": "धातू",
+     "label": "धातू",
+     "rect": [
+      308.11,
+      309.7,
+      323.54,
+      322.3
+     ]
+    },
+    {
+     "value": "अधातू",
+     "label": "अधातू",
+     "rect": [
+      323.47,
+      309.7,
+      345.14,
+      322.3
+     ]
+    },
+    {
+     "value": "प्लास्टिक",
+     "label": "प्लास्टिक",
+     "rect": [
+      345.07,
+      309.7,
+      376.8,
+      322.3
+     ]
+    }
+   ],
+   "rect": [
+    308.11,
+    309.7,
+    376.8,
+    322.3
+   ],
+   "label_mr": "आवरणाचा तपशील",
+   "label_en": "Body material"
+  },
+  {
+   "id": "t_type",
+   "page": 4,
+   "type": "choice",
+   "options": [
+    {
+     "value": "हाताने फिरवणारे",
+     "label": "हाताने फिरवणारे",
+     "rect": [
+      312.33,
+      323.1,
+      367.55,
+      335.7
+     ]
+    },
+    {
+     "value": "इलेक्ट्रॉनिक",
+     "label": "इलेक्ट्रॉनिक",
+     "rect": [
+      371.45,
+      323.1,
+      409.88,
+      335.7
+     ]
+    }
+   ],
+   "rect": [
+    312.33,
+    323.1,
+    409.88,
+    335.7
+   ],
+   "label_mr": "प्रकार",
+   "label_en": "Type"
+  },
+  {
+   "id": "t_voltage",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308,
+    336.3,
+    560,
+    349.0
+   ],
+   "base": 345.8,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "कार्यदाब",
+   "label_en": "Working voltage"
+  },
+  {
+   "id": "t_range",
+   "page": 4,
+   "type": "choice",
+   "options": [
+    {
+     "value": "१०",
+     "label": "१०",
+     "rect": [
+      318.91,
+      350.0,
+      329.69,
+      362.6
+     ]
+    },
+    {
+     "value": "१००",
+     "label": "१००",
+     "rect": [
+      329.6,
+      350.0,
+      344.57,
+      362.6
+     ]
+    },
+    {
+     "value": "२००",
+     "label": "२००",
+     "rect": [
+      344.49,
+      350.0,
+      359.45,
+      362.6
+     ]
+    }
+   ],
+   "rect": [
+    318.91,
+    350.0,
+    359.45,
+    362.6
+   ],
+   "label_mr": "तबकडील परिमाण (ओहम)",
+   "label_en": "Dial range (ohm)"
+  },
+  {
+   "id": "t_condition",
+   "page": 4,
+   "type": "choice",
+   "options": [
+    {
+     "value": "चांगली",
+     "label": "चांगली",
+     "rect": [
+      312.33,
+      363.4,
+      335.99,
+      376.0
+     ]
+    },
+    {
+     "value": "समाधानकारक",
+     "label": "समाधानकारक",
+     "rect": [
+      335.82,
+      363.4,
+      383.39,
+      376.0
+     ]
+    },
+    {
+     "value": "असमाधानकारक",
+     "label": "असमाधानकारक",
+     "rect": [
+      383.23,
+      363.4,
+      437.15,
+      376.0
+     ]
+    }
+   ],
+   "rect": [
+    312.33,
+    363.4,
+    437.15,
+    376.0
+   ],
+   "label_mr": "सर्वसाधारण स्थिती",
+   "label_en": "General condition"
+  },
+  {
+   "id": "t_working",
+   "page": 4,
+   "type": "choice",
+   "options": [
+    {
+     "value": "चांगली",
+     "label": "चांगली",
+     "rect": [
+      312.33,
+      376.9,
+      335.99,
+      389.5
+     ]
+    },
+    {
+     "value": "समाधानकारक",
+     "label": "समाधानकारक",
+     "rect": [
+      335.82,
+      376.9,
+      383.39,
+      389.5
+     ]
+    },
+    {
+     "value": "असमाधानकारक",
+     "label": "असमाधानकारक",
+     "rect": [
+      383.23,
+      376.9,
+      437.15,
+      389.5
+     ]
+    }
+   ],
+   "rect": [
+    312.33,
+    376.9,
+    437.15,
+    389.5
+   ],
+   "label_mr": "कार्यस्थिती",
+   "label_en": "Working condition"
+  },
+  {
+   "id": "t_remarks",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308,
+    390.0,
+    560,
+    402.7
+   ],
+   "base": 399.5,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शेरा",
+   "label_en": "Remarks"
+  },
+  {
+   "id": "t_place",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    106,
+    446.2,
+    255,
+    458.9
+   ],
+   "base": 455.7,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "ठिकाण (स्वाक्षरीचे)",
+   "label_en": "Place (signing)"
+  },
+  {
+   "id": "t_date",
+   "page": 4,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    105,
+    469.5,
+    255,
+    482.2
+   ],
+   "base": 479.0,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "दिनांक (स्वाक्षरीचे)",
+   "label_en": "Date (signing)"
+  },
+  {
+   "id": "t_inspector",
+   "page": 4,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    286,
+    469.5,
+    560,
+    482.2
+   ],
+   "base": 479.0,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "सहाय्यक विद्युत निरीक्षकाचे नांव",
+   "label_en": "Asst. electrical inspector name"
+  },
+  {
+   "id": "u_owner",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    249.77,
+    177.26,
+    525,
+    186.36
+   ],
+   "base": 183.86,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मालक / अर्जदाराचे नाव",
+   "label_en": "Owner / applicant name",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "u_lic_no",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    153.02,
+    191.18,
+    405,
+    202.2
+   ],
+   "base": 199.7,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.)",
+   "label_en": "Contractor licence no.",
+   "key": "contractor_license_no",
+   "onDots": true
+  },
+  {
+   "id": "u_lic_date",
+   "page": 5,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    442.54,
+    191.18,
+    525,
+    202.2
+   ],
+   "base": 199.7,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अनुज्ञप्ती दिनांक",
+   "label_en": "Licence date",
+   "key": "contractor_license_date",
+   "onDots": true
+  },
+  {
+   "id": "u_firm",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    145.58,
+    218.06,
+    420,
+    229.56
+   ],
+   "base": 227.06,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "u_firm_address",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    150.14,
+    231.5,
+    525,
+    243.0
+   ],
+   "base": 240.5,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "संस्थेचा पत्ता",
+   "label_en": "Firm address",
+   "key": "firm_address",
+   "onDots": true
+  },
+  {
+   "id": "u_owner_mobile",
+   "page": 5,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    113.66,
+    255.17,
+    232,
+    266.67
+   ],
+   "base": 264.17,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "मालकाचा मोबाइल क्र.",
+   "label_en": "Owner mobile no.",
+   "key": "owner_mobile",
+   "onDots": true
+  },
+  {
+   "id": "u_owner_email",
+   "page": 5,
+   "type": "text",
+   "kind": "email",
+   "rect": [
+    130.46,
+    269.09,
+    232,
+    280.59
+   ],
+   "base": 278.09,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "मालकाचा ई-मेल",
+   "label_en": "Owner e-mail",
+   "key": "owner_email",
+   "onDots": true
+  },
+  {
+   "id": "u_owner_sig",
+   "page": 5,
+   "type": "signature",
+   "rect": [
+    185.92,
+    287.85,
+    335.92,
+    303.85
+   ],
+   "key": "owner_signature",
+   "label_mr": "मालकाची स्वाक्षरी",
+   "label_en": "Owner signature"
+  },
+  {
+   "id": "u_inspector1",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    293,
+    332.7,
+    560,
+    345.4
+   ],
+   "base": 342.2,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत निरीक्षकाचे नांव",
+   "label_en": "Electrical inspector name"
+  },
+  {
+   "id": "u_sup_name",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    208.97,
+    371.01,
+    525,
+    380.19
+   ],
+   "base": 377.69,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षकाचे नाव",
+   "label_en": "Electrical supervisor name",
+   "key": "supervisor_name",
+   "onDots": true
+  },
+  {
+   "id": "u_sup_lic_no",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    101.66,
+    398.85,
+    400,
+    409.95
+   ],
+   "base": 407.45,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.)",
+   "label_en": "Supervisor licence no.",
+   "key": "sup_license_no",
+   "onDots": true
+  },
+  {
+   "id": "u_sup_lic_date",
+   "page": 5,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    437.26,
+    398.85,
+    525,
+    409.95
+   ],
+   "base": 407.45,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना दिनांक",
+   "label_en": "Supervisor licence date",
+   "key": "sup_license_date",
+   "onDots": true
+  },
+  {
+   "id": "u_sup_address",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    162.98,
+    422.69,
+    525,
+    433.59
+   ],
+   "base": 431.09,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "पर्यवेक्षकाचा पत्ता",
+   "label_en": "Supervisor address",
+   "key": "supervisor_address",
+   "onDots": true
+  },
+  {
+   "id": "u_sup_address2",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    160.58,
+    433.75,
+    525,
+    443.95
+   ],
+   "base": 442.75,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "पर्यवेक्षकाचा पत्ता (ओळ २)",
+   "label_en": "Supervisor address (line 2)",
+   "onDots": true
+  },
+  {
+   "id": "u_sup_mobile",
+   "page": 5,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    169.58,
+    446.35,
+    525,
+    455.57
+   ],
+   "base": 453.07,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाचा मोबाइल क्र.",
+   "label_en": "Supervisor mobile no.",
+   "key": "supervisor_mobile",
+   "onDots": true
+  },
+  {
+   "id": "u_sup_email",
+   "page": 5,
+   "type": "text",
+   "kind": "email",
+   "rect": [
+    169.58,
+    460.39,
+    525,
+    469.49
+   ],
+   "base": 466.99,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाचा ई-मेल",
+   "label_en": "Supervisor e-mail",
+   "key": "supervisor_email",
+   "onDots": true
+  },
+  {
+   "id": "u_sup_sig",
+   "page": 5,
+   "type": "signature",
+   "rect": [
+    168.03,
+    478.43,
+    318.03,
+    494.43
+   ],
+   "key": "supervisor_signature",
+   "label_mr": "पर्यवेक्षकाची स्वाक्षरी",
+   "label_en": "Supervisor signature"
+  },
+  {
+   "id": "u_inspector2",
+   "page": 5,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    285,
+    546.5,
+    560,
+    559.2
+   ],
+   "base": 556.0,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत निरीक्षकाचे नांव (२)",
+   "label_en": "Electrical inspector name (2)"
+  },
+  {
+   "id": "v_name",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    120.74,
+    187.1,
+    368,
+    198.0
+   ],
+   "base": 195.5,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षकाचे नाव",
+   "label_en": "Electrical supervisor name",
+   "key": "supervisor_name",
+   "onDots": true
+  },
+  {
+   "id": "v_age",
+   "page": 6,
+   "type": "text",
+   "kind": "number",
+   "rect": [
+    397.15,
+    187.1,
+    416,
+    198.0
+   ],
+   "base": 195.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाचे वय",
+   "label_en": "Supervisor age",
+   "key": "supervisor_age",
+   "onDots": true
+  },
+  {
+   "id": "v_address",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    102.02,
+    201.02,
+    525,
+    211.92
+   ],
+   "base": 209.42,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "पर्यवेक्षकाचा पत्ता",
+   "label_en": "Supervisor address",
+   "key": "supervisor_address",
+   "onDots": true
+  },
+  {
+   "id": "v_address2",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    90.02,
+    212.06,
+    525,
+    222.26
+   ],
+   "base": 221.06,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "पर्यवेक्षकाचा पत्ता (ओळ २)",
+   "label_en": "Supervisor address (line 2)",
+   "onDots": true
+  },
+  {
+   "id": "v_firm",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    197.81,
+    224.06,
+    560,
+    235.56
+   ],
+   "base": 233.06,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "v_lic_no",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    106.94,
+    237.5,
+    380,
+    249.0
+   ],
+   "base": 246.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.)",
+   "label_en": "Contractor licence no.",
+   "key": "contractor_license_no",
+   "onDots": true
+  },
+  {
+   "id": "v_lic_date",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    410.95,
+    237.5,
+    525,
+    249.0
+   ],
+   "base": 246.5,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अनुज्ञप्ती दिनांक",
+   "label_en": "Licence date",
+   "key": "contractor_license_date",
+   "onDots": true
+  },
+  {
+   "id": "v_join_date",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    136.7,
+    250.97,
+    265,
+    262.47
+   ],
+   "base": 259.97,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "संस्थेत रुजू / नेमणूक दिनांक",
+   "label_en": "Date supervisor joined firm",
+   "key": "sup_join_date",
+   "onDots": true
+  },
+  {
+   "id": "v_sup_lic_no",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    97.58,
+    264.41,
+    380,
+    275.91
+   ],
+   "base": 273.41,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.)",
+   "label_en": "Supervisor licence no.",
+   "key": "sup_license_no",
+   "onDots": true
+  },
+  {
+   "id": "v_sup_lic_date",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    410.95,
+    264.41,
+    525,
+    275.91
+   ],
+   "base": 273.41,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना दिनांक",
+   "label_en": "Supervisor licence date",
+   "key": "sup_license_date",
+   "onDots": true
+  },
+  {
+   "id": "v_prev_firm",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    164.3,
+    277.85,
+    525,
+    289.35
+   ],
+   "base": 286.85,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शेवटची नोकरी – मेसर्स",
+   "label_en": "Last employer firm",
+   "key": "prev_employer_firm",
+   "onDots": true
+  },
+  {
+   "id": "v_prev_lic",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    102.98,
+    291.29,
+    380,
+    302.79
+   ],
+   "base": 300.29,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – म.ठे.क्र.",
+   "label_en": "Last employer licence no.",
+   "key": "prev_employer_license",
+   "onDots": true
+  },
+  {
+   "id": "v_prev_from",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    428.86,
+    291.29,
+    525,
+    302.79
+   ],
+   "base": 300.29,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – पासून दिनांक",
+   "label_en": "Last job – from date",
+   "key": "prev_from",
+   "onDots": true
+  },
+  {
+   "id": "v_prev_to",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    122.54,
+    304.73,
+    177.77,
+    316.23
+   ],
+   "base": 313.73,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – पर्यंत दिनांक",
+   "label_en": "Last job – to date",
+   "key": "prev_to",
+   "onDots": true
+  },
+  {
+   "id": "v_sig",
+   "page": 6,
+   "type": "signature",
+   "rect": [
+    300,
+    416,
+    420,
+    438
+   ],
+   "key": "supervisor_signature",
+   "label_mr": "पर्यवेक्षकाची स्वाक्षरी",
+   "label_en": "Supervisor signature"
+  },
+  {
+   "id": "v_place",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    95.16,
+    449.7,
+    250,
+    463.1
+   ],
+   "base": 459.2,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "स्थळ",
+   "label_en": "Place",
+   "key": "affidavit_place",
+   "cover": true
+  },
+  {
+   "id": "v_date",
+   "page": 6,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    100,
+    463.1,
+    250,
+    475.8
+   ],
+   "base": 472.6,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "दिनांक (प्रतिज्ञापत्र)",
+   "label_en": "Date (affidavit)",
+   "key": "affidavit_date"
+  },
+  {
+   "id": "v_name2",
+   "page": 6,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    348.31,
+    463.63,
+    560,
+    475.13
+   ],
+   "base": 472.63,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षकाचे नाव",
+   "label_en": "Electrical supervisor name",
+   "key": "supervisor_name",
+   "onDots": true
+  },
+  {
+   "id": "v_mobile",
+   "page": 6,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    352.63,
+    479.11,
+    560,
+    490.61
+   ],
+   "base": 488.11,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाचा मोबाइल क्र.",
+   "label_en": "Supervisor mobile no.",
+   "key": "supervisor_mobile",
+   "onDots": true
+  },
+  {
+   "id": "w_name",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    157.22,
+    187.58,
+    310,
+    199.08
+   ],
+   "base": 196.58,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मालक / अर्जदाराचे नाव",
+   "label_en": "Owner / applicant name",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "w_age",
+   "page": 7,
+   "type": "text",
+   "kind": "number",
+   "rect": [
+    335.95,
+    187.58,
+    363.58,
+    199.08
+   ],
+   "base": 196.58,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "मालकाचे वय",
+   "label_en": "Owner age",
+   "key": "owner_age",
+   "onDots": true
+  },
+  {
+   "id": "w_address",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    138.62,
+    203.42,
+    525,
+    214.92
+   ],
+   "base": 212.42,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मालकाचा पत्ता (राहणार)",
+   "label_en": "Owner address",
+   "key": "owner_address",
+   "onDots": true
+  },
+  {
+   "id": "w_firm",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    237,
+    227.6,
+    525,
+    240.3
+   ],
+   "base": 237.1,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name"
+  },
+  {
+   "id": "w_lic_date",
+   "page": 7,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    171.14,
+    241.58,
+    400,
+    253.08
+   ],
+   "base": 250.58,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अनुज्ञप्ती दिनांक",
+   "label_en": "Licence date",
+   "key": "contractor_license_date",
+   "onDots": true
+  },
+  {
+   "id": "w_sup_name",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    143.06,
+    270.05,
+    525,
+    281.55
+   ],
+   "base": 279.05,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षकाचे नाव",
+   "label_en": "Electrical supervisor name",
+   "key": "supervisor_name",
+   "onDots": true
+  },
+  {
+   "id": "w_sup_lic_no",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    255.29,
+    286.01,
+    525,
+    297.51
+   ],
+   "base": 295.01,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.)",
+   "label_en": "Supervisor licence no.",
+   "key": "sup_license_no",
+   "onDots": true
+  },
+  {
+   "id": "w_sup_lic_date",
+   "page": 7,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    131.18,
+    301.85,
+    164.33,
+    313.35
+   ],
+   "base": 310.85,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना दिनांक",
+   "label_en": "Supervisor licence date",
+   "key": "sup_license_date",
+   "onDots": true
+  },
+  {
+   "id": "w_appoint_date",
+   "page": 7,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    376.03,
+    301.85,
+    525,
+    313.35
+   ],
+   "base": 310.85,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "संस्थेत रुजू / नेमणूक दिनांक",
+   "label_en": "Date supervisor joined firm",
+   "key": "sup_join_date",
+   "onDots": true
+  },
+  {
+   "id": "w_sig",
+   "page": 7,
+   "type": "signature",
+   "rect": [
+    370,
+    386,
+    480,
+    408
+   ],
+   "key": "owner_signature",
+   "label_mr": "मालकाची स्वाक्षरी",
+   "label_en": "Owner signature"
+  },
+  {
+   "id": "w_place",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    131.16,
+    418.8,
+    250,
+    432.2
+   ],
+   "base": 428.3,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "स्थळ",
+   "label_en": "Place",
+   "key": "affidavit_place",
+   "cover": true
+  },
+  {
+   "id": "w_date",
+   "page": 7,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    138,
+    432.3,
+    250,
+    445.0
+   ],
+   "base": 441.8,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "दिनांक (प्रतिज्ञापत्र)",
+   "label_en": "Date (affidavit)",
+   "key": "affidavit_date"
+  },
+  {
+   "id": "w_name2",
+   "page": 7,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    396.07,
+    432.79,
+    560,
+    444.29
+   ],
+   "base": 441.79,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मालक / अर्जदाराचे नाव",
+   "label_en": "Owner / applicant name",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "w_mobile",
+   "page": 7,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    405.67,
+    446.23,
+    560,
+    457.73
+   ],
+   "base": 455.23,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "मालकाचा मोबाइल क्र.",
+   "label_en": "Owner mobile no.",
+   "key": "owner_mobile",
+   "onDots": true
+  },
+  {
+   "id": "x_name",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    118.94,
+    226.58,
+    205,
+    238.08
+   ],
+   "base": 235.58,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मालक / अर्जदाराचे नाव",
+   "label_en": "Owner / applicant name",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "x_firm",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    107.06,
+    241.46,
+    268,
+    252.96
+   ],
+   "base": 250.46,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "x_sup_lic_no",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    248.69,
+    254.93,
+    525,
+    266.43
+   ],
+   "base": 263.93,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.)",
+   "label_en": "Supervisor licence no.",
+   "key": "sup_license_no",
+   "onDots": true
+  },
+  {
+   "id": "x_sup_lic_date",
+   "page": 8,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    98.66,
+    268.37,
+    205,
+    279.87
+   ],
+   "base": 277.37,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना दिनांक",
+   "label_en": "Supervisor licence date",
+   "key": "sup_license_date",
+   "onDots": true
+  },
+  {
+   "id": "x_prev_firm",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    176.66,
+    281.81,
+    525,
+    293.31
+   ],
+   "base": 290.81,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "शेवटची नोकरी – मेसर्स",
+   "label_en": "Last employer firm",
+   "key": "prev_employer_firm",
+   "onDots": true
+  },
+  {
+   "id": "x_prev_lic",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    107.54,
+    296.33,
+    320,
+    307.23
+   ],
+   "base": 304.73,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – म.ठे.क्र.",
+   "label_en": "Last employer licence no.",
+   "key": "prev_employer_license",
+   "onDots": true
+  },
+  {
+   "id": "x_prev_from",
+   "page": 8,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    387.91,
+    296.33,
+    525,
+    307.23
+   ],
+   "base": 304.73,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – पासून दिनांक",
+   "label_en": "Last job – from date",
+   "key": "prev_from",
+   "onDots": true
+  },
+  {
+   "id": "x_prev_to",
+   "page": 8,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    130.1,
+    313.61,
+    161.77,
+    325.11
+   ],
+   "base": 322.61,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – पर्यंत दिनांक",
+   "label_en": "Last job – to date",
+   "key": "prev_to",
+   "onDots": true
+  },
+  {
+   "id": "x_sig",
+   "page": 8,
+   "type": "signature",
+   "rect": [
+    340,
+    416,
+    460,
+    438
+   ],
+   "key": "owner_signature",
+   "label_mr": "मालकाची स्वाक्षरी",
+   "label_en": "Owner signature"
+  },
+  {
+   "id": "x_place",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    95.16,
+    450.8,
+    250,
+    464.2
+   ],
+   "base": 460.3,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "स्थळ",
+   "label_en": "Place",
+   "key": "affidavit_place",
+   "cover": true
+  },
+  {
+   "id": "x_date",
+   "page": 8,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    100,
+    466.1,
+    250,
+    478.8
+   ],
+   "base": 475.6,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "दिनांक (प्रतिज्ञापत्र)",
+   "label_en": "Date (affidavit)",
+   "key": "affidavit_date"
+  },
+  {
+   "id": "x_name2",
+   "page": 8,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    394.99,
+    466.63,
+    560,
+    478.13
+   ],
+   "base": 475.63,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मालक / अर्जदाराचे नाव",
+   "label_en": "Owner / applicant name",
+   "key": "owner_name",
+   "onDots": true
+  },
+  {
+   "id": "x_mobile",
+   "page": 8,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    399.31,
+    482.11,
+    560,
+    493.61
+   ],
+   "base": 491.11,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "मालकाचा मोबाइल क्र.",
+   "label_en": "Owner mobile no.",
+   "key": "owner_mobile",
+   "onDots": true
+  },
+  {
+   "id": "y_partner1",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    144.74,
+    253.97,
+    525,
+    265.47
+   ],
+   "base": 262.97,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "भागीदार क्र. १ चे नाव",
+   "label_en": "Partner 1 name",
+   "key": "partner1_name",
+   "onDots": true
+  },
+  {
+   "id": "y_partner2",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    134.78,
+    269.45,
+    525,
+    280.95
+   ],
+   "base": 278.45,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "भागीदार क्र. २ चे नाव",
+   "label_en": "Partner 2 name",
+   "key": "partner2_name",
+   "onDots": true
+  },
+  {
+   "id": "y_firm",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    200.69,
+    284.81,
+    525,
+    296.31
+   ],
+   "base": 293.81,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name",
+   "onDots": true
+  },
+  {
+   "id": "y_lic_no",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    99.98,
+    300.29,
+    235,
+    311.79
+   ],
+   "base": 309.29,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.)",
+   "label_en": "Contractor licence no.",
+   "key": "contractor_license_no",
+   "onDots": true
+  },
+  {
+   "id": "y_lic_date",
+   "page": 9,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    264.77,
+    300.29,
+    525,
+    311.79
+   ],
+   "base": 309.29,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "अनुज्ञप्ती दिनांक",
+   "label_en": "Licence date",
+   "key": "contractor_license_date",
+   "onDots": true
+  },
+  {
+   "id": "y_sup_name",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    279.53,
+    331.25,
+    525,
+    342.75
+   ],
+   "base": 340.25,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षकाचे नाव",
+   "label_en": "Electrical supervisor name",
+   "key": "supervisor_name",
+   "onDots": true
+  },
+  {
+   "id": "y_sup_lic_no",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    215.09,
+    346.73,
+    525,
+    358.23
+   ],
+   "base": 355.73,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.)",
+   "label_en": "Supervisor licence no.",
+   "key": "sup_license_no",
+   "onDots": true
+  },
+  {
+   "id": "y_sup_lic_date",
+   "page": 9,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    103.1,
+    362.09,
+    156.53,
+    373.59
+   ],
+   "base": 371.09,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना दिनांक",
+   "label_en": "Supervisor licence date",
+   "key": "sup_license_date",
+   "onDots": true
+  },
+  {
+   "id": "y_photo1",
+   "page": 9,
+   "type": "photo",
+   "rect": [
+    150.7,
+    442.2,
+    208.0,
+    497.2
+   ],
+   "key": "partner1_photo",
+   "label_mr": "भागीदार क्र. १ फोटो",
+   "label_en": "Partner 1 photo"
+  },
+  {
+   "id": "y_photo2",
+   "page": 9,
+   "type": "photo",
+   "rect": [
+    278.6,
+    443.7,
+    335.9,
+    498.7
+   ],
+   "key": "partner2_photo",
+   "label_mr": "भागीदार क्र. २ फोटो",
+   "label_en": "Partner 2 photo"
+  },
+  {
+   "id": "y_place",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    95.16,
+    544.3,
+    250,
+    557.7
+   ],
+   "base": 553.8,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "स्थळ",
+   "label_en": "Place",
+   "key": "affidavit_place",
+   "cover": true
+  },
+  {
+   "id": "y_date",
+   "page": 9,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    100,
+    559.6,
+    250,
+    572.3
+   ],
+   "base": 569.1,
+   "size": 8.0,
+   "lang": "en",
+   "label_mr": "दिनांक (प्रतिज्ञापत्र)",
+   "label_en": "Date (affidavit)",
+   "key": "affidavit_date"
+  },
+  {
+   "id": "y_sig1",
+   "page": 9,
+   "type": "signature",
+   "rect": [
+    300,
+    542,
+    420,
+    557.5
+   ],
+   "key": "partner1_signature",
+   "label_mr": "भागीदार क्र. १ स्वाक्षरी",
+   "label_en": "Partner 1 signature"
+  },
+  {
+   "id": "y_sig2",
+   "page": 9,
+   "type": "signature",
+   "rect": [
+    300,
+    573,
+    420,
+    588.5
+   ],
+   "key": "partner2_signature",
+   "label_mr": "भागीदार क्र. २ स्वाक्षरी",
+   "label_en": "Partner 2 signature"
+  },
+  {
+   "id": "y_partner1_2",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    324.79,
+    560.11,
+    560,
+    571.61
+   ],
+   "base": 569.11,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "भागीदार क्र. १ चे नाव",
+   "label_en": "Partner 1 name",
+   "key": "partner1_name",
+   "onDots": true
+  },
+  {
+   "id": "y_partner2_2",
+   "page": 9,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    324.07,
+    591.07,
+    560,
+    602.57
+   ],
+   "base": 600.07,
+   "size": 8.0,
+   "lang": "any",
+   "label_mr": "भागीदार क्र. २ चे नाव",
+   "label_en": "Partner 2 name",
+   "key": "partner2_name",
+   "onDots": true
+  }
+ ]
+}

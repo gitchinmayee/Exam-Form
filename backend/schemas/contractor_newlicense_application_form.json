@@ -1,31 +1,863 @@
 {
   "form_type": "contractor_newlicense_application_form",
-  "title": "New Contractor License Application Form",
-  "title_en": "New Contractor License Application Form",
+  "title": "New Electrical Contractor Licence Application",
+  "title_en": "New Electrical Contractor Licence Application",
   "title_mr": "नवीन विद्युत ठेकेदार अनुज्ञप्ती अर्ज",
   "fields": [
-    { "name": "firm_name", "label_en": "Firm Name", "label_mr": "मेसर्स (संस्थेचे नाव)" },
-    { "name": "owner_name", "label_en": "Owner Name", "label_mr": "मुखत्यारधारक/मालक" },
-    { "name": "supervisor_name", "label_en": "Supervisor Name", "label_mr": "पर्यवेक्षकाचे नाव" },
-    { "name": "license_number", "label_en": "License Number", "label_mr": "परवाना क्रमांक" },
-    { "name": "application_date", "label_en": "Application Date", "label_mr": "दिनांक" },
-    { "name": "megger_make", "label_en": "Megger Make", "label_mr": "मेगर बनावट" },
-    { "name": "megger_voltage", "label_en": "Megger Voltage", "label_mr": "व्होल्टेज" },
-    { "name": "megger_receipt_no", "label_en": "Megger Receipt Number", "label_mr": "मेगर पावती क्रमांक" },
-    { "name": "earth_tester_receipt_no", "label_en": "Earth Tester Receipt Number", "label_mr": "अर्थ टेस्टर पावती क्रमांक" },
-    { "name": "namuna_v_name", "label_en": "Namuna V - Supervisor Name", "label_mr": "नमुना व - पर्यवेक्षकाचे नाव" },
-    { "name": "namuna_v_age", "label_en": "Namuna V - Age", "label_mr": "नमुना व - वय" },
-    { "name": "namuna_v_address", "label_en": "Namuna V - Address", "label_mr": "नमुना व - पत्ता" },
-    { "name": "namuna_v_firm", "label_en": "Namuna V - Firm", "label_mr": "नमुना व - संस्था" },
-    { "name": "namuna_v_start_date", "label_en": "Namuna V - Start Date", "label_mr": "नमुना व - सुरुवात दिनांक" },
-    { "name": "namuna_v_place", "label_en": "Namuna V - Place", "label_mr": "नमुना व - स्थळ" },
-    { "name": "namuna_v_date", "label_en": "Namuna V - Date", "label_mr": "नमुना व - दिनांक" },
-    { "name": "namuna_w_name", "label_en": "Namuna W - Owner Name", "label_mr": "नमुना डब्लु - मालकाचे नाव" },
-    { "name": "namuna_w_address", "label_en": "Namuna W - Address", "label_mr": "नमुना डब्लु - पत्ता" },
-    { "name": "namuna_w_firm", "label_en": "Namuna W - Firm", "label_mr": "नमुना डब्लु - संस्था" },
-    { "name": "namuna_w_supervisor_name", "label_en": "Namuna W - Supervisor Name", "label_mr": "नमुना डब्लु - पर्यवेक्षकाचे नाव" },
-    { "name": "namuna_w_supervisor_license_no", "label_en": "Namuna W - Supervisor License", "label_mr": "नमुना डब्लु - पर्यवेक्षक परवाना" },
-    { "name": "namuna_w_place", "label_en": "Namuna W - Place", "label_mr": "नमुना डब्लु - स्थळ" },
-    { "name": "namuna_w_date", "label_en": "Namuna W - Date", "label_mr": "नमुना डब्लु - दिनांक" }
+    {
+      "name": "p1_contractor_no",
+      "label_en": "Maharashtra contractor no. (p1)",
+      "label_mr": "महाराष्ट्र ठेकेदार क्रमांक (पान 1)"
+    },
+    {
+      "name": "p1_date",
+      "label_en": "Date (p1)",
+      "label_mr": "दिनांक (पान 1)"
+    },
+    {
+      "name": "p1_firm",
+      "label_en": "Firm name (p1)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 1)"
+    },
+    {
+      "name": "p1_sup_lic_no",
+      "label_en": "Supervisor licence no. (p1)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 1)"
+    },
+    {
+      "name": "p1_sup_lic_date",
+      "label_en": "Supervisor licence date (p1)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 1)"
+    },
+    {
+      "name": "p1_sup_name",
+      "label_en": "Electrical supervisor name (p1)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 1)"
+    },
+    {
+      "name": "p1_owner",
+      "label_en": "Power-of-attorney holder / partner / owner (p1)",
+      "label_mr": "मुखत्यारधारक / भागीदारक / मालक (पान 1)"
+    },
+    {
+      "name": "p1_megger_make",
+      "label_en": "Megger make (p1)",
+      "label_mr": "मेगर बनावट (पान 1)"
+    },
+    {
+      "name": "p1_megger_volt",
+      "label_en": "Megger voltage (p1)",
+      "label_mr": "मेगर व्होल्टेज (पान 1)"
+    },
+    {
+      "name": "p1_megger_serial",
+      "label_en": "Megger serial no. (p1)",
+      "label_mr": "मेगर क्रमांक (पान 1)"
+    },
+    {
+      "name": "p1_earth_make",
+      "label_en": "Earth tester make (p1)",
+      "label_mr": "अर्थ टेस्टर बनावट (पान 1)"
+    },
+    {
+      "name": "p1_earth_range",
+      "label_en": "Earth tester range (p1)",
+      "label_mr": "अर्थ टेस्टर रेंज (पान 1)"
+    },
+    {
+      "name": "p1_earth_serial",
+      "label_en": "Earth tester serial no. (p1)",
+      "label_mr": "अर्थ टेस्टर क्रमांक (पान 1)"
+    },
+    {
+      "name": "p1_check_1",
+      "label_en": "Checklist item 1 done (p1)",
+      "label_mr": "तपासणी मुद्दा 1 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_2",
+      "label_en": "Checklist item 2 done (p1)",
+      "label_mr": "तपासणी मुद्दा 2 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_3",
+      "label_en": "Checklist item 3 done (p1)",
+      "label_mr": "तपासणी मुद्दा 3 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_4",
+      "label_en": "Checklist item 4 done (p1)",
+      "label_mr": "तपासणी मुद्दा 4 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_5",
+      "label_en": "Checklist item 5 done (p1)",
+      "label_mr": "तपासणी मुद्दा 5 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_6",
+      "label_en": "Checklist item 6 done (p1)",
+      "label_mr": "तपासणी मुद्दा 6 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_7",
+      "label_en": "Checklist item 7 done (p1)",
+      "label_mr": "तपासणी मुद्दा 7 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_8",
+      "label_en": "Checklist item 8 done (p1)",
+      "label_mr": "तपासणी मुद्दा 8 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_9",
+      "label_en": "Checklist item 9 done (p1)",
+      "label_mr": "तपासणी मुद्दा 9 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_10",
+      "label_en": "Checklist item 10 done (p1)",
+      "label_mr": "तपासणी मुद्दा 10 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_11",
+      "label_en": "Checklist item 11 done (p1)",
+      "label_mr": "तपासणी मुद्दा 11 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_12",
+      "label_en": "Checklist item 12 done (p1)",
+      "label_mr": "तपासणी मुद्दा 12 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_13",
+      "label_en": "Checklist item 13 done (p1)",
+      "label_mr": "तपासणी मुद्दा 13 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_14",
+      "label_en": "Checklist item 14 done (p1)",
+      "label_mr": "तपासणी मुद्दा 14 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_15",
+      "label_en": "Checklist item 15 done (p1)",
+      "label_mr": "तपासणी मुद्दा 15 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_16",
+      "label_en": "Checklist item 16 done (p1)",
+      "label_mr": "तपासणी मुद्दा 16 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_check_17",
+      "label_en": "Checklist item 17 done (p1)",
+      "label_mr": "तपासणी मुद्दा 17 पूर्ण (पान 1)"
+    },
+    {
+      "name": "p1_challan_no",
+      "label_en": "Challan no. (p1)",
+      "label_mr": "चलन क्रमांक (पान 1)"
+    },
+    {
+      "name": "p1_challan_date",
+      "label_en": "Challan date (p1)",
+      "label_mr": "चलन दिनांक (पान 1)"
+    },
+    {
+      "name": "p1_megger_receipt_no",
+      "label_en": "Megger receipt no. (p1)",
+      "label_mr": "मेगर पावती क्रमांक (पान 1)"
+    },
+    {
+      "name": "p1_megger_receipt_date",
+      "label_en": "Megger receipt date (p1)",
+      "label_mr": "मेगर पावती दिनांक (पान 1)"
+    },
+    {
+      "name": "p1_earth_receipt_no",
+      "label_en": "Earth tester receipt no. (p1)",
+      "label_mr": "अर्थ टेस्टर पावती क्रमांक (पान 1)"
+    },
+    {
+      "name": "p1_earth_receipt_date",
+      "label_en": "Earth tester receipt date (p1)",
+      "label_mr": "अर्थ टेस्टर पावती दिनांक (पान 1)"
+    },
+    {
+      "name": "s_firm",
+      "label_en": "Firm name (p2)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 2)"
+    },
+    {
+      "name": "s_lic_date",
+      "label_en": "Licence date (p2)",
+      "label_mr": "अनुज्ञप्ती दिनांक (पान 2)"
+    },
+    {
+      "name": "s_applicant",
+      "label_en": "Applicant (new licence) (p2)",
+      "label_mr": "नवीन अनुज्ञाचे अर्जदार (पान 2)"
+    },
+    {
+      "name": "s_sup_name",
+      "label_en": "Electrical supervisor name (p2)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 2)"
+    },
+    {
+      "name": "s_sup_lic_no",
+      "label_en": "Supervisor licence no. (p2)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 2)"
+    },
+    {
+      "name": "s_sup_lic_date",
+      "label_en": "Supervisor licence date (p2)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 2)"
+    },
+    {
+      "name": "s_test_date",
+      "label_en": "Megger test date (p2)",
+      "label_mr": "मेगर परीक्षण दिनांक (पान 2)"
+    },
+    {
+      "name": "s_test_place",
+      "label_en": "Megger test place (p2)",
+      "label_mr": "मेगर परीक्षण ठिकाण (पान 2)"
+    },
+    {
+      "name": "s_make",
+      "label_en": "Megger make (p2)",
+      "label_mr": "मेगर बनावट (पान 2)"
+    },
+    {
+      "name": "s_serial",
+      "label_en": "Megger serial no. (p2)",
+      "label_mr": "मेगर क्रमांक (पान 2)"
+    },
+    {
+      "name": "s_covering",
+      "label_en": "Body material (p2)",
+      "label_mr": "आवरणाचा तपशील (पान 2)"
+    },
+    {
+      "name": "s_type",
+      "label_en": "Type (p2)",
+      "label_mr": "प्रकार (पान 2)"
+    },
+    {
+      "name": "s_voltage",
+      "label_en": "Working voltage (V) (p2)",
+      "label_mr": "कार्यदाब (वोल्ट) (पान 2)"
+    },
+    {
+      "name": "s_range",
+      "label_en": "Dial range (p2)",
+      "label_mr": "तबकडील परिमाण (पान 2)"
+    },
+    {
+      "name": "s_condition",
+      "label_en": "General condition (p2)",
+      "label_mr": "सर्वसाधारण स्थिती (पान 2)"
+    },
+    {
+      "name": "s_working",
+      "label_en": "Working condition (p2)",
+      "label_mr": "कार्यस्थिती (पान 2)"
+    },
+    {
+      "name": "s_remarks",
+      "label_en": "Remarks (p2)",
+      "label_mr": "शेरा (पान 2)"
+    },
+    {
+      "name": "s_place",
+      "label_en": "Place (signing) (p2)",
+      "label_mr": "ठिकाण (स्वाक्षरीचे) (पान 2)"
+    },
+    {
+      "name": "s_date",
+      "label_en": "Date (signing) (p2)",
+      "label_mr": "दिनांक (स्वाक्षरीचे) (पान 2)"
+    },
+    {
+      "name": "s_inspector",
+      "label_en": "Asst. electrical inspector name (p2)",
+      "label_mr": "सहाय्यक विद्युत निरीक्षकाचे नांव (पान 2)"
+    },
+    {
+      "name": "t_firm",
+      "label_en": "Firm name (p3)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 3)"
+    },
+    {
+      "name": "t_lic_date",
+      "label_en": "Licence date (p3)",
+      "label_mr": "अनुज्ञप्ती दिनांक (पान 3)"
+    },
+    {
+      "name": "t_applicant",
+      "label_en": "Applicant (new licence) (p3)",
+      "label_mr": "नवीन अनुज्ञाचे अर्जदार (पान 3)"
+    },
+    {
+      "name": "t_sup_name",
+      "label_en": "Electrical supervisor name (p3)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 3)"
+    },
+    {
+      "name": "t_sup_lic_no",
+      "label_en": "Supervisor licence no. (p3)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 3)"
+    },
+    {
+      "name": "t_sup_lic_date",
+      "label_en": "Supervisor licence date (p3)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 3)"
+    },
+    {
+      "name": "t_test_date",
+      "label_en": "Earth tester test date (p3)",
+      "label_mr": "अर्थ टेस्टर परीक्षण दिनांक (पान 3)"
+    },
+    {
+      "name": "t_test_place",
+      "label_en": "Earth tester test place (p3)",
+      "label_mr": "अर्थ टेस्टर परीक्षण ठिकाण (पान 3)"
+    },
+    {
+      "name": "t_make",
+      "label_en": "Earth tester make (p3)",
+      "label_mr": "अर्थ टेस्टर बनावट (पान 3)"
+    },
+    {
+      "name": "t_serial",
+      "label_en": "Earth tester serial no. (p3)",
+      "label_mr": "अर्थ टेस्टर क्रमांक (पान 3)"
+    },
+    {
+      "name": "t_covering",
+      "label_en": "Body material (p3)",
+      "label_mr": "आवरणाचा तपशील (पान 3)"
+    },
+    {
+      "name": "t_type",
+      "label_en": "Type (p3)",
+      "label_mr": "प्रकार (पान 3)"
+    },
+    {
+      "name": "t_voltage",
+      "label_en": "Working voltage (p3)",
+      "label_mr": "कार्यदाब (पान 3)"
+    },
+    {
+      "name": "t_range",
+      "label_en": "Dial range (ohm) (p3)",
+      "label_mr": "तबकडील परिमाण (ओहम) (पान 3)"
+    },
+    {
+      "name": "t_condition",
+      "label_en": "General condition (p3)",
+      "label_mr": "सर्वसाधारण स्थिती (पान 3)"
+    },
+    {
+      "name": "t_working",
+      "label_en": "Working condition (p3)",
+      "label_mr": "कार्यस्थिती (पान 3)"
+    },
+    {
+      "name": "t_remarks",
+      "label_en": "Remarks (p3)",
+      "label_mr": "शेरा (पान 3)"
+    },
+    {
+      "name": "t_place",
+      "label_en": "Place (signing) (p3)",
+      "label_mr": "ठिकाण (स्वाक्षरीचे) (पान 3)"
+    },
+    {
+      "name": "t_date",
+      "label_en": "Date (signing) (p3)",
+      "label_mr": "दिनांक (स्वाक्षरीचे) (पान 3)"
+    },
+    {
+      "name": "t_inspector",
+      "label_en": "Asst. electrical inspector name (p3)",
+      "label_mr": "सहाय्यक विद्युत निरीक्षकाचे नांव (पान 3)"
+    },
+    {
+      "name": "u_owner",
+      "label_en": "Owner / applicant name (p4)",
+      "label_mr": "मालक / अर्जदाराचे नाव (पान 4)"
+    },
+    {
+      "name": "u_lic_no",
+      "label_en": "Contractor licence no. (p4)",
+      "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.) (पान 4)"
+    },
+    {
+      "name": "u_lic_date",
+      "label_en": "Licence date (p4)",
+      "label_mr": "अनुज्ञप्ती दिनांक (पान 4)"
+    },
+    {
+      "name": "u_firm",
+      "label_en": "Firm name (p4)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 4)"
+    },
+    {
+      "name": "u_firm_address",
+      "label_en": "Firm address (p4)",
+      "label_mr": "संस्थेचा पत्ता (पान 4)"
+    },
+    {
+      "name": "u_owner_mobile",
+      "label_en": "Owner mobile no. (p4)",
+      "label_mr": "मालकाचा मोबाइल क्र. (पान 4)"
+    },
+    {
+      "name": "u_owner_email",
+      "label_en": "Owner e-mail (p4)",
+      "label_mr": "मालकाचा ई-मेल (पान 4)"
+    },
+    {
+      "name": "u_inspector",
+      "label_en": "Electrical inspector name (p4)",
+      "label_mr": "विद्युत निरीक्षकाचे नांव (पान 4)"
+    },
+    {
+      "name": "u_sup_name",
+      "label_en": "Electrical supervisor name (p4)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 4)"
+    },
+    {
+      "name": "u_sup_lic_no",
+      "label_en": "Supervisor licence no. (p4)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 4)"
+    },
+    {
+      "name": "u_sup_lic_date",
+      "label_en": "Supervisor licence date (p4)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 4)"
+    },
+    {
+      "name": "u_sup_address",
+      "label_en": "Supervisor address (p4)",
+      "label_mr": "पर्यवेक्षकाचा पत्ता (पान 4)"
+    },
+    {
+      "name": "u_sup_email",
+      "label_en": "Supervisor e-mail (p4)",
+      "label_mr": "पर्यवेक्षकाचा ई-मेल (पान 4)"
+    },
+    {
+      "name": "u_sup_mobile",
+      "label_en": "Supervisor mobile no. (p4)",
+      "label_mr": "पर्यवेक्षकाचा मोबाइल क्र. (पान 4)"
+    },
+    {
+      "name": "v_name",
+      "label_en": "Electrical supervisor name (p5)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 5)"
+    },
+    {
+      "name": "v_age",
+      "label_en": "Supervisor age (p5)",
+      "label_mr": "पर्यवेक्षकाचे वय (पान 5)"
+    },
+    {
+      "name": "v_address",
+      "label_en": "Supervisor address (p5)",
+      "label_mr": "पर्यवेक्षकाचा पत्ता (पान 5)"
+    },
+    {
+      "name": "v_firm",
+      "label_en": "Firm name (p5)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 5)"
+    },
+    {
+      "name": "v_lic_date",
+      "label_en": "Licence date (p5)",
+      "label_mr": "अनुज्ञप्ती दिनांक (पान 5)"
+    },
+    {
+      "name": "v_join_date",
+      "label_en": "Date supervisor joined firm (p5)",
+      "label_mr": "संस्थेत रुजू / नेमणूक दिनांक (पान 5)"
+    },
+    {
+      "name": "v_sup_lic_no",
+      "label_en": "Supervisor licence no. (p5)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 5)"
+    },
+    {
+      "name": "v_sup_lic_date",
+      "label_en": "Supervisor licence date (p5)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 5)"
+    },
+    {
+      "name": "v_prev_firm",
+      "label_en": "Last employer firm (p5)",
+      "label_mr": "शेवटची नोकरी – मेसर्स (पान 5)"
+    },
+    {
+      "name": "v_prev_lic",
+      "label_en": "Last employer licence no. (p5)",
+      "label_mr": "शेवटची नोकरी – म.ठे.क्र. (पान 5)"
+    },
+    {
+      "name": "v_prev_from",
+      "label_en": "Last job – from date (p5)",
+      "label_mr": "शेवटची नोकरी – पासून दिनांक (पान 5)"
+    },
+    {
+      "name": "v_prev_to",
+      "label_en": "Last job – to date (p5)",
+      "label_mr": "शेवटची नोकरी – पर्यंत दिनांक (पान 5)"
+    },
+    {
+      "name": "v_place",
+      "label_en": "Place (p5)",
+      "label_mr": "स्थळ (पान 5)"
+    },
+    {
+      "name": "v_date",
+      "label_en": "Date (affidavit) (p5)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 5)"
+    },
+    {
+      "name": "v_name2",
+      "label_en": "Electrical supervisor name (p5)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 5)"
+    },
+    {
+      "name": "v_mobile",
+      "label_en": "Supervisor mobile no. (p5)",
+      "label_mr": "पर्यवेक्षकाचा मोबाइल क्र. (पान 5)"
+    },
+    {
+      "name": "w_name",
+      "label_en": "Owner / applicant name (p6)",
+      "label_mr": "मालक / अर्जदाराचे नाव (पान 6)"
+    },
+    {
+      "name": "w_age",
+      "label_en": "Owner age (p6)",
+      "label_mr": "मालकाचे वय (पान 6)"
+    },
+    {
+      "name": "w_address",
+      "label_en": "Owner address (p6)",
+      "label_mr": "मालकाचा पत्ता (राहणार) (पान 6)"
+    },
+    {
+      "name": "w_firm",
+      "label_en": "Firm name (p6)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 6)"
+    },
+    {
+      "name": "w_lic_date",
+      "label_en": "Licence date (p6)",
+      "label_mr": "अनुज्ञप्ती दिनांक (पान 6)"
+    },
+    {
+      "name": "w_sup_name",
+      "label_en": "Electrical supervisor name (p6)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 6)"
+    },
+    {
+      "name": "w_sup_lic_no",
+      "label_en": "Supervisor licence no. (p6)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 6)"
+    },
+    {
+      "name": "w_sup_lic_date",
+      "label_en": "Supervisor licence date (p6)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 6)"
+    },
+    {
+      "name": "w_appoint_date",
+      "label_en": "Date supervisor joined firm (p6)",
+      "label_mr": "संस्थेत रुजू / नेमणूक दिनांक (पान 6)"
+    },
+    {
+      "name": "w_place",
+      "label_en": "Place (p6)",
+      "label_mr": "स्थळ (पान 6)"
+    },
+    {
+      "name": "w_date",
+      "label_en": "Date (affidavit) (p6)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 6)"
+    },
+    {
+      "name": "w_name2",
+      "label_en": "Owner / applicant name (p6)",
+      "label_mr": "मालक / अर्जदाराचे नाव (पान 6)"
+    },
+    {
+      "name": "w_mobile",
+      "label_en": "Owner mobile no. (p6)",
+      "label_mr": "मालकाचा मोबाइल क्र. (पान 6)"
+    },
+    {
+      "name": "x_name",
+      "label_en": "Owner / applicant name (p7)",
+      "label_mr": "मालक / अर्जदाराचे नाव (पान 7)"
+    },
+    {
+      "name": "x_firm",
+      "label_en": "Firm name (p7)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 7)"
+    },
+    {
+      "name": "x_sup_lic_no",
+      "label_en": "Supervisor licence no. (p7)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 7)"
+    },
+    {
+      "name": "x_sup_lic_date",
+      "label_en": "Supervisor licence date (p7)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 7)"
+    },
+    {
+      "name": "x_prev_firm",
+      "label_en": "Last employer firm (p7)",
+      "label_mr": "शेवटची नोकरी – मेसर्स (पान 7)"
+    },
+    {
+      "name": "x_prev_lic",
+      "label_en": "Last employer licence no. (p7)",
+      "label_mr": "शेवटची नोकरी – म.ठे.क्र. (पान 7)"
+    },
+    {
+      "name": "x_prev_from",
+      "label_en": "Last job – from date (p7)",
+      "label_mr": "शेवटची नोकरी – पासून दिनांक (पान 7)"
+    },
+    {
+      "name": "x_prev_to",
+      "label_en": "Last job – to date (p7)",
+      "label_mr": "शेवटची नोकरी – पर्यंत दिनांक (पान 7)"
+    },
+    {
+      "name": "x_place",
+      "label_en": "Place (p7)",
+      "label_mr": "स्थळ (पान 7)"
+    },
+    {
+      "name": "x_date",
+      "label_en": "Date (affidavit) (p7)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 7)"
+    },
+    {
+      "name": "x_name2",
+      "label_en": "Owner / applicant name (p7)",
+      "label_mr": "मालक / अर्जदाराचे नाव (पान 7)"
+    },
+    {
+      "name": "x_mobile",
+      "label_en": "Owner mobile no. (p7)",
+      "label_mr": "मालकाचा मोबाइल क्र. (पान 7)"
+    },
+    {
+      "name": "y_partner1",
+      "label_en": "Partner 1 name (p8)",
+      "label_mr": "भागीदार क्र. १ चे नाव (पान 8)"
+    },
+    {
+      "name": "y_partner2",
+      "label_en": "Partner 2 name (p8)",
+      "label_mr": "भागीदार क्र. २ चे नाव (पान 8)"
+    },
+    {
+      "name": "y_firm",
+      "label_en": "Firm name (p8)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 8)"
+    },
+    {
+      "name": "y_lic_date",
+      "label_en": "Licence date (p8)",
+      "label_mr": "अनुज्ञप्ती दिनांक (पान 8)"
+    },
+    {
+      "name": "y_sup_name",
+      "label_en": "Electrical supervisor name (p8)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 8)"
+    },
+    {
+      "name": "y_sup_lic_no",
+      "label_en": "Supervisor licence no. (p8)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 8)"
+    },
+    {
+      "name": "y_sup_lic_date",
+      "label_en": "Supervisor licence date (p8)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 8)"
+    },
+    {
+      "name": "y_partner1_2",
+      "label_en": "Partner 1 name (p8)",
+      "label_mr": "भागीदार क्र. १ चे नाव (पान 8)"
+    },
+    {
+      "name": "y_partner2_2",
+      "label_en": "Partner 2 name (p8)",
+      "label_mr": "भागीदार क्र. २ चे नाव (पान 8)"
+    },
+    {
+      "name": "y_place",
+      "label_en": "Place (p8)",
+      "label_mr": "स्थळ (पान 8)"
+    },
+    {
+      "name": "y_date",
+      "label_en": "Date (affidavit) (p8)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 8)"
+    },
+    {
+      "name": "z_name",
+      "label_en": "Electrical supervisor name (p9)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 9)"
+    },
+    {
+      "name": "z_age",
+      "label_en": "Supervisor age (p9)",
+      "label_mr": "पर्यवेक्षकाचे वय (पान 9)"
+    },
+    {
+      "name": "z_address",
+      "label_en": "Supervisor address (p9)",
+      "label_mr": "पर्यवेक्षकाचा पत्ता (पान 9)"
+    },
+    {
+      "name": "z_aadhaar",
+      "label_en": "Supervisor Aadhaar no. (p9)",
+      "label_mr": "पर्यवेक्षकाचा आधार क्रमांक (पान 9)"
+    },
+    {
+      "name": "z_firm",
+      "label_en": "Firm name (p9)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 9)"
+    },
+    {
+      "name": "z_join_date",
+      "label_en": "Date supervisor joined firm (p9)",
+      "label_mr": "संस्थेत रुजू / नेमणूक दिनांक (पान 9)"
+    },
+    {
+      "name": "z_sup_lic_no",
+      "label_en": "Supervisor licence no. (p9)",
+      "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.) (पान 9)"
+    },
+    {
+      "name": "z_sup_lic_date",
+      "label_en": "Supervisor licence date (p9)",
+      "label_mr": "पर्यवेक्षक परवाना दिनांक (पान 9)"
+    },
+    {
+      "name": "z_prev_firm",
+      "label_en": "Last employer firm (p9)",
+      "label_mr": "शेवटची नोकरी – मेसर्स (पान 9)"
+    },
+    {
+      "name": "z_prev_lic",
+      "label_en": "Last employer licence no. (p9)",
+      "label_mr": "शेवटची नोकरी – म.ठे.क्र. (पान 9)"
+    },
+    {
+      "name": "z_prev_from",
+      "label_en": "Last job – from date (p9)",
+      "label_mr": "शेवटची नोकरी – पासून दिनांक (पान 9)"
+    },
+    {
+      "name": "z_prev_to",
+      "label_en": "Last job – to date (p9)",
+      "label_mr": "शेवटची नोकरी – पर्यंत दिनांक (पान 9)"
+    },
+    {
+      "name": "z_place",
+      "label_en": "Place (p9)",
+      "label_mr": "स्थळ (पान 9)"
+    },
+    {
+      "name": "z_sig_date",
+      "label_en": "Date (affidavit) (p9)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 9)"
+    },
+    {
+      "name": "z_date",
+      "label_en": "Date (affidavit) (p9)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 9)"
+    },
+    {
+      "name": "z_name2",
+      "label_en": "Electrical supervisor name (p9)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 9)"
+    },
+    {
+      "name": "z_mobile",
+      "label_en": "Supervisor mobile no. (p9)",
+      "label_mr": "पर्यवेक्षकाचा मोबाइल क्र. (पान 9)"
+    },
+    {
+      "name": "ph_firm",
+      "label_en": "Firm name (p10)",
+      "label_mr": "मेसर्स (संस्थेचे नाव) (पान 10)"
+    },
+    {
+      "name": "ph_owner",
+      "label_en": "Owner / applicant name (p10)",
+      "label_mr": "मालक / अर्जदाराचे नाव (पान 10)"
+    },
+    {
+      "name": "ph_sup",
+      "label_en": "Electrical supervisor name (p10)",
+      "label_mr": "विद्युत पर्यवेक्षकाचे नाव (पान 10)"
+    },
+    {
+      "name": "b_name",
+      "label_en": "Owner / applicant name (p11)",
+      "label_mr": "मालक / अर्जदाराचे नाव (पान 11)"
+    },
+    {
+      "name": "b_parent",
+      "label_en": "Father's / mother's name (p11)",
+      "label_mr": "वडील / आईचे नाव (पान 11)"
+    },
+    {
+      "name": "b_relation",
+      "label_en": "Son / daughter (p11)",
+      "label_mr": "मुलगा / मुलगी (पान 11)"
+    },
+    {
+      "name": "b_age",
+      "label_en": "Owner age (p11)",
+      "label_mr": "मालकाचे वय (पान 11)"
+    },
+    {
+      "name": "b_address",
+      "label_en": "Owner address (p11)",
+      "label_mr": "मालकाचा पत्ता (राहणार) (पान 11)"
+    },
+    {
+      "name": "b_place",
+      "label_en": "Place (p11)",
+      "label_mr": "स्थळ (पान 11)"
+    },
+    {
+      "name": "b_date",
+      "label_en": "Date (affidavit) (p11)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 11)"
+    },
+    {
+      "name": "b_name2",
+      "label_en": "Owner / applicant name (p11)",
+      "label_mr": "मालक / अर्जदाराचे नाव (पान 11)"
+    },
+    {
+      "name": "b_mobile",
+      "label_en": "Owner mobile no. (p11)",
+      "label_mr": "मालकाचा मोबाइल क्र. (पान 11)"
+    }
   ]
 }

@@ -1,31 +1,438 @@
 {
   "form_type": "wireman_suit_application",
-  "title": "Wireman Suit Application",
-  "title_en": "Wireman Suit Application",
+  "title": "Wireman Exam Suit Application",
+  "title_en": "Wireman Exam Suit Application",
   "title_mr": "विद्युत तारतंत्री सूट अर्ज",
   "fields": [
-    { "name": "applicant_name_header", "label_en": "Applicant Name", "label_mr": "अर्जदाराचे नाव" },
-    { "name": "receipt_date", "label_en": "Receipt Date", "label_mr": "आवक दिनांक" },
-    { "name": "b1_full_name", "label_en": "Full Name", "label_mr": "पूर्ण नांव" },
-    { "name": "b1_address", "label_en": "Permanent Address", "label_mr": "कायमचा पत्ता" },
-    { "name": "b1_mobile", "label_en": "Mobile Number", "label_mr": "मोबाईल क्रमांक" },
-    { "name": "b1_dob", "label_en": "Date of Birth", "label_mr": "जन्म दिनांक" },
-    { "name": "b1_qualification", "label_en": "Qualification", "label_mr": "शैक्षणिक अर्हता" },
-    { "name": "b1_iti_details", "label_en": "Passed Institution & Date", "label_mr": "उत्तीर्ण संस्थेचे नांव व दिनांक" },
-    { "name": "b1_work_exp", "label_en": "Work Experience", "label_mr": "अनुभव" },
-    { "name": "j_name", "label_en": "Annexure - Name", "label_mr": "जोडपत्र - नांव" },
-    { "name": "j_dob", "label_en": "Annexure - Date of Birth", "label_mr": "जोडपत्र - जन्म दिनांक" },
-    { "name": "j_edu_qual", "label_en": "Annexure - Qualification", "label_mr": "जोडपत्र - शैक्षणिक अर्हता" },
-    { "name": "pb_name", "label_en": "Declaration - Name", "label_mr": "प्रपत्र ब - नाव" },
-    { "name": "pb_parent_name", "label_en": "Declaration - Parent Name", "label_mr": "प्रपत्र ब - वडिलांचे नाव" },
-    { "name": "pb_age", "label_en": "Age", "label_mr": "वय" },
-    { "name": "pb_occupation", "label_en": "Occupation", "label_mr": "व्यवसाय" },
-    { "name": "pb_address", "label_en": "Declaration - Address", "label_mr": "प्रपत्र ब - पत्ता" },
-    { "name": "pb_place", "label_en": "Place", "label_mr": "ठिकाण" },
-    { "name": "pb_date", "label_en": "Date", "label_mr": "दिनांक" },
-    { "name": "pb_applicant_name", "label_en": "Applicant Name (Declaration)", "label_mr": "अर्जदाराचे नाव" },
-    { "name": "pb_mobile", "label_en": "Mobile (Declaration)", "label_mr": "मोबाइल क्रमांक" },
-    { "name": "sig_date", "label_en": "Signature Date", "label_mr": "सही दिनांक" },
-    { "name": "sig_place", "label_en": "Signature Place", "label_mr": "सही स्थळ" }
+    {
+      "name": "ck_name",
+      "label_en": "Candidate / applicant name (p1)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 1)"
+    },
+    {
+      "name": "ck_1",
+      "label_en": "Item 1 – attached / not (p1)",
+      "label_mr": "मुद्दा 1 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_2",
+      "label_en": "Item 2 – attached / not (p1)",
+      "label_mr": "मुद्दा 2 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_3",
+      "label_en": "Item 3 – attached / not (p1)",
+      "label_mr": "मुद्दा 3 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_4",
+      "label_en": "Item 4 – attached / not (p1)",
+      "label_mr": "मुद्दा 4 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_5",
+      "label_en": "Item 5 – attached / not (p1)",
+      "label_mr": "मुद्दा 5 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_6",
+      "label_en": "Item 6 – attached / not (p1)",
+      "label_mr": "मुद्दा 6 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_7",
+      "label_en": "Item 7 – attached / not (p1)",
+      "label_mr": "मुद्दा 7 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_8",
+      "label_en": "Item 8 – attached / not (p1)",
+      "label_mr": "मुद्दा 8 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_9",
+      "label_en": "Item 9 – attached / not (p1)",
+      "label_mr": "मुद्दा 9 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_10",
+      "label_en": "Item 10 – attached / not (p1)",
+      "label_mr": "मुद्दा 10 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_11",
+      "label_en": "Item 11 – attached / not (p1)",
+      "label_mr": "मुद्दा 11 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_12",
+      "label_en": "Item 12 – attached / not (p1)",
+      "label_mr": "मुद्दा 12 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_13",
+      "label_en": "Item 13 – attached / not (p1)",
+      "label_mr": "मुद्दा 13 – जोडले आहे/नाही (पान 1)"
+    },
+    {
+      "name": "ck_14",
+      "label_en": "Item 14 done (p1)",
+      "label_mr": "मुद्दा 14 पूर्ण (पान 1)"
+    },
+    {
+      "name": "ck_15",
+      "label_en": "Item 15 done (p1)",
+      "label_mr": "मुद्दा 15 पूर्ण (पान 1)"
+    },
+    {
+      "name": "ck_officer1",
+      "label_en": "Branch / asst. engineer – name (p1)",
+      "label_mr": "शाखा/सहा. अभियंता – नांव (पान 1)"
+    },
+    {
+      "name": "ck_officer2",
+      "label_en": "Asst. electrical inspector – name (p1)",
+      "label_mr": "सहाय्यक विद्युत निरीक्षक – नांव (पान 1)"
+    },
+    {
+      "name": "ck_officer3",
+      "label_en": "Electrical inspector – name (p1)",
+      "label_mr": "विद्युत निरीक्षक – नांव (पान 1)"
+    },
+    {
+      "name": "l_name",
+      "label_en": "Candidate / applicant name (p2)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 2)"
+    },
+    {
+      "name": "l_address",
+      "label_en": "Candidate address (p2)",
+      "label_mr": "उमेदवाराचा पत्ता (पान 2)"
+    },
+    {
+      "name": "l_address2",
+      "label_en": "Address (line 2) (p2)",
+      "label_mr": "पत्ता (ओळ २) (पान 2)"
+    },
+    {
+      "name": "l_date",
+      "label_en": "Letter date (p2)",
+      "label_mr": "अर्जाचा दिनांक (पान 2)"
+    },
+    {
+      "name": "l_name2",
+      "label_en": "Candidate / applicant name (p2)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 2)"
+    },
+    {
+      "name": "l_mobile",
+      "label_en": "Candidate mobile no. (p2)",
+      "label_mr": "उमेदवाराचा मोबाइल क्र. (पान 2)"
+    },
+    {
+      "name": "r_name",
+      "label_en": "Candidate name & surname (p3)",
+      "label_mr": "उमेदवाराचे नांव व आडनाव (पान 3)"
+    },
+    {
+      "name": "r_parent",
+      "label_en": "Father's / husband's name (p3)",
+      "label_mr": "वडिलांचे / पतीचे नाव (पान 3)"
+    },
+    {
+      "name": "r_address",
+      "label_en": "Candidate address (p3)",
+      "label_mr": "उमेदवाराचा पत्ता (पान 3)"
+    },
+    {
+      "name": "r_email",
+      "label_en": "Candidate e-mail (p3)",
+      "label_mr": "उमेदवाराचा ई-मेल (पान 3)"
+    },
+    {
+      "name": "r_mobile",
+      "label_en": "Candidate mobile no. (p3)",
+      "label_mr": "उमेदवाराचा मोबाइल क्र. (पान 3)"
+    },
+    {
+      "name": "r_certificate",
+      "label_en": "Certificate required (p3)",
+      "label_mr": "उमेदवारास कोणते प्रमाणपत्र पाहिजे (पान 3)"
+    },
+    {
+      "name": "r_exam_experience",
+      "label_en": "Experience at permission – period & place (p3)",
+      "label_mr": "परवानगी वेळचा कामाचा अनुभव, कालावधी व ठिकाण (पान 3)"
+    },
+    {
+      "name": "r_seat_no",
+      "label_en": "Exam seat no. (p3)",
+      "label_mr": "परीक्षा आसन क्रमांक (पान 3)"
+    },
+    {
+      "name": "r_exam_date",
+      "label_en": "Exam date (p3)",
+      "label_mr": "परीक्षेचा दिनांक (पान 3)"
+    },
+    {
+      "name": "r_exam_place",
+      "label_en": "Exam place (p3)",
+      "label_mr": "परीक्षेचे ठिकाण (पान 3)"
+    },
+    {
+      "name": "r_result",
+      "label_en": "Result (p3)",
+      "label_mr": "निकाल (पान 3)"
+    },
+    {
+      "name": "r_exam_passed",
+      "label_en": "Qualification / exam passed (p3)",
+      "label_mr": "शैक्षणिक पात्रता / उत्तीर्ण परीक्षा (पान 3)"
+    },
+    {
+      "name": "r_experience",
+      "label_en": "Work experience – period & place (p3)",
+      "label_mr": "प्रत्यक्ष कामाचा अनुभव, कालावधी व ठिकाण (पान 3)"
+    },
+    {
+      "name": "r_dob",
+      "label_en": "Candidate date of birth (p3)",
+      "label_mr": "उमेदवाराची जन्म दिनांक (पान 3)"
+    },
+    {
+      "name": "r_birthplace",
+      "label_en": "Place of birth (p3)",
+      "label_mr": "जन्म ठिकाण (पान 3)"
+    },
+    {
+      "name": "r_height",
+      "label_en": "Height (p3)",
+      "label_mr": "उंची (पान 3)"
+    },
+    {
+      "name": "r_complexion",
+      "label_en": "Complexion (p3)",
+      "label_mr": "वर्ण (पान 3)"
+    },
+    {
+      "name": "r_idmark",
+      "label_en": "Identification mark (p3)",
+      "label_mr": "शरीरावरील ओळख चिन्हे (पान 3)"
+    },
+    {
+      "name": "b1_name",
+      "label_en": "Candidate / applicant name (p4)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 4)"
+    },
+    {
+      "name": "b1_address",
+      "label_en": "Candidate address (p4)",
+      "label_mr": "उमेदवाराचा पत्ता (पान 4)"
+    },
+    {
+      "name": "b1_address2",
+      "label_en": "Address (line 2) (p4)",
+      "label_mr": "पत्ता (ओळ २) (पान 4)"
+    },
+    {
+      "name": "b1_mobile",
+      "label_en": "Candidate mobile no. (p4)",
+      "label_mr": "उमेदवाराचा मोबाइल क्र. (पान 4)"
+    },
+    {
+      "name": "b1_email",
+      "label_en": "Candidate e-mail (p4)",
+      "label_mr": "उमेदवाराचा ई-मेल (पान 4)"
+    },
+    {
+      "name": "b1_dob",
+      "label_en": "Candidate date of birth (p4)",
+      "label_mr": "उमेदवाराची जन्म दिनांक (पान 4)"
+    },
+    {
+      "name": "b1_age",
+      "label_en": "Candidate age (p4)",
+      "label_mr": "उमेदवाराचे वय (पान 4)"
+    },
+    {
+      "name": "b1_qualification",
+      "label_en": "Qualification / exam passed (p4)",
+      "label_mr": "शैक्षणिक पात्रता / उत्तीर्ण परीक्षा (पान 4)"
+    },
+    {
+      "name": "b1_training_period",
+      "label_en": "Training period (p4)",
+      "label_mr": "प्रशिक्षण कालावधी (पान 4)"
+    },
+    {
+      "name": "b1_training_place",
+      "label_en": "Training place & institute (p4)",
+      "label_mr": "प्रशिक्षण ठिकाण व संस्थेचे नांव (पान 4)"
+    },
+    {
+      "name": "b1_challan_no",
+      "label_en": "Challan no. (p4)",
+      "label_mr": "चलन क्रमांक (पान 4)"
+    },
+    {
+      "name": "b1_challan_date",
+      "label_en": "Challan date (p4)",
+      "label_mr": "चलन भरल्याचा दिनांक (पान 4)"
+    },
+    {
+      "name": "d_name",
+      "label_en": "Candidate / applicant name (p5)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 5)"
+    },
+    {
+      "name": "d_parent",
+      "label_en": "Father's / husband's name (p5)",
+      "label_mr": "वडिलांचे / पतीचे नाव (पान 5)"
+    },
+    {
+      "name": "d_yanchi",
+      "label_en": "Of (his / her) (p5)",
+      "label_mr": "यांचा / यांची (पान 5)"
+    },
+    {
+      "name": "d_relation",
+      "label_en": "Son / daughter (p5)",
+      "label_mr": "मुलगा / मुलगी (पान 5)"
+    },
+    {
+      "name": "d_age",
+      "label_en": "Candidate age (p5)",
+      "label_mr": "उमेदवाराचे वय (पान 5)"
+    },
+    {
+      "name": "d_address",
+      "label_en": "Candidate address (p5)",
+      "label_mr": "उमेदवाराचा पत्ता (पान 5)"
+    },
+    {
+      "name": "d_aadhaar",
+      "label_en": "Candidate Aadhaar no. (p5)",
+      "label_mr": "उमेदवाराचा आधार क्रमांक (पान 5)"
+    },
+    {
+      "name": "d_place",
+      "label_en": "Place (p5)",
+      "label_mr": "स्थळ (पान 5)"
+    },
+    {
+      "name": "d_date",
+      "label_en": "Date (affidavit) (p5)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 5)"
+    },
+    {
+      "name": "e_name",
+      "label_en": "Candidate / applicant name (p6)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 6)"
+    },
+    {
+      "name": "e_join_date",
+      "label_en": "Date of joining (p6)",
+      "label_mr": "प्रवेशाचा दिनांक (पान 6)"
+    },
+    {
+      "name": "e_work",
+      "label_en": "Nature of work (p6)",
+      "label_mr": "कामाचे स्वरूप (पान 6)"
+    },
+    {
+      "name": "e_leave_date",
+      "label_en": "Date of leaving (p6)",
+      "label_mr": "काम सोडल्याचा दिनांक (पान 6)"
+    },
+    {
+      "name": "e_sup",
+      "label_en": "Supervisor / engineer name (p6)",
+      "label_mr": "विद्युत पर्यवेक्षक / अभियंता यांचे नांव (पान 6)"
+    },
+    {
+      "name": "e_sup_lic",
+      "label_en": "Licence no. / technical qualification (p6)",
+      "label_mr": "परवाना क्रमांक / तांत्रिक अर्हता (पान 6)"
+    },
+    {
+      "name": "e_contractor_lic",
+      "label_en": "Contractor licence no. (p6)",
+      "label_mr": "ठेकेदार अनुज्ञप्ती क्रमांक (म.ठे.क्र.) (पान 6)"
+    },
+    {
+      "name": "e_contractor_lic2",
+      "label_en": "Contractor licence no. (line 2) (p6)",
+      "label_mr": "ठेकेदारीचा अनुज्ञप्ती क्रमांक (ओळ २) (पान 6)"
+    },
+    {
+      "name": "e_date",
+      "label_en": "Certificate date (p6)",
+      "label_mr": "प्रमाणपत्र दिनांक (पान 6)"
+    },
+    {
+      "name": "j_name",
+      "label_en": "Candidate / applicant name (p7)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 7)"
+    },
+    {
+      "name": "j_inward",
+      "label_en": "Inward no. / date (p7)",
+      "label_mr": "आवक क्रमांक / दिनांक (पान 7)"
+    },
+    {
+      "name": "j_dob",
+      "label_en": "Candidate date of birth (p7)",
+      "label_mr": "उमेदवाराची जन्म दिनांक (पान 7)"
+    },
+    {
+      "name": "j_qualification",
+      "label_en": "Qualification / exam passed (p7)",
+      "label_mr": "शैक्षणिक पात्रता / उत्तीर्ण परीक्षा (पान 7)"
+    },
+    {
+      "name": "pb_name",
+      "label_en": "Candidate / applicant name (p8)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 8)"
+    },
+    {
+      "name": "pb_parent",
+      "label_en": "Father's / husband's name (p8)",
+      "label_mr": "वडिलांचे / पतीचे नाव (पान 8)"
+    },
+    {
+      "name": "pb_relation",
+      "label_en": "Son / daughter (p8)",
+      "label_mr": "मुलगा / मुलगी (पान 8)"
+    },
+    {
+      "name": "pb_age",
+      "label_en": "Candidate age (p8)",
+      "label_mr": "उमेदवाराचे वय (पान 8)"
+    },
+    {
+      "name": "pb_address",
+      "label_en": "Candidate address (p8)",
+      "label_mr": "उमेदवाराचा पत्ता (पान 8)"
+    },
+    {
+      "name": "pb_place",
+      "label_en": "Place (p8)",
+      "label_mr": "स्थळ (पान 8)"
+    },
+    {
+      "name": "pb_date",
+      "label_en": "Date (affidavit) (p8)",
+      "label_mr": "दिनांक (प्रतिज्ञापत्र) (पान 8)"
+    },
+    {
+      "name": "pb_name2",
+      "label_en": "Candidate / applicant name (p8)",
+      "label_mr": "उमेदवार / अर्जदाराचे नाव (पान 8)"
+    },
+    {
+      "name": "pb_mobile",
+      "label_en": "Candidate mobile no. (p8)",
+      "label_mr": "उमेदवाराचा मोबाइल क्र. (पान 8)"
+    }
   ]
 }

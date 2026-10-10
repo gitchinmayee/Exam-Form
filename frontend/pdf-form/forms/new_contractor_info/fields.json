@@ -1,0 +1,673 @@
+{
+ "form_type": "contractor_newlicense_form",
+ "title_mr": "नवीन विद्युत ठेकेदार लायसन्स करीता आवश्यक माहिती",
+ "title_en": "Information for New Contractor License",
+ "template": "template.pdf",
+ "pageSize": [
+  595.32,
+  841.92
+ ],
+ "pages": [
+  {
+   "n": 1,
+   "title_mr": "माहिती १",
+   "title_en": "Information 1"
+  },
+  {
+   "n": 2,
+   "title_mr": "माहिती २",
+   "title_en": "Information 2"
+  }
+ ],
+ "shifts": [],
+ "fields": [
+  {
+   "id": "n_firm",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    125.0,
+    575.41,
+    140.42
+   ],
+   "base": 135.95,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "मेसर्स (संस्थेचे नाव)",
+   "label_en": "Firm name",
+   "key": "firm_name"
+  },
+  {
+   "id": "n_firm_address",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    142.82,
+    575.41,
+    157.7
+   ],
+   "base": 153.5,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "संस्थेचा पत्ता",
+   "label_en": "Firm address",
+   "key": "firm_address"
+  },
+  {
+   "id": "n_owner_name",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    160.1,
+    575.41,
+    174.98
+   ],
+   "base": 170.78,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "मालक / अर्जदाराचे नाव",
+   "label_en": "Owner / applicant name",
+   "key": "owner_name"
+  },
+  {
+   "id": "n_owner_address",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    177.38,
+    575.41,
+    192.26
+   ],
+   "base": 188.06,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "मालकाचा पत्ता (राहणार)",
+   "label_en": "Owner address",
+   "key": "owner_address"
+  },
+  {
+   "id": "n_owner_father",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    194.66,
+    575.41,
+    222.98
+   ],
+   "base": 205.46,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "मालकाच्या वडिलांचे नाव",
+   "label_en": "Owner's father's name",
+   "key": "owner_parent_name",
+   "lines": 2
+  },
+  {
+   "id": "n_owner_dob",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    308.95,
+    225.38,
+    575.41,
+    240.38
+   ],
+   "base": 236.12,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "मालकाची जन्म दिनांक",
+   "label_en": "Owner date of birth",
+   "key": "owner_dob"
+  },
+  {
+   "id": "n_owner_email",
+   "page": 1,
+   "type": "text",
+   "kind": "email",
+   "rect": [
+    308.95,
+    242.78,
+    575.41,
+    257.68
+   ],
+   "base": 253.47,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "मालकाचा ई-मेल",
+   "label_en": "Owner e-mail",
+   "key": "owner_email"
+  },
+  {
+   "id": "n_owner_education",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    260.08,
+    575.41,
+    288.41
+   ],
+   "base": 270.88,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "मालकाचे शिक्षण",
+   "label_en": "Owner education",
+   "key": "owner_education",
+   "lines": 2
+  },
+  {
+   "id": "n_owner_pan",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    290.81,
+    575.41,
+    319.13
+   ],
+   "base": 308.21,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "मालकाचा पॅन क्रमांक",
+   "label_en": "Owner PAN",
+   "key": "owner_pan"
+  },
+  {
+   "id": "n_bank_name",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    339.63,
+    575.41,
+    352.33
+   ],
+   "base": 349.13,
+   "size": 9,
+   "lang": "any",
+   "label_mr": "बँकेचे नाव",
+   "label_en": "Name of bank"
+  },
+  {
+   "id": "n_bank_branch",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    356.43,
+    575.41,
+    369.13
+   ],
+   "base": 365.93,
+   "size": 9,
+   "lang": "any",
+   "label_mr": "बँकेची शाखा",
+   "label_en": "Bank branch"
+  },
+  {
+   "id": "n_bank_account",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    373.23,
+    575.41,
+    385.93
+   ],
+   "base": 382.73,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "खाते क्रमांक",
+   "label_en": "Account number"
+  },
+  {
+   "id": "n_bank_balance",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    390.03,
+    575.41,
+    402.73
+   ],
+   "base": 399.53,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "शिल्लक रक्कम",
+   "label_en": "Balance"
+  },
+  {
+   "id": "n_sup_name",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    406.01,
+    575.41,
+    420.89
+   ],
+   "base": 416.69,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "विद्युत पर्यवेक्षकाचे नाव",
+   "label_en": "Electrical supervisor name",
+   "key": "supervisor_name"
+  },
+  {
+   "id": "n_sup_father",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    423.29,
+    575.41,
+    451.63
+   ],
+   "base": 434.09,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "पर्यवेक्षकाच्या वडिलांचे नाव",
+   "label_en": "Supervisor's father's name",
+   "key": "supervisor_parent_name",
+   "lines": 2
+  },
+  {
+   "id": "n_sup_address",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    454.03,
+    575.41,
+    468.91
+   ],
+   "base": 464.71,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "पर्यवेक्षकाचा पत्ता",
+   "label_en": "Supervisor address",
+   "key": "supervisor_address"
+  },
+  {
+   "id": "n_sup_dob",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    308.95,
+    471.31,
+    575.41,
+    499.63
+   ],
+   "base": 488.71,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाची जन्म दिनांक",
+   "label_en": "Supervisor date of birth",
+   "key": "supervisor_dob"
+  },
+  {
+   "id": "n_sup_email",
+   "page": 1,
+   "type": "text",
+   "kind": "email",
+   "rect": [
+    308.95,
+    502.03,
+    575.41,
+    530.35
+   ],
+   "base": 519.43,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाचा ई-मेल",
+   "label_en": "Supervisor e-mail",
+   "key": "supervisor_email"
+  },
+  {
+   "id": "n_sup_mobile",
+   "page": 1,
+   "type": "text",
+   "kind": "mobile",
+   "rect": [
+    308.95,
+    532.75,
+    575.41,
+    561.07
+   ],
+   "base": 550.15,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाचा मोबाइल क्र.",
+   "label_en": "Supervisor mobile no.",
+   "key": "supervisor_mobile"
+  },
+  {
+   "id": "n_sup_aadhaar",
+   "page": 1,
+   "type": "text",
+   "kind": "aadhaar",
+   "rect": [
+    308.95,
+    563.47,
+    575.41,
+    591.79
+   ],
+   "base": 580.87,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाचा आधार क्रमांक",
+   "label_en": "Supervisor Aadhaar no.",
+   "key": "supervisor_aadhaar"
+  },
+  {
+   "id": "n_sup_appoint",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    308.95,
+    594.19,
+    575.41,
+    622.54
+   ],
+   "base": 611.6,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षकाची सध्याची नेमणूक दिनांक",
+   "label_en": "Supervisor appointment date",
+   "key": "sup_join_date"
+  },
+  {
+   "id": "n_sup_lic_no",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    632.84,
+    452.8,
+    645.54
+   ],
+   "base": 642.34,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना क्रमांक (म.प.क्र.)",
+   "label_en": "Supervisor licence no.",
+   "key": "sup_license_no"
+  },
+  {
+   "id": "n_sup_lic_date",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    458.8,
+    632.84,
+    575.41,
+    645.54
+   ],
+   "base": 642.34,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "पर्यवेक्षक परवाना दिनांक",
+   "label_en": "Supervisor licence date",
+   "key": "sup_license_date"
+  },
+  {
+   "id": "n_prev_firm",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    673.76,
+    575.41,
+    701.82
+   ],
+   "base": 683.26,
+   "size": 9,
+   "lang": "any",
+   "label_mr": "शेवटची नोकरी – मेसर्स",
+   "label_en": "Last employer firm",
+   "key": "prev_employer_firm",
+   "lines": 2
+  },
+  {
+   "id": "n_prev_mc",
+   "page": 1,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    711.68,
+    452.8,
+    724.38
+   ],
+   "base": 721.18,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – म.ठे.क्र.",
+   "label_en": "Last employer licence no.",
+   "key": "prev_employer_license"
+  },
+  {
+   "id": "n_prev_mc_date",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    458.8,
+    711.68,
+    575.41,
+    724.38
+   ],
+   "base": 721.18,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – ठेकेदार क्रमांकाचा दिनांक",
+   "label_en": "Last employer MC date"
+  },
+  {
+   "id": "n_prev_from",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    308.95,
+    741.92,
+    439.18,
+    754.62
+   ],
+   "base": 751.42,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – पासून दिनांक",
+   "label_en": "Last job – from date",
+   "key": "prev_from"
+  },
+  {
+   "id": "n_prev_to",
+   "page": 1,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    445.18,
+    741.92,
+    575.41,
+    754.62
+   ],
+   "base": 751.42,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "शेवटची नोकरी – पर्यंत दिनांक",
+   "label_en": "Last job – to date",
+   "key": "prev_to"
+  },
+  {
+   "id": "n_shop_name",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    104.18,
+    525.82,
+    129.14
+   ],
+   "base": 114.98,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "खरेदी दुकानाचे नाव",
+   "label_en": "Purchase shop name",
+   "lines": 2
+  },
+  {
+   "id": "n_shop_address",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    131.54,
+    525.82,
+    156.5
+   ],
+   "base": 142.34,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "दुकानाचा पत्ता",
+   "label_en": "Shop address",
+   "lines": 2
+  },
+  {
+   "id": "n_receipt_no",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    166.8,
+    425.53,
+    179.5
+   ],
+   "base": 176.3,
+   "size": 9,
+   "lang": "any",
+   "label_mr": "खरेदी पावती क्रमांक",
+   "label_en": "Purchase receipt no."
+  },
+  {
+   "id": "n_receipt_date",
+   "page": 2,
+   "type": "date",
+   "kind": "date",
+   "rect": [
+    431.53,
+    166.8,
+    525.82,
+    179.5
+   ],
+   "base": 176.3,
+   "size": 9,
+   "lang": "en",
+   "label_mr": "खरेदी पावती दिनांक",
+   "label_en": "Purchase receipt date"
+  },
+  {
+   "id": "n_megger_make",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    189.62,
+    525.82,
+    214.58
+   ],
+   "base": 200.42,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "मेगर बनावट",
+   "label_en": "Megger make",
+   "key": "megger_make",
+   "lines": 2
+  },
+  {
+   "id": "n_earth_make",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    216.98,
+    525.82,
+    241.94
+   ],
+   "base": 227.78,
+   "size": 9.0,
+   "lang": "any",
+   "label_mr": "अर्थ टेस्टर बनावट",
+   "label_en": "Earth tester make",
+   "key": "earth_make",
+   "lines": 2
+  },
+  {
+   "id": "n_megger_serial",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    244.34,
+    525.82,
+    269.21
+   ],
+   "base": 255.14,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "मेगर क्रमांक",
+   "label_en": "Megger serial no.",
+   "key": "megger_serial",
+   "lines": 2
+  },
+  {
+   "id": "n_earth_serial",
+   "page": 2,
+   "type": "text",
+   "kind": "text",
+   "rect": [
+    308.95,
+    271.61,
+    525.82,
+    314.57
+   ],
+   "base": 296.33,
+   "size": 9.0,
+   "lang": "en",
+   "label_mr": "अर्थ टेस्टर क्रमांक",
+   "label_en": "Earth tester serial no.",
+   "key": "earth_serial"
+  }
+ ]
+}
