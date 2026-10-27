@@ -29,6 +29,34 @@
         /* keep the language button clear of the sticky page tabs */
         #global-lang-toggle { top: auto !important; bottom: 16px; right: 16px; }
         @media (max-width: 640px) { .top-bar h1 { font-size: 0.95rem; } .btn { padding: 8px 12px; font-size: 0.85rem; } }
+
+        /* ── Extra fields panel ── */
+        #extra-fields-panel {
+            max-width: 900px; margin: 12px auto 0; padding: 0 12px;
+        }
+        .extra-fields-card {
+            background: #fff; border: 1.5px solid #c8d6e8; border-radius: 10px;
+            padding: 16px 20px; margin-bottom: 4px;
+        }
+        .extra-fields-card h2 {
+            font-size: 0.92rem; font-weight: 700; color: #0056b3;
+            margin: 0 0 12px; padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .extra-fields-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px 20px;
+        }
+        .extra-field label {
+            display: block; font-size: 0.8rem; color: #445;
+            margin-bottom: 4px; font-weight: 600;
+        }
+        .extra-field input {
+            width: 100%; padding: 7px 10px; border: 1.5px solid #bbc8d8;
+            border-radius: 5px; font-size: 0.92rem; font-family: inherit;
+            background: #f4f8ff; color: #1a2a40; outline: none;
+        }
+        .extra-field input:focus { border-color: #0056b3; background: #fff; }
     </style>
 </head>
 <body>
@@ -45,6 +73,43 @@
         <span data-mr="मूळ अर्जावरच थेट माहिती भरा. निळ्या जागेत टाइप करा, फोटो/स्वाक्षरीच्या चौकटीवर क्लिक करून चित्र निवडा. एकदा भरलेली माहिती (नाव, संस्था, परवाना…) इतर पानांवर आपोआप भरली जाते (हिरवी) — हवे तर बदला. मराठीत लिहिण्यासाठी 'अ' बटण वापरा."
               data-en="Fill the original form directly. Type in the blue blanks; click a photo/signature box to choose a picture. Details entered once (name, firm, licence…) are filled on the other pages automatically (green) — edit them if needed. Use the 'अ' button to type in Marathi.">मूळ अर्जावरच थेट माहिती भरा.</span>
     </p>
+
+    <!-- Extra fields not present on the info PDF but required in the renewal form -->
+    <div id="extra-fields-panel">
+        <div class="extra-fields-card">
+            <h2 data-mr="अतिरिक्त माहिती (नूतनीकरण फॉर्मसाठी)" data-en="Additional Details (needed for Renewal Form)">अतिरिक्त माहिती (नूतनीकरण फॉर्मसाठी)</h2>
+            <div class="extra-fields-grid">
+                <div class="extra-field">
+                    <label for="ef_owner_mobile"
+                           data-mr="मालकाचा मोबाइल क्र."
+                           data-en="Owner mobile no.">मालकाचा मोबाइल क्र.</label>
+                    <input type="tel" id="ef_owner_mobile"
+                           data-autofill-key="owner_mobile"
+                           inputmode="numeric" maxlength="15"
+                           placeholder="10-digit mobile number"
+                           autocomplete="tel">
+                </div>
+                <div class="extra-field">
+                    <label for="ef_owner_age"
+                           data-mr="मालकाचे वय (वर्षे)"
+                           data-en="Owner age (years)">मालकाचे वय (वर्षे)</label>
+                    <input type="number" id="ef_owner_age"
+                           data-autofill-key="owner_age"
+                           inputmode="numeric" min="18" max="100"
+                           placeholder="e.g. 45">
+                </div>
+                <div class="extra-field">
+                    <label for="ef_supervisor_age"
+                           data-mr="पर्यवेक्षकाचे वय (वर्षे)"
+                           data-en="Supervisor age (years)">पर्यवेक्षकाचे वय (वर्षे)</label>
+                    <input type="number" id="ef_supervisor_age"
+                           data-autofill-key="supervisor_age"
+                           inputmode="numeric" min="18" max="100"
+                           placeholder="e.g. 35">
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="pdfFormMount"><div id="loading">लोड होत आहे… / Loading…</div></div>
     <div class="bottom-actions">
         <button type="button" class="btn btn-back" onclick="window.location.href='dashboard.html'" data-mr="← मागे" data-en="← Back">← मागे</button>
@@ -88,5 +153,6 @@
 <script src="lang-toggle.js"></script>
 <script src="config.js"></script>
 <script src="payment.js"></script>
+<script src="renewal-autofill.js" data-role="save" data-next="contractor_renewal_form.html"></script>
 </body>
 </html>
